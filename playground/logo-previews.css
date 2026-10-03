@@ -1,0 +1,47 @@
+.site-nav-brand .mini-mark{display:block;width:145px;height:auto;aspect-ratio:var(--mark-ratio);background:var(--mark-ground) var(--mark-image) no-repeat left top / var(--mark-size);background-position:var(--mark-position);margin:0 0 4px}
+.micro-mark{display:block;width:85px;height:58px;flex:0 0 auto;background:var(--mark-ground) var(--mark-image) no-repeat left top / var(--mark-size);background-position:var(--mark-position)}
+.social-avatar{background-color:var(--icon-ground);background-image:var(--icon-image);background-repeat:no-repeat;background-size:var(--icon-size);background-position:var(--icon-position);border-radius:50%}
+.welcome-copy .mini-mark{display:block;width:min(100%,125px);height:82px;background:var(--mark-ground) var(--mark-image) no-repeat left top / var(--mark-size);background-position:var(--mark-position);margin-top:5px}
+@media(max-width:1100px){.site-nav-brand .mini-mark{width:125px}}
+@media(max-width:780px){.site-nav-brand .mini-mark{width:120px}}
+
+/* Marchio ritagliato in maschera: la palette colora la forma, non la tavola sorgente. */
+.site-nav-brand .mini-mark,.micro-mark,.welcome-copy .mini-mark,.logo-crop,.feed-wordmark{background-color:var(--mark-ink);background-image:none;mask-image:var(--mark-mask);mask-mode:alpha;mask-repeat:no-repeat;mask-position:center;mask-size:contain;-webkit-mask-image:var(--mark-mask);-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;-webkit-mask-size:contain}
+.social-avatar{position:relative;background:var(--symbol-ground);background-image:none;overflow:hidden}
+.social-avatar::after,.feed-mark-symbol{content:"";display:block;width:100%;height:100%;background:var(--symbol-ink);mask-image:var(--symbol-mask);mask-mode:alpha;mask-repeat:no-repeat;mask-position:center;mask-size:contain;-webkit-mask-image:var(--symbol-mask);-webkit-mask-repeat:no-repeat;-webkit-mask-position:center;-webkit-mask-size:contain}
+.logo-crop{background-color:var(--mark-ink);background-image:none}
+.welcome-copy .mini-mark{background-color:var(--mark-ink)}
+.feed-mark-symbol{width:48%;height:48%;margin:0 auto 7px}
+.feed-wordmark{display:block;width:78%;height:35%;margin:0 auto 8px}
+
+/* Nove riquadri di feed con una cadenza fra immagine, tipografia e firma. */
+.feed-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:19px 0 8px;color:var(--ink)}
+.feed-heading strong{font:600 14px/1.3 var(--ui),sans-serif}
+.feed-heading span{font:400 10px/1.3 var(--ui),sans-serif;color:#746e78;text-align:right}
+.instagram-feed{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;background:#fff;border:1px solid #e3dfe5;padding:3px}
+.feed-tile{aspect-ratio:1;min-width:0;overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:center;padding:10%;font-family:var(--body),sans-serif}
+.feed-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.feed-type{background:var(--paper);color:var(--ink);justify-content:space-between}
+.instagram-feed{container-type:inline-size}
+.feed-type span,.feed-quote>span,.feed-accent>span{font:600 clamp(7px,2cqw,10px)/1.3 var(--ui),sans-serif;letter-spacing:.05em}
+.feed-type strong,.feed-quote strong,.feed-accent strong{font:var(--head-weight) clamp(12px,5cqw,27px)/.98 var(--heading),sans-serif;font-variation-settings:var(--variations);letter-spacing:-.045em}
+.feed-type i{font:400 clamp(7px,1.8cqw,9px)/1.3 var(--ui),sans-serif;font-style:normal}
+.feed-detail{padding:0;background:var(--second)}
+.feed-detail img{object-fit:cover;object-position:68% center}
+.feed-detail>span,.feed-frame>span{position:absolute;left:7%;right:7%;bottom:7%;padding:5px 7px;background:var(--paper);color:var(--ink);font:500 clamp(7px,2cqw,10px)/1.2 var(--ui),sans-serif}
+.feed-mark{background:var(--ink);color:var(--paper);align-items:center;text-align:center}
+.feed-mark b{font:600 clamp(8px,2.4cqw,12px)/1.2 var(--ui),sans-serif}
+.feed-mark small{font:400 clamp(6px,1.8cqw,8px)/1.2 var(--ui),sans-serif;color:var(--second);letter-spacing:.08em;margin-top:4px}
+.feed-frame{padding:0;background:var(--accent)}
+.feed-frame img{inset:8%;width:84%;height:84%;object-fit:cover}
+.feed-frame>span{bottom:8%;left:8%;right:8%;text-align:center}
+.feed-quote{background:var(--second);color:var(--ink);justify-content:space-between}
+.feed-quote i{font:400 18px/1 var(--ui),sans-serif;font-style:normal;align-self:flex-end}
+.feed-accent{background:var(--accent);color:var(--ink);justify-content:space-between}
+.feed-detail-alt{background:var(--paper)}
+.feed-detail-alt img{object-position:center 35%;filter:saturate(.83)}
+.feed-closer{background:var(--paper);color:var(--ink);align-items:center;text-align:center}
+.feed-closer small{font:400 clamp(6px,1.8cqw,9px)/1.25 var(--body),sans-serif}
+.feed-closer b{font:600 clamp(7px,2.2cqw,11px)/1.2 var(--ui),sans-serif;margin-top:6px}
+@media(max-width:1100px){.feed-type strong,.feed-quote strong,.feed-accent strong{font-size:clamp(12px,2vw,21px)}}
+@media(max-width:780px){.feed-type strong,.feed-quote strong,.feed-accent strong{font-size:clamp(18px,4vw,30px)}.feed-type span,.feed-quote>span,.feed-accent>span{font-size:clamp(8px,2vw,11px)}.feed-detail>span,.feed-frame>span{font-size:clamp(8px,1.8vw,12px)}.feed-mark b,.feed-closer b{font-size:clamp(10px,2.5vw,14px)}.feed-mark small,.feed-closer small{font-size:clamp(8px,1.8vw,11px)}}

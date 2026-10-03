@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Instagram Story · stella.casa</title>
+<link rel="stylesheet" href="../tokens.css">
+<style>
+  html,body{margin:0;padding:0}
+  .artboard{width:1080px;height:1920px;position:relative;overflow:hidden;background:var(--vino);font-family:var(--font-testo);}
+  .artboard img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,28,45,.55) 0%,rgba(40,28,45,.08) 26%,rgba(40,28,45,.08) 62%,rgba(40,28,45,.65) 100%)}
+  .safe-top{position:absolute;top:0;left:0;right:0;height:220px}
+  .safe-bottom{position:absolute;bottom:0;left:0;right:0;height:260px}
+  .brand-mark{position:absolute;top:260px;left:64px;display:flex;align-items:center;gap:16px}
+  .brand-mark img{width:56px;height:56px;object-fit:contain;filter:brightness(0) invert(1)}
+  .label{position:absolute;left:64px;right:64px;bottom:340px;background:var(--crema);color:var(--prugna);border-radius:28px;padding:48px 44px;box-shadow:0 24px 60px rgba(40,28,45,.35)}
+  .label .eyebrow{font-size:22px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--vino);margin:0 0 18px}
+  .label h1{font-family:var(--font-titoli);font-weight:600;letter-spacing:-.045em;line-height:.99;font-size:64px;margin:0 0 30px;max-width:11ch}
+  .cta{display:inline-flex;align-items:center;gap:14px;background:var(--corallo);color:var(--prugna);font-weight:700;font-size:24px;padding:20px 32px;border-radius:999px}
+  .cta:after{content:'↑';font-size:26px}
+  .credit{position:absolute;bottom:36px;left:64px;right:64px;color:var(--crema);font-size:20px;opacity:.85}
+</style>
+</head>
+<body>
+  <div class="artboard">
+    <img class="bg" src="../assets/luce-persiane.jpg" alt="Illustrazione: una persona apre le persiane e la luce entra nella stanza">
+    <div class="shade"></div>
+    <div class="brand-mark"><img src="../assets/simbolo-crema.svg" alt="stella.casa"></div>
+    <div class="label">
+      <p class="eyebrow">Prima di cominciare</p>
+      <h1>Prima di affidarla, conosciamola.</h1>
+      <span class="cta">Link nella story</span>
+    </div>
+    <p class="credit">stella.casa · gestione case a Imperia</p>
+  </div>
+</body>
+</html>

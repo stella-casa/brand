@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Carosello 2/3 · stella.casa</title>
+<link rel="stylesheet" href="../tokens.css">
+<style>
+  html,body{margin:0;padding:0}
+  .artboard{width:1080px;height:1350px;position:relative;overflow:hidden;background:var(--crema);color:var(--prugna);font-family:var(--font-testo)}
+  .pad{position:absolute;inset:0;padding:72px 76px;display:flex;flex-direction:column;justify-content:flex-start;gap:64px}
+  .top-row{display:flex;align-items:center;justify-content:space-between}
+  .top-row img{width:44px;height:44px;object-fit:contain}
+  .index{font-size:20px;font-weight:700;letter-spacing:.08em;color:var(--vino)}
+  .index span{opacity:.55}
+  .eyebrow{font-size:22px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin:0 0 22px;color:var(--vino)}
+  h1{font-family:var(--font-titoli);font-weight:600;letter-spacing:-.045em;line-height:.99;font-size:64px;margin:0 0 44px;max-width:11ch}
+  .list{display:grid;gap:0}
+  .list div{display:flex;flex-direction:column;gap:8px;padding:28px 0;border-bottom:1px solid rgba(81,27,54,.25)}
+  .list div:first-child{border-top:1px solid rgba(81,27,54,.25)}
+  .list b{font-family:var(--font-titoli);font-weight:600;letter-spacing:-.03em;font-size:36px}
+  .list p{margin:0;font-size:22px;line-height:1.5;max-width:32ch;color:var(--prugna)}
+  .foot{font-size:20px;opacity:.8;max-width:34ch}
+</style>
+</head>
+<body>
+  <div class="artboard">
+    <div class="pad">
+      <div class="top-row">
+        <img src="../assets/simbolo-prugna.svg" alt="stella.casa">
+        <p class="index"><span>2</span> / 3</p>
+      </div>
+      <div>
+        <p class="eyebrow">Tre voci da cercare</p>
+        <h1>Cosa deve esserci scritto.</h1>
+        <div class="list">
+          <div><b>Compenso</b><p>Quanto paghi per la gestione, in modo esplicito.</p></div>
+          <div><b>Base di calcolo</b><p>Su cosa viene applicato quel compenso.</p></div>
+          <div><b>Costi esclusi</b><p>Quali spese restano fuori e chi le autorizza.</p></div>
+        </div>
+      </div>
+      <p class="foot">Nessun importo qui: sono le voci che una proposta seria dovrebbe mostrare.</p>
+    </div>
+  </div>
+</body>
+</html>

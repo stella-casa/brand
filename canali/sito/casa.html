@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#fff3e7">
+  <meta name="description" content="Stella sul Mare, monolocale a Oneglia, Imperia. Richiedi informazioni sulle date del tuo soggiorno.">
+  <title>Stella sul Mare · Oneglia, Imperia · stella.casa</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="property.css">
+  <script defer src="site.js"></script>
+</head>
+<body data-page="casa">
+<header class="site-header" id="inizio">
+  <a class="brand" href="index.html" aria-label="stella.casa, inizio"><img class="brand-logo" data-brand-kind="symbol" src="assets/simbolo-incastro.png" alt=""><span class="brand-name">stella.casa</span></a>
+  <nav class="site-links" aria-label="Navigazione del sito"><a href="#casa">La casa</a><a href="#foto">Fotografie</a><a href="#reservation-request">Date e ospiti</a><a class="button button-small" href="#reservation-request">Verifica le date</a></nav>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+  <nav class="mobile-nav" id="mobile-nav" hidden aria-label="Navigazione mobile"><a href="#casa">La casa</a><a href="#foto">Fotografie</a><a href="#reservation-request">Date e ospiti</a></nav>
+</header>
+<main class="property-main">
+  <section class="booking-hero" id="casa" aria-labelledby="property-title">
+    <div class="property-intro">
+      <p class="eyebrow">Oneglia · Imperia · Liguria</p>
+      <h1 id="property-title">Stella<br>sul Mare</h1>
+      <p class="property-sub">Un monolocale raccolto nel Ponente ligure, per fare base a Oneglia.</p>
+      <div class="property-facts"><span>32 m²</span><i aria-hidden="true"></i><span>Secondo piano</span><i aria-hidden="true"></i><span>Fino a 3 ospiti</span></div>
+      <a class="property-photo-link" href="#foto">Guarda la casa <span aria-hidden="true">↓</span></a>
+    </div>
+    <form id="reservation-request" class="reservation-card" aria-labelledby="request-title">
+      <p class="booking-label">Il tuo soggiorno</p>
+      <h2 id="request-title">Scegli le date.</h2>
+      <p class="booking-intro">Prepara le date del soggiorno. Disponibilità e prezzo saranno da confermare.</p>
+      <div class="date-fields">
+        <label>Arrivo<input name="arrivo" type="date" required></label>
+        <label>Partenza<input name="partenza" type="date" required></label>
+      </div>
+      <label class="guest-field">Ospiti<select name="ospiti"><option value="1">1 ospite</option><option value="2" selected>2 ospiti</option><option value="3">3 ospiti</option></select></label>
+      <button class="property-button" type="submit">Prepara la richiesta <span aria-hidden="true">→</span></button>
+      <p class="booking-note">Anteprima locale. Nessun dato viene inviato; date e prezzo vanno confermati.</p>
+      <div class="reservation-result" id="reservation-result" role="status" aria-live="polite" hidden></div>
+    </form>
+  </section>
+  <section class="property-gallery-section" id="foto" aria-labelledby="gallery-title">
+    <div class="section-heading"><div><p class="eyebrow">Spazi della casa</p><h2 id="gallery-title">Dai un’occhiata.</h2></div><span class="gallery-note">Fotografie di Stella sul Mare</span></div>
+    <div class="property-gallery" aria-roledescription="carosello" aria-label="Fotografie di Stella sul Mare">
+      <div class="property-gallery-track" tabindex="0" aria-label="Scorri le fotografie">
+        <figure class="property-slide"><img src="assets/foto/casa-soggiorno.jpg" alt="Zona giorno con divano di Stella sul Mare"><figcaption>La zona giorno</figcaption></figure>
+        <figure class="property-slide"><img src="assets/foto/casa-cucina.jpg" alt="Cucina compatta di Stella sul Mare"><figcaption>La cucina</figcaption></figure>
+        <figure class="property-slide"><img src="assets/foto/casa-cura.jpg" alt="Dotazioni di servizio organizzate in casa"><figcaption>Le dotazioni</figcaption></figure>
+        <figure class="property-slide"><img src="assets/foto/casa-facciata.webp" alt="Facciata dell’edificio a Oneglia"><figcaption>La casa a Oneglia</figcaption></figure>
+      </div>
+      <div class="gallery-controls"><p>Scorri le immagini per esplorare gli ambienti.</p><div><button type="button" data-gallery-slide="previous" aria-label="Fotografia precedente">←</button><button type="button" data-gallery-slide="next" aria-label="Fotografia successiva">→</button></div></div>
+    </div>
+  </section>
+  <section class="property-details" aria-labelledby="details-title">
+    <div><p class="eyebrow">Prima di partire</p><h2 id="details-title">Un posto semplice<br>da cui cominciare.</h2></div>
+    <div class="details-copy"><p>Stella sul Mare si trova a Oneglia, nella città di Imperia. La scheda raccoglie le informazioni essenziali per conoscere l’alloggio e chiedere le date.</p><p>La richiesta non blocca il calendario: disponibilità, prezzo e dettagli del soggiorno vengono confermati prima della prenotazione.</p><a href="#reservation-request">Scegli le date <span aria-hidden="true">↑</span></a></div>
+  </section>
+  <section class="request-section" id="richiesta"><p class="eyebrow">Una casa seguita da vicino</p><h2>Hai in mente un soggiorno?</h2><p>Disponibilità e prezzo si confermano con stella.casa prima della prenotazione.</p><a class="property-button" href="#casa">Torna alla richiesta <span aria-hidden="true">↑</span></a><small>Pagina dimostrativa · la richiesta non viene inviata da questa anteprima.</small></section>
+</main>
+<footer class="property-footer"><a class="brand" href="index.html" aria-label="stella.casa"><img class="brand-logo" data-brand-kind="symbol" src="assets/simbolo-incastro.png" alt=""><span class="brand-name">stella.casa</span></a><span>Stella sul Mare · Oneglia, Imperia</span><a href="index.html">Gestione a cura di stella.casa ↗</a></footer>
+</body>
+</html>

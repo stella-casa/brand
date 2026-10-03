@@ -1,0 +1,133 @@
+STELLA.CASA — MASTER DI STAMPA
+================================
+Cartella: brand/stampa/
+Tutti i file sono SVG vettoriali con testo vivo incorporato via @font-face
+(base64, Outfit + DM Sans) dove presente. NON sono PDF/X certificati: prima
+della stampa vanno convertiti dallo stampatore nel formato richiesto (es.
+PDF/X-1a o X-4) con conversione colore RGB → CMYK sul profilo ICC della
+macchina/carta scelta. I valori colore qui sotto sono gli HEX/RGB di brand;
+la resa CMYK finale dipende dal profilo dello stampatore, va verificata con
+una prova colore prima della tiratura.
+
+Placeholder da sostituire prima dell'invio in stampa:
+- "Nome Cognome", "Responsabile ospiti", "+39 000 000 0000",
+  "nome@stella.casa" nel retro biglietto da visita.
+- "Stella sul Mare" nella targa (nome della casa: da personalizzare per
+  ogni immobile).
+Nessun altro dato è inventato: url e brand sono quelli reali (stella.casa).
+
+Colori brand (HEX):
+- Corallo  #F25B45
+- Vino     #511B36
+- Pesca    #F6B495
+- Lavanda  #B7A0CA
+- Crema    #FFF3E7
+- Prugna   #281C2D
+Conversione CMYK: da fare in uscita con profilo ICC dello stampatore
+(consigliato: FOGRA51/39 per offset patinata, o profilo specifico del
+plotter/laser per adesivi e targhe). Non usare conversioni automatiche
+"generiche" del software: verificare corallo e vino a video prova colore,
+sono i due toni più sensibili a deriva cromatica.
+
+------------------------------------------------------------
+1) biglietto-fronte-91x61-bleed3.svg
+   Trim: 85×55 mm — Bleed: 3 mm per lato — Formato file: 91×61 mm
+   Fondo Vino pieno, logo stacked (logo-crema) centrato.
+   Materiale: cartoncino patinato/naturale 350-400 g/m², plastificazione
+   opaca consigliata (il Vino pieno mostra ogni graffio sulla lucida).
+   Il rettangolo tratteggiato azzurro (layer "guida-taglio") è una guida
+   di riferimento non stampante: va rimosso o messo su livello non-stampa
+   prima dell'imposizione in tipografia.
+
+2) biglietto-retro-91x61-bleed3.svg
+   Stesso formato/bleed del fronte. Fondo Crema, testi in Prugna (DM Sans),
+   simbolo piccolo in Corallo (solo decorativo, non porta testo sopra —
+   rispetta la regola di contrasto). Sostituire i placeholder di nome,
+   ruolo, telefono ed email.
+
+3) targa-220x160.svg
+   Formato: 220×160 mm — NESSUN bleed (pannello rigido, non fustellato al
+   vivo). Margine di sicurezza rispettato: 12 mm.
+   Fondo Prugna, titolo "Stella sul Mare" in Outfit Crema, pay-off "Una
+   casa seguita da" + firma orizzontale (firma-crema).
+   Materiale consigliato: dibond/alluminio 3 mm con stampa UV diretta, o
+   plexiglass inciso/retroilluminato. "Stella sul Mare" è un placeholder
+   per il nome dell'immobile: personalizzare per ogni struttura.
+
+4) adesivo-50x50.svg
+   Diametro trim: 50 mm — Bleed: 2 mm — Formato file: 54×54 mm.
+   Cerchio pieno Corallo con simbolo (simbolo-prugna) centrato.
+   Layer "grafica" = stampa; layer "fustella" = linea di taglio (cerchio
+   magenta #FF00FF, spessore 0.25 mm) da isolare su piano separato in
+   tipografia (die-cut sticker standard).
+   Materiale: vinile adesivo bianco opaco o trasparente + laminazione
+   opaca, fustella a forma libera circolare.
+
+5) segnalibro-56x186-bleed3.svg
+   Trim: 50×180 mm — Bleed: 3 mm — Formato file: 56×186 mm.
+   Fondo Crema, fascia superiore Vino con titolo "Lettere / da casa"
+   (Outfit Crema), pay-off "stella.casa/lettere" in basso (Prugna/DM Sans).
+   Materiale: cartoncino 300-350 g/m², eventualmente con angoli
+   arrotondati in fustella (non incluso in questo file, da richiedere in
+   tipografia se voluto).
+
+6) cartellina-fronte-226x316-bleed3.svg
+   Trim: 220×310 mm (fronte di una cartellina A4 con lembo) — Bleed:
+   3 mm — Formato file: 226×316 mm.
+   Fondo Vino, simbolo grande in Corallo tagliato fuori dal bordo destro
+   (elemento decorativo, l'unico che può essere ritagliato: il logo
+   firmato stacked in basso a sinistra non va mai tagliato). Titolo "La
+   tua casa, seguita da vicino." in Outfit Crema.
+   Materiale: cartoncino 300-350 g/m² per cartelline, verniciatura o
+   plastificazione opaca consigliata sul Vino.
+
+7) portachiavi-fustella-40x50.svg
+   Formato: 40×50 mm — nessun bleed (oggetto sagomato).
+   Layer "grafica" = superficie stampata/incisa (Vino pieno, simbolo +
+   linguetta superiore piena con foro).
+   Layer "fustella" = linea di taglio unica a contorno del simbolo saldata
+   alla linguetta (stroke magenta #FF00FF 0.25 mm, fill none), più il
+   cerchio del foro passante da 3.2 mm di diametro, posizionato nella
+   linguetta piena (area strutturalmente solida, non nelle parti sottili
+   dell'incastro).
+   NOTA IMPORTANTE: la linguetta per l'anello portachiavi non è prevista
+   nel logo originale — è un'aggiunta pratica per questo gadget, saldata
+   al simbolo con un'unione booleana (path-union) già eseguita in fase di
+   preparazione, quindi il contorno di taglio non presenta giunzioni
+   spurie. Verificare comunque in anteprima vettoriale prima del taglio
+   laser/fustella metallica che lo spessore minimo del materiale scelto
+   (acrilico, legno, metallo) regga i tratti più sottili dell'incastro.
+   Materiale: acrilico 3 mm o metallo inciso, colore Vino su fondo
+   chiaro o taglio a giorno.
+
+------------------------------------------------------------
+Font
+- Outfit (titoli, peso 600, letter-spacing -0.03em) — incorporato in
+  base64 nei file con testo vivo.
+- DM Sans (testo, 400/700) — idem.
+Font-file sorgente: ../font/outfit-variable-latin.woff2,
+../font/dm-sans-variable-latin.woff2 (licenza OFL, vedi i .txt allegati).
+
+Logo "Incastro"
+Il path del logo è stato copiato direttamente dai file vettoriali in
+../assets/ (simbolo-*, logo-*, firma-*) e riposizionato con transform
+scale/translate, senza mai ritoccare i nodi né rititolare la wordmark
+come testo. Spazio di rispetto minimo attorno al logo: 25% dell'altezza
+del simbolo (rispettato in tutti i layout con logo/firma).
+
+Tutti i file di questa cartella sono stati esportati anche in anteprima
+PNG a 1200 px di larghezza (stesso nome file, estensione .png) solo per
+controllo visivo: non sono da usare per la stampa.
+
+
+targhetta-150x100.svg
+  Targhetta con il nome della casa, da applicare accanto al portone o al citofono.
+  Formato 150 x 100 mm, nessuna abbondanza. Ceramica smaltata o alluminio verniciato crema, stampa vino.
+  Livello "fori": due fori da 4 mm per il fissaggio (magenta, non stampare). In alternativa biadesivo per esterni.
+  Anteprima in situ: ../assets/mockup-targhetta.jpg
+
+Tessili (asciugamani e lenzuola)
+  Ricamo del simbolo, non del marchio completo. Altezza 35-45 mm su asciugamani, 25-30 mm su federe.
+  Versione chiara: tessuto crema, ricamo vino. Versione scura: tessuto vino, ricamo crema.
+  Accento corallo solo come profilo o bordo sottile (lenzuola) o fascia (asciugamani), mai come ricamo del simbolo su crema.
+  Verificare con il fornitore la tenuta del colore del vino ai lavaggi a 60 °C.

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Locandina · stella.casa</title>
+<link rel="stylesheet" href="../tokens.css">
+<style>
+  html,body{margin:0;padding:0}
+  .artboard{width:1123px;height:1587px;position:relative;overflow:hidden;background:var(--crema);color:var(--prugna);font-family:var(--font-testo)}
+  .visual{position:absolute;top:0;left:0;right:0;height:952px;overflow:hidden}
+  .visual img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+  .visual .shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(255,243,231,1) 0%,rgba(255,243,231,0) 22%)}
+  .body{position:absolute;top:952px;left:0;right:0;bottom:0;padding:64px 80px 72px;display:flex;flex-direction:column;justify-content:space-between}
+  h1{font-family:var(--font-titoli);font-weight:600;letter-spacing:-.045em;line-height:.99;font-size:78px;margin:0;max-width:12ch;color:var(--vino)}
+  .deck{font-size:24px;line-height:1.5;max-width:38ch;margin:28px 0 0;opacity:.85}
+  .foot{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+  .foot img{width:220px;height:auto;object-fit:contain}
+  .contact{font-size:18px;line-height:1.6;text-align:right;opacity:.85}
+  .contact b{display:block;color:var(--vino);font-size:20px}
+</style>
+</head>
+<body>
+  <div class="artboard">
+    <div class="visual">
+      <img src="../assets/luce-lama.jpg" alt="Illustrazione: una lama di luce corallo attraversa la stanza">
+      <div class="shade"></div>
+    </div>
+    <div class="body">
+      <div>
+        <h1>La tua casa, seguita da vicino.</h1>
+        <p class="deck">Metodo, presenza e comunicazione costante per chi affida un immobile a stella.casa.</p>
+      </div>
+      <div class="foot">
+        <img src="../assets/logo-vino.svg" alt="stella.casa">
+        <p class="contact"><b>stella.casa</b>Imperia · esempio<br>nome@stella.casa (esempio)</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Quaderno della casa · esempio</title>
+<link rel="stylesheet" href="../tokens.css">
+<style>
+  html,body{margin:0;padding:0}
+  .artboard{width:1240px;height:1754px;position:relative;overflow:hidden;background:#fff;color:var(--prugna);font-family:var(--font-testo);box-sizing:border-box}
+  .header{display:flex;align-items:stretch;justify-content:space-between;padding:56px 72px;border-bottom:2px solid var(--prugna)}
+  .header-left{display:flex;flex-direction:column;justify-content:space-between}
+  .header-left img{width:190px;height:auto;object-fit:contain;margin-bottom:24px}
+  .eyebrow{font-size:14px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--vino);margin:0 0 8px}
+  h1{font-family:var(--font-titoli);font-weight:600;letter-spacing:-.04em;line-height:1;font-size:38px;margin:0;max-width:14ch}
+  .fields{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-self:flex-end;min-width:520px}
+  .fields div{border-top:1px solid rgba(40,28,45,.35);padding-top:8px}
+  .fields b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--vino);margin-bottom:6px}
+  .fields span{font-size:16px}
+  .visual{width:150px;height:150px;flex:none;margin-left:32px;overflow:hidden;border-radius:6px}
+  .visual img{width:100%;height:100%;object-fit:cover}
+
+  table{width:calc(100% - 144px);margin:44px 72px 0;border-collapse:collapse;font-size:15px}
+  thead th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--vino);font-weight:700;padding:0 0 14px;border-bottom:2px solid var(--prugna)}
+  tbody td{padding:16px 12px 16px 0;border-bottom:1px solid rgba(40,28,45,.18);vertical-align:top}
+  tbody tr td:first-child{padding-left:0}
+  .col-data{width:110px}
+  .col-voce{width:280px;font-weight:600}
+  .col-stato{width:180px}
+  .stato{display:inline-block;font-size:13px;font-weight:700;padding:4px 0}
+  .stato-da-verificare{color:var(--corallo)}
+  .stato-completato{color:var(--vino)}
+  .col-nota{opacity:.85}
+  .footnote{position:absolute;bottom:40px;left:72px;right:72px;font-size:12px;opacity:.6;border-top:1px solid rgba(40,28,45,.25);padding-top:14px}
+</style>
+</head>
+<body>
+  <div class="artboard">
+    <div class="header">
+      <div class="header-left">
+        <img src="../assets/firma-prugna.svg" alt="stella.casa">
+        <div>
+          <p class="eyebrow">Quaderno della casa · esempio</p>
+          <h1>Registro interventi e verifiche</h1>
+        </div>
+      </div>
+      <div class="fields">
+        <div><b>Casa</b><span>Stella sul Mare · esempio</span></div>
+        <div><b>Periodo</b><span>Settembre 2026 · esempio</span></div>
+        <div><b>Autore</b><span>Nome Cognome · esempio</span></div>
+      </div>
+      <div class="visual"><img src="../assets/incisione-spaccato.jpg" alt="Incisione di dettaglio della casa, spaccato"></div>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th class="col-data">Data</th><th class="col-voce">Voce</th><th class="col-stato">Stato</th><th class="col-nota">Nota</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="col-data">03/09</td><td class="col-voce">Controllo caldaia</td><td class="col-stato"><span class="stato stato-completato">Completato</span></td><td class="col-nota">Verifica annuale eseguita, esempio.</td></tr>
+        <tr><td class="col-data">09/09</td><td class="col-voce">Sostituzione lampadina bagno</td><td class="col-stato"><span class="stato stato-completato">Completato</span></td><td class="col-nota">Materiale fornito dal proprietario, esempio.</td></tr>
+        <tr><td class="col-data">14/09</td><td class="col-voce">Rumore persiana camera</td><td class="col-stato"><span class="stato stato-da-verificare">Da verificare</span></td><td class="col-nota">Segnalato dall'ospite, in attesa di sopralluogo, esempio.</td></tr>
+        <tr><td class="col-data">21/09</td><td class="col-voce">Pulizia canne fumarie</td><td class="col-stato"><span class="stato stato-da-verificare">Da verificare</span></td><td class="col-nota">Preventivo da richiedere, esempio.</td></tr>
+        <tr><td class="col-data">27/09</td><td class="col-voce">Controllo estintore</td><td class="col-stato"><span class="stato stato-completato">Completato</span></td><td class="col-nota">Scadenza aggiornata, esempio.</td></tr>
+      </tbody>
+    </table>
+    <p class="footnote">Documento esemplificativo per il proprietario. Dati, date e importi sono placeholder e non rappresentano interventi reali.</p>
+  </div>
+</body>
+</html>

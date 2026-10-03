@@ -1,0 +1,254 @@
+[
+  {
+    "file": "01-incastro",
+    "name": "Incastro",
+    "description": "Due elementi si agganciano lasciando un passaggio centrale. Un marchio architettonico, compatto, adatto a diventare timbro, rilievo o oggetto.",
+    "number": "01",
+    "character": "strutturato, deciso.",
+    "evaluate": "il segno è astratto; il nome lo accompagna nelle prime esposizioni.",
+    "color": "cobalto e pesca."
+  },
+  {
+    "file": "02-firma",
+    "name": "Firma",
+    "description": "Il nome diventa il segno. La doppia elle alza il ritmo della scritta, mentre la S può vivere nell’avatar. Una direzione legata alla natura personale del nome Stella.",
+    "number": "02",
+    "character": "personale, espressivo.",
+    "evaluate": "nel consolidamento andranno rifiniti raccordi e leggibilità di “.casa” alle piccole misure.",
+    "color": "lampone scuro e rosa."
+  },
+  {
+    "file": "03-rondine",
+    "name": "Rondine",
+    "description": "Una rondine custodisce un’apertura nel proprio corpo. Il tratto illustrativo entra nel logo e può diventare un piccolo emblema sulle case e sugli oggetti.",
+    "number": "03",
+    "character": "accogliente, figurativo.",
+    "evaluate": "la componente ospitalità prevale su quella tecnica della gestione.",
+    "color": "verde bottiglia e azzurro."
+  },
+  {
+    "file": "04-battente",
+    "name": "Battente",
+    "description": "Un segno scultoreo ispirato al battente di un portone.",
+    "number": "04",
+    "character": "solido, materico, autorevole.",
+    "evaluate": "la forma funziona come oggetto; nelle piccole dimensioni va mantenuta aperta la curva interna. Può comunicare più patrimonio che ospitalità.",
+    "color": "blu inchiostro e pietra calda; bronzo nell’applicazione."
+  },
+  {
+    "file": "05-legatura",
+    "name": "Legatura",
+    "description": "Le iniziali s e c si intrecciano in un monogramma tipografico.",
+    "number": "05",
+    "character": "editoriale, elegante, composto.",
+    "evaluate": "l’intreccio delle iniziali richiede lettura; i tratti sottili vanno rinforzati per ricamo e timbro.",
+    "color": "gelso e azzurro ghiaccio."
+  },
+  {
+    "file": "06-portico",
+    "name": "Portico",
+    "description": "Il nome diventa una piccola architettura, con lettere alte e aperture profonde.",
+    "number": "06",
+    "character": "architettonico, slanciato, rigoroso.",
+    "evaluate": "il nome lungo ha bisogno di spazio. Per l’avatar servirà una riduzione studiata a partire dalle lettere.",
+    "color": "terracotta e giallo chiaro."
+  },
+  {
+    "file": "07-palmo",
+    "name": "Palmo",
+    "description": "Una mano disegnata protegge un piccolo spazio vuoto: la cura diventa il segno.",
+    "number": "07",
+    "character": "umano, protettivo, diretto.",
+    "evaluate": "la mano può richiamare anche servizi alla persona: nome e contesto devono rendere chiaro il settore.",
+    "color": "ruggine e menta pallida."
+  },
+  {
+    "file": "08-trama",
+    "name": "Trama",
+    "description": "Fasce intrecciate come un tessuto, con pieni e vuoti che costruiscono un segno compatto.",
+    "number": "08",
+    "character": "artigianale, ordinato, tattile.",
+    "evaluate": "l’intreccio tende a chiudersi in piccolo e può richiamare il tessile; controllare vuoti e associazioni.",
+    "color": "verde bosco e avorio."
+  },
+  {
+    "file": "09-rosone",
+    "name": "Rosone",
+    "description": "Un emblema radiale ispirato ai motivi delle cementine, da riconoscere anche senza il nome.",
+    "number": "09",
+    "character": "decorativo, mediterraneo, conviviale.",
+    "evaluate": "la riconoscibilità dipende dal disegno specifico dei petali: evitare che diventi un motivo ornamentale generico.",
+    "color": "rosso ossido e lavanda chiara."
+  },
+  {
+    "file": "10-gatto",
+    "name": "Gatto",
+    "description": "Un gatto raccolto su sé stesso: un emblema illustrato, domestico e ironico.",
+    "number": "10",
+    "character": "domestico, quieto, ironico.",
+    "evaluate": "il gatto imprime una personalità forte, ma può far pensare a un’attività dedicata agli animali.",
+    "color": "grafite calda e giallo burro."
+  },
+  {
+    "file": "11-sigillo",
+    "name": "Sigillo",
+    "description": "Il nome si raccoglie in un piccolo sigillo, come un marchio di bottega.",
+    "number": "11",
+    "character": "di bottega, deciso, informale.",
+    "evaluate": "la densità delle lettere richiede attenzione sotto i 30 mm e negli avatar; “.casa” deve restare leggibile.",
+    "color": "verde petrolio e salmone chiaro."
+  },
+  {
+    "file": "12-filo",
+    "name": "Filo",
+    "description": "Un unico tratto continuo, come un filo cucito: leggero e gestuale.",
+    "number": "12",
+    "character": "gestuale, personale, leggero.",
+    "evaluate": "è la direzione apprezzata dall’utente. La lettura delle iniziali resta suggerita; alle piccole misure occorre preservare il cappio superiore.",
+    "color": "melanzana e pervinca chiaro."
+  },
+  {
+    "file": "13-custode",
+    "name": "Custode",
+    "description": "Una piccola figura umana che accoglie: il servizio prende un volto simbolico.",
+    "number": "13",
+    "character": "umano, presente, operoso.",
+    "evaluate": "la figura racconta il servizio, ma potrebbe sembrare una mascotte; valutare quanto rendere esplicita la persona nel marchio.",
+    "color": "petrolio profondo e albicocca pallida."
+  },
+  {
+    "file": "14-filo-sigla",
+    "name": "Filo / Sigla",
+    "description": "Una S e una c si concatenano in un gesto verticale. Più compatto di Filo: la sigla può occupare un avatar o un piccolo timbro.",
+    "number": "14",
+    "character": "calligrafico, compatto, personale.",
+    "evaluate": "la sigla è più verticale di Filo. La S può ricordare un 8 o una e commerciale: verificare la prima lettura senza spiegazione.",
+    "color": "melanzana e pervinca chiaro."
+  },
+  {
+    "file": "15-filo-nodo",
+    "name": "Filo / Nodo",
+    "description": "Un nodo aperto, asimmetrico, con due code corte. Porta il tratto verso un segno domestico e tattile, da ricamare o imprimere.",
+    "number": "15",
+    "character": "tattile, spontaneo, domestico.",
+    "evaluate": "è vicino alla sensibilità di Filo, con meno lettura alfabetica. L’incrocio deve restare pulito nelle riduzioni.",
+    "color": "melanzana e pervinca chiaro."
+  },
+  {
+    "file": "16-filo-soglia",
+    "name": "Filo / Soglia",
+    "description": "Il filo sale, disegna un’apertura e ritorna in un anello alla base. È la proposta più architettonica della famiglia.",
+    "number": "16",
+    "character": "architettonico, aperto, pacato.",
+    "evaluate": "l’arco suggerisce un ingresso; può anche essere letto come una lettera corsiva. Valutare se questa ambiguità è utile al marchio.",
+    "color": "melanzana e pervinca chiaro."
+  },
+  {
+    "file": "17-filo-abbraccio",
+    "name": "Filo / Abbraccio",
+    "description": "Due curve si raccolgono intorno a uno spazio vuoto. Il segno resta aperto: l’accoglienza è suggerita dal gesto.",
+    "number": "17",
+    "character": "avvolgente, morbido, raccolto.",
+    "evaluate": "la silhouette è compatta, ma meno legata al nome. Va verificato che il ritorno del filo non si impasti in piccolo.",
+    "color": "melanzana e pervinca chiaro."
+  },
+  {
+    "file": "18-filo-doppia-elle",
+    "name": "Filo / Doppia elle",
+    "description": "Le due elle di stella diventano un segno autonomo, con altezze diverse e un’unica base curva. Il dettaglio nasce direttamente dal nome.",
+    "number": "18",
+    "character": "personale, ritmico, essenziale.",
+    "evaluate": "il legame con la doppia elle nasce dal nome, ma il simbolo da solo può essere letto come “le”. È il raccordo da rifinire.",
+    "color": "melanzana e pervinca chiaro."
+  },
+  {
+    "file": "19-filo-rondine",
+    "name": "Filo / Rondine",
+    "description": "Una rondine essenziale, tracciata senza staccare la mano. È il legame più esplicito fra il marchio e il linguaggio illustrativo.",
+    "number": "19",
+    "character": "illustrativo, arioso, accogliente.",
+    "evaluate": "la lettura figurativa è immediata. Il disegno deve mantenere un vero percorso continuo e una coda leggibile anche in piccolo.",
+    "color": "melanzana e pervinca chiaro."
+  },
+  {
+    "file": "20-filo-stella-aperta",
+    "name": "Filo / Stella aperta",
+    "description": "Una stella a cinque punte, aperta e leggermente irregolare, si prolunga in una curva. Il nome diventa immediatamente riconoscibile nel simbolo.",
+    "number": "20",
+    "character": "esplicito, luminoso, disinvolto.",
+    "evaluate": "la stella rende immediato il legame con il nome. Il raccordo con la C va risolto nel ridisegno per ottenere un percorso unico senza diramazioni.",
+    "color": "melanzana e pervinca chiaro."
+  },
+  {
+    "file": "21-filo-stella-sc",
+    "name": "Filo / Stella SC",
+    "description": "Il gesto della S attraversa una piccola stella e continua nella C. È lo studio più vicino alla richiesta di fondere nome e iniziali in un solo filo.",
+    "number": "21",
+    "character": "calligrafico, simbolico, personale.",
+    "evaluate": "è la fusione più ambiziosa: valutare se stella, S e C emergono senza spiegazione e se gli incroci restano aperti.",
+    "color": "melanzana e pervinca chiaro."
+  },
+  {
+    "file": "22-filo-stella-c",
+    "name": "Filo / Stella nella C",
+    "description": "Una C ampia avvolge una stella decentrata. Il filo passa dal bordo esterno al centro, cercando una forma più compatta per avatar e piccoli supporti.",
+    "number": "22",
+    "character": "raccolto, protettivo, grafico.",
+    "evaluate": "il formato compatto favorisce l’avatar; la stella interna richiede spazio. La S è un raccordo suggerito, non una lettera esplicita.",
+    "color": "melanzana e pervinca chiaro."
+  },
+  {
+    "file": "23-firma-filo-gesto",
+    "name": "Firma × Filo / Gesto",
+    "description": "Stella si scrive in un gesto ampio e connesso. La s iniziale, con il cappio inferiore aperto, diventa il marchio piccolo; le due elle danno altezza alla firma.",
+    "number": "23",
+    "character": "personale, fluido, sicuro.",
+    "evaluate": "è il punto di incontro più diretto fra Firma e Filo. Verificare che il raccordo s–t non cambi la riconoscibilità della s quando viene isolata.",
+    "color": "lampone scuro e rosa cipria."
+  },
+  {
+    "file": "24-firma-filo-iniziale",
+    "name": "Firma × Filo / Iniziale",
+    "description": "Una S maiuscola apre il nome e ne diventa la firma riconoscibile. Il resto della parola scorre più basso, con .casa raccolto sotto il finale.",
+    "number": "24",
+    "character": "autorevole, personale, disteso.",
+    "evaluate": "la S ha più autonomia rispetto alla parola. Il raccordo S–t va rifinito per conservare la fluidità del tratto senza chiudere lo spazio tra le lettere.",
+    "color": "melanzana e pervinca chiaro."
+  },
+  {
+    "file": "25-firma-filo-nastro",
+    "name": "Firma × Filo / Nastro",
+    "description": "Il filo si allarga e costruisce una scritta bassa, morbida e compatta. La s conserva due curve aperte e una silhouette leggibile anche da sola.",
+    "number": "25",
+    "character": "deciso, conviviale, informale.",
+    "evaluate": "il peso favorisce la presenza del marchio, ma i piccoli vuoti di e e a devono rimanere aperti. La firma risulta meno leggera di Filo.",
+    "color": "verde bosco e crema."
+  },
+  {
+    "file": "26-firma-filo-slancio",
+    "name": "Firma × Filo / Slancio",
+    "description": "La s parte da un piccolo anello e accompagna una parola inclinata, con elle alte e leggere. Il mini-logo mantiene quel nodo iniziale come dettaglio distintivo.",
+    "number": "26",
+    "character": "dinamico, arioso, gestuale.",
+    "evaluate": "l’inclinazione dà energia, ma la s deve restare una lettera e non sembrare un nodo astratto. Controllare la lettura della t nel flusso continuo.",
+    "color": "blu inchiostro e azzurro polvere."
+  },
+  {
+    "file": "27-firma-filo-risvolto",
+    "name": "Firma × Filo / Risvolto",
+    "description": "Il terminale della a torna sotto Stella e chiude la firma con una sottolineatura. La s iniziale resta semplice e autonoma, mentre il filo tiene insieme il nome.",
+    "number": "27",
+    "character": "espressivo, avvolgente, assertivo.",
+    "evaluate": "il ritorno inferiore aggiunge presenza ma occupa spazio. Va tenuto abbastanza distante dalle lettere e da .casa per funzionare in piccolo.",
+    "color": "rosso mattone e pesca chiaro."
+  },
+  {
+    "file": "28-firma-filo-sartoria",
+    "name": "Firma × Filo / Sartoria",
+    "description": "Una s a doppio cappio introduce una scritta verticale e regolare. Il tratto ricorda un filo posato sulla carta; le due elle ravvicinate ne scandiscono il ritmo.",
+    "number": "28",
+    "character": "raccolto, curato, tattile.",
+    "evaluate": "la s a cappio è distintiva, ma può ricordare un 8. Valutare questa ambiguità insieme alla leggibilità del nome completo e alla resa del ricamo.",
+    "color": "prugna e avorio caldo, con rosa cipria nell’avatar."
+  }
+]

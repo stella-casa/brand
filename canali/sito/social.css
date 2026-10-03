@@ -1,0 +1,298 @@
+/* Instagram and Facebook surfaces for the Firma × Filo direction. */
+@font-face{font-family:"DM Sans";src:url("assets/fonts/dm-sans-variable-latin.woff2") format("woff2");font-style:normal;font-weight:400 700;font-display:swap}
+@font-face{font-family:Outfit;src:url("assets/fonts/outfit-variable-latin.woff2") format("woff2");font-style:normal;font-weight:400 700;font-display:swap}
+
+.social-page{--social-coral:var(--coral,#f25b45);--social-wine:var(--wine,#511b36);--social-peach:var(--peach,#f6b495);--social-lavender:var(--lavender,#b7a0ca);--social-cream:var(--cream,#fff3e7);--social-plum:var(--plum,#281c2d);background:var(--social-cream);color:var(--social-plum);font-family:"DM Sans",Arial,sans-serif}
+.social-page .site-header{max-width:none;height:88px;padding:0 clamp(22px,5vw,76px);color:var(--social-wine);background:var(--social-cream);border-bottom:1px solid rgba(81,27,54,.16)}
+.social-page .site-header.is-scrolled{height:64px;background:rgba(255,243,231,.96);color:var(--social-plum);border-bottom:0}
+.social-page .brand{color:var(--social-wine)}
+.social-page .brand-logo{display:block;width:76px;height:32px;object-fit:contain;filter:brightness(0) opacity(.72)}.social-page .brand-name{font-size:16px;color:var(--social-wine)}.social-page .site-header.is-scrolled .brand-logo{width:62px;height:26px}
+.social-page .site-links{gap:clamp(17px,2.4vw,34px);color:var(--social-plum);font:500 15px/1 "DM Sans",Arial,sans-serif}
+.social-page .site-links a{text-decoration:none}
+.social-page .site-links a:hover{text-decoration:underline;text-underline-offset:5px}
+.social-page .button{min-height:46px;border-radius:2px;background:var(--social-wine);color:var(--social-cream);font:600 14px/1 "DM Sans",Arial,sans-serif;transition:background .22s ease,transform .22s ease}
+.social-page .button:hover{background:var(--social-plum);transform:translateY(-1px)}
+.social-page .menu-toggle{display:none}
+.social-page .mobile-nav{display:none}
+.social-main{max-width:none;margin:0;padding:88px 0 76px;overflow:visible}
+.channel-heading{max-width:1360px;margin:0 auto;padding:27px clamp(22px,5vw,76px) 23px;display:flex;align-items:end;justify-content:space-between;gap:38px}
+.channel-kicker{margin:0 0 9px;color:var(--social-wine);font-size:12px;line-height:1.25;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.channel-heading h1{max-width:none;margin:0;color:var(--social-wine);font:500 clamp(32px,4vw,49px)/.98 Outfit,"DM Sans",sans-serif;letter-spacing:-.045em}
+.channel-heading>p{max-width:39ch;margin:0 0 2px;font-size:15px;line-height:1.45;color:rgba(40,28,45,.82)}
+
+/* Instagram: a varied three-column grid with copy and utility cards between real pilot photos. */
+.ig-profile{max-width:1360px;margin:0 auto 20px;padding:0 clamp(22px,5vw,76px);display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:13px;align-items:center}
+.ig-avatar,.fb-avatar,.fb-post-avatar{display:grid;place-items:center;flex:none;background:var(--social-coral)}
+.ig-avatar{width:50px;height:50px;border-radius:50%}
+.ig-avatar img{width:29px;height:29px;object-fit:contain}
+.ig-profile-copy h2,.fb-profile-copy h2{margin:0 0 3px;color:var(--social-wine);font:600 19px/1.1 Outfit,"DM Sans",sans-serif;letter-spacing:-.025em}
+.ig-profile-copy p,.fb-profile-copy p{margin:0;font-size:12px;line-height:1.35;color:rgba(40,28,45,.72)}
+.ig-contact,.fb-contact{display:inline-flex;align-items:center;gap:10px;padding:10px 0;color:var(--social-wine);font-size:13px;font-weight:700;text-decoration-thickness:1px;text-underline-offset:4px}
+.ig-contact span,.fb-contact span{font-size:17px;transition:transform .2s ease}
+.ig-contact:hover span,.fb-contact:hover span{transform:translate(2px,-2px)}
+.ig-gallery{max-width:1360px;margin:0 auto;padding:0 clamp(22px,5vw,76px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ig-tile{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;color:var(--social-plum);text-decoration:none;isolation:isolate}
+.ig-tile:focus-visible{outline:3px solid var(--social-wine);outline-offset:4px;z-index:2}
+.ig-tile>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.ig-tile:hover>img{transform:scale(1.018)}
+.ig-tile-kicker{display:block;margin:0 0 17px;font-size:12px;line-height:1.3;font-weight:700;letter-spacing:.045em}
+.ig-tile strong{display:block;font:500 clamp(24px,2.45vw,36px)/.98 Outfit,"DM Sans",sans-serif;letter-spacing:-.045em}
+.ig-tile-hero{background:var(--social-wine);color:var(--social-cream)}
+.ig-tile-hero>img{object-position:55% center}
+.ig-hero-shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(40,28,45,.88) 0%,rgba(40,28,45,.35) 43%,rgba(40,28,45,0) 78%)}
+.ig-hero-copy{position:absolute;left:clamp(17px,2.8vw,38px);right:16px;bottom:clamp(25px,4vw,50px)}
+.ig-tile-hero .ig-tile-kicker{color:var(--social-cream)}
+.ig-tile-hero strong{max-width:11ch;font-size:clamp(30px,3.3vw,48px)}
+.ig-signature,.ig-tile-signature{display:block;width:83px;height:34px;margin-top:18px;object-fit:contain;object-position:left center;filter:brightness(0) invert(1)}
+.ig-scene-credit{position:absolute;top:12px;right:12px;max-width:170px;padding:6px 8px;background:rgba(40,28,45,.8);color:var(--social-cream);font-size:9px;line-height:1.25;font-weight:600;letter-spacing:.02em}
+.ig-tile-coral{padding:clamp(20px,3vw,39px);display:flex;flex-direction:column;justify-content:center;background:var(--social-coral);color:var(--social-plum)}
+.ig-tile-coral .ig-tile-kicker{margin-bottom:21px;color:var(--social-plum)}
+.ig-tile-coral strong{max-width:9ch;color:var(--social-cream);font-size:clamp(31px,3.6vw,49px)}
+.ig-tile-costs{padding:clamp(18px,2.5vw,34px);display:flex;flex-direction:column;justify-content:space-between;background:var(--social-cream);color:var(--social-plum)}
+.ig-tile-costs .ig-tile-kicker{color:var(--social-wine)}
+.ig-tile-costs strong{max-width:10ch;font-size:clamp(25px,2.8vw,38px)}
+.ig-cost-list{display:grid;margin-top:24px}
+.ig-cost-list span{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 0 7px;border-bottom:1px solid rgba(81,27,54,.25);font-size:12px;font-weight:600}
+.ig-cost-list i{display:block;width:32%;height:2px;background:var(--social-coral)}
+.ig-tile-index{display:block;margin-top:12px;color:var(--social-wine);font-size:9px;line-height:1;font-weight:700;letter-spacing:.12em}
+.ig-tile-listing{padding:clamp(20px,3vw,38px);display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(132deg,#511b36 0%,#8c3844 33%,#f25b45 58%,#f25b45 100%);color:var(--social-cream)}
+.ig-tile-listing .ig-tile-kicker{color:var(--social-cream)}
+.ig-tile-listing strong{max-width:10ch;color:var(--social-plum);font-size:clamp(29px,3.1vw,44px)}
+.ig-tile-listing .ig-signature{margin-top:0;filter:brightness(0) opacity(.75)}
+.ig-tile-kitchen{background:var(--social-wine)}
+.ig-tile-kitchen>img{object-position:center 54%}
+.ig-tile-signature{position:absolute;top:15px;left:15px;width:64px;height:22px;margin:0;filter:drop-shadow(0 1px 4px rgba(40,28,45,.45))}
+.ig-photo-index{position:absolute;right:11px;bottom:11px;padding:5px 7px;background:rgba(255,243,231,.92);color:var(--social-wine);font-size:8px;line-height:1;font-weight:700;letter-spacing:.08em}
+.ig-tile-decision{padding:clamp(18px,2.5vw,34px);display:flex;flex-direction:column;justify-content:space-between;background:var(--social-lavender);color:var(--social-plum)}
+.ig-tile-decision .ig-tile-kicker{color:var(--social-plum)}
+.ig-tile-decision strong{max-width:9ch;font-size:clamp(28px,3vw,42px)}
+.ig-decision-copy{max-width:22ch;margin-top:16px;font-size:13px;line-height:1.4}
+.ig-tile-living>img{object-position:center 48%}
+.ig-tile-between{padding:clamp(20px,3vw,38px);display:flex;flex-direction:column;justify-content:center;background:var(--social-peach);color:var(--social-plum)}
+.ig-tile-between .ig-tile-kicker{margin-bottom:19px}
+.ig-tile-between strong{max-width:10ch;font-size:clamp(29px,3.25vw,46px)}
+.ig-between-line{display:block;width:58%;height:5px;margin-top:24px;background:var(--social-coral)}
+.ig-tile-checklist{padding:clamp(17px,2.4vw,32px);display:grid;grid-template-rows:auto auto 1fr auto;align-items:start;background:var(--social-cream);color:var(--social-plum)}
+.ig-tile-checklist .ig-tile-kicker{color:var(--social-wine)}
+.ig-tile-checklist strong{max-width:11ch;font-size:clamp(24px,2.5vw,35px)}
+.ig-check-crop{align-self:end;justify-self:end;width:46%;height:56px;margin-top:12px;overflow:hidden}
+.ig-check-crop img{width:100%;height:100%;object-fit:cover}
+.ig-caption-prompt{max-width:1208px;margin:14px auto 0;padding:0 clamp(22px,5vw,76px);display:flex;gap:13px;align-items:center;color:rgba(40,28,45,.68);font-size:12px}
+.ig-caption-prompt span{color:var(--social-wine);font-weight:700;letter-spacing:.09em}
+.ig-captions{max-width:1360px;margin:48px auto 0;padding:0 clamp(22px,5vw,76px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 30px}
+.ig-caption{scroll-margin-top:100px;min-height:210px;padding:19px 0 24px;border-top:1px solid rgba(81,27,54,.36)}
+.ig-caption:target{border-top:3px solid var(--social-coral);padding-top:17px}
+.caption-kind{margin:0 0 10px;color:var(--social-wine);font-size:10px;line-height:1.3;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.ig-caption h2{max-width:19ch;margin:0 0 10px;color:var(--social-wine);font:500 23px/1 Outfit,"DM Sans",sans-serif;letter-spacing:-.035em}
+.ig-caption p:not(.caption-kind){max-width:47ch;margin:0 0 10px;font-size:13px;line-height:1.55}
+.ig-caption>a{color:var(--social-wine);font-size:12px;font-weight:700;text-underline-offset:4px}
+.caption-credit{padding-left:10px;border-left:2px solid var(--social-coral);color:var(--social-wine)}
+.social-disclaimer{max-width:1208px;margin:34px auto 0;padding:16px clamp(22px,5vw,76px) 0;border-top:1px solid rgba(81,27,54,.22);color:rgba(40,28,45,.77);font-size:12px;line-height:1.5}
+
+/* Facebook: a scenographic full-bleed cover followed by a long-form feed. */
+.facebook-main{padding-bottom:0}
+.facebook-main .channel-heading{min-height:86px;padding-top:19px;padding-bottom:18px}
+.channel-heading-wide h1{font-size:clamp(32px,3.7vw,44px)}
+.fb-cover{position:relative;width:100vw;height:clamp(360px,56vh,680px);margin:0 0 0 calc(50% - 50vw);overflow:hidden;background:var(--social-wine);color:var(--social-cream);isolation:isolate}
+.fb-cover>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;transition:transform 1.3s cubic-bezier(.2,.7,.2,1)}
+.fb-cover:hover>img{transform:scale(1.012)}
+.fb-cover-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(40,28,45,.78) 0%,rgba(40,28,45,.53) 35%,rgba(40,28,45,.08) 76%),linear-gradient(0deg,rgba(40,28,45,.29),transparent 56%)}
+.fb-cover-copy{position:absolute;left:clamp(22px,8vw,132px);bottom:clamp(30px,6vh,70px);max-width:740px}
+.fb-cover-signature{display:block;width:120px;height:50px;margin:0 0 18px;object-fit:contain;object-position:left center;filter:brightness(0) invert(1)}
+.fb-cover-kicker{margin:0 0 12px;color:var(--social-cream);font-size:11px;line-height:1.2;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.fb-cover-copy h2{max-width:18ch;margin:0;color:var(--social-cream);font:500 clamp(37px,5.4vw,70px)/.96 Outfit,"DM Sans",sans-serif;letter-spacing:-.045em}
+.fb-cover-credit{max-width:1208px;margin:8px auto 0;padding:0 clamp(22px,5vw,76px);color:rgba(40,28,45,.7);font-size:10px;line-height:1.4}
+.fb-profile{max-width:1208px;min-height:82px;margin:0 auto;padding:15px clamp(22px,5vw,76px);display:flex;align-items:center;gap:13px;border-bottom:1px solid rgba(81,27,54,.2)}
+.fb-avatar{width:46px;height:46px;border-radius:50%;background-color:var(--social-coral)}
+.fb-avatar{mask-image:none;-webkit-mask-image:none}
+.fb-avatar img{display:block;width:30px;height:30px;object-fit:contain}
+.fb-profile-copy h2{font-size:17px}
+.fb-contact{margin-left:auto}
+.fb-feed-section{width:100vw;margin:24px 0 0 calc(50% - 50vw);padding:52px clamp(22px,5vw,76px) 62px;background:var(--social-peach)}
+.fb-feed-heading{max-width:760px;margin:0 auto 27px}
+.fb-feed-heading h2{max-width:15ch;margin:0 0 11px;color:var(--social-wine);font:500 clamp(34px,4vw,48px)/.98 Outfit,"DM Sans",sans-serif;letter-spacing:-.045em}
+.fb-feed-heading>p:last-child{max-width:46ch;margin:0;font-size:13px;line-height:1.45}
+.fb-post-list{max-width:760px;margin:0 auto;display:grid;gap:16px}
+.fb-post{overflow:hidden;background:var(--social-cream);color:var(--social-plum)}
+.fb-post-header{display:flex;align-items:center;gap:10px;padding:15px 20px 11px}
+.fb-post-avatar{width:34px;height:34px;border-radius:50%;background-color:var(--social-coral);mask-image:none;-webkit-mask-image:none}
+.fb-post-avatar img{display:block;width:22px;height:22px;object-fit:contain}
+.fb-post-header>div{display:grid;gap:2px;font-size:12px;line-height:1.2}
+.fb-post-header b{color:var(--social-wine);font-weight:700}
+.fb-post-header span{color:rgba(40,28,45,.67);font-size:10px}
+.fb-post-copy{padding:5px 20px 16px}
+.fb-post-copy h3{max-width:34ch;margin:0 0 10px;color:var(--social-wine);font:600 21px/1.08 Outfit,"DM Sans",sans-serif;letter-spacing:-.025em}
+.fb-post-copy p{max-width:69ch;margin:0 0 9px;font-size:13px;line-height:1.55}
+.fb-post-copy p:last-child{margin-bottom:0}
+.fb-link-preview{display:flex;min-height:174px;padding:24px 26px;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:13px;color:var(--social-cream);text-decoration:none;transition:filter .2s ease}
+.fb-link-preview:hover{filter:saturate(1.08)}
+.fb-link-costs{background:linear-gradient(122deg,#511b36 0%,#832e3e 46%,#f25b45 100%)}
+.fb-link-kicker{display:block;color:var(--social-wine);font-size:9px;line-height:1.2;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.fb-link-costs .fb-link-kicker{padding:5px 7px;background:var(--social-cream)}
+.fb-link-preview strong{display:block;max-width:24ch;color:inherit;font:500 clamp(25px,3vw,37px)/.98 Outfit,"DM Sans",sans-serif;letter-spacing:-.035em}
+.fb-link-costs>span:not(.fb-link-kicker){padding:5px 7px;background:var(--social-cream);color:var(--social-plum);font-size:12px;line-height:1.4}
+.fb-open{display:inline-flex;align-items:center;gap:10px;margin-top:2px;font-size:11px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.fb-open i{font-size:15px;font-style:normal;text-decoration:none}
+.fb-link-owner{position:relative;min-height:173px;padding:26px;background:var(--social-cream);color:var(--social-wine);border-top:1px solid rgba(81,27,54,.16)}
+.fb-link-owner .fb-link-kicker{color:var(--social-wine)}
+.fb-link-owner strong{max-width:25ch}
+.fb-link-owner>span:not(.fb-owner-mark):not(.fb-link-kicker){font-size:12px;line-height:1.4;color:rgba(40,28,45,.78)}
+.fb-owner-mark{position:absolute;right:25px;top:24px;width:55px;height:55px;object-fit:contain;filter:brightness(0) saturate(100%) invert(37%) sepia(85%) saturate(1376%) hue-rotate(333deg) brightness(97%) contrast(96%)}
+.fb-link-pilot{min-height:170px;padding:0;display:grid;grid-template-columns:34% 1fr;background:var(--social-cream);color:var(--social-wine);border-top:1px solid rgba(81,27,54,.16)}
+.fb-link-image{min-height:170px;overflow:hidden;background:var(--social-wine)}
+.fb-link-image img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.fb-link-pilot:hover .fb-link-image img{transform:scale(1.025)}
+.fb-link-copy{padding:20px 23px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:7px}
+.fb-link-pilot .fb-link-copy>span:not(.fb-link-kicker){font-size:12px;line-height:1.4;color:rgba(40,28,45,.78)}
+.social-footer{max-width:1360px;margin:0 auto;padding:28px clamp(22px,5vw,76px);min-height:114px;display:grid;grid-template-columns:auto auto 1fr;align-items:center;gap:28px}
+.social-footer .brand-logo{width:68px;height:28px}.social-footer .brand-name{font-size:15px}
+.social-footer>p{margin:0;color:var(--social-wine);font-size:12px;line-height:1.4}
+.surface-links{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:10px 20px}
+.surface-links a{color:var(--social-wine);font-size:11px;font-weight:700;text-underline-offset:4px}
+
+@media(max-width:760px){
+  .social-page .site-header{height:72px;padding:0 20px}
+  .social-page .site-header.is-scrolled{height:58px;padding:0 17px}
+  .social-main{padding-top:72px}
+  .social-page .brand-logo{width:58px;height:24px}.social-page .brand-name{font-size:14px}
+  .social-page .site-links{display:none}
+  .social-page .menu-toggle{display:block;padding:8px 12px;border:1px solid var(--social-wine);border-radius:2px;background:transparent;color:var(--social-wine);font:600 12px/1 "DM Sans",Arial,sans-serif}
+  .social-page .mobile-nav:not([hidden]){position:absolute;top:72px;left:0;right:0;z-index:55;display:grid;gap:0;padding:8px 20px 17px;background:var(--social-cream);border-top:1px solid rgba(81,27,54,.16);box-shadow:0 14px 22px rgba(40,28,45,.13)}
+  .social-page .mobile-nav a{padding:11px 0;border-bottom:1px solid rgba(81,27,54,.17);color:var(--social-wine);font-size:14px;text-decoration:none}
+  .channel-heading{display:block;padding:22px 20px 18px}
+  .channel-heading h1{font-size:34px}
+  .channel-heading>p{max-width:42ch;margin-top:10px;font-size:13px}
+  .ig-profile{grid-template-columns:42px minmax(0,1fr);gap:9px;padding:0 20px;margin-bottom:14px}
+  .ig-avatar{width:40px;height:40px}
+  .ig-profile-copy h2{font-size:16px}
+  .ig-profile-copy p{font-size:10px}
+  .ig-contact{grid-column:2;justify-self:start;padding:3px 0 0;font-size:11px}
+  .ig-gallery{gap:5px;padding:0 12px;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ig-tile{aspect-ratio:4/5}
+  .ig-tile-kicker{margin-bottom:9px;font-size:8px;line-height:1.2}
+  .ig-tile strong{font-size:clamp(15px,4.5vw,25px);line-height:.98;letter-spacing:-.04em}
+  .ig-tile-hero .ig-hero-copy{left:10px;right:8px;bottom:22px}
+  .ig-tile-hero .ig-tile-kicker{font-size:7px}
+  .ig-tile-hero strong{font-size:clamp(17px,5.2vw,28px)}
+  .ig-signature{width:52px;height:22px;margin-top:9px}
+  .ig-scene-credit{top:5px;right:4px;max-width:80px;padding:4px 5px;font-size:6px;line-height:1.2}
+  .ig-tile-coral,.ig-tile-listing,.ig-tile-between{padding:11px 9px}
+  .ig-tile-coral .ig-tile-kicker{margin-bottom:10px}
+  .ig-tile-coral strong{font-size:clamp(17px,5vw,27px);color:var(--social-plum)}
+  .ig-tile-costs,.ig-tile-decision,.ig-tile-checklist{padding:10px 8px}
+  .ig-tile-costs strong{font-size:clamp(15px,4.3vw,23px)}
+  .ig-cost-list{margin-top:9px}
+  .ig-cost-list span{gap:3px;padding:5px 0 4px;font-size:7px}
+  .ig-cost-list i{width:22%;height:1px}
+  .ig-tile-index{margin-top:5px;font-size:6px;letter-spacing:.07em}
+  .ig-tile-listing strong{font-size:clamp(16px,4.7vw,26px)}
+  .ig-tile-kitchen .ig-tile-signature{top:6px;left:5px;width:42px;height:15px}
+  .ig-photo-index{right:3px;bottom:4px;padding:3px 4px;font-size:5px;letter-spacing:.05em}
+  .ig-tile-decision strong{font-size:clamp(16px,4.5vw,24px)}
+  .ig-decision-copy{margin-top:7px;font-size:8px;line-height:1.3}
+  .ig-tile-between .ig-tile-kicker{margin-bottom:10px}
+  .ig-tile-between strong{font-size:clamp(17px,4.9vw,26px)}
+  .ig-between-line{width:48%;height:3px;margin-top:11px}
+  .ig-tile-checklist strong{font-size:clamp(14px,4.1vw,22px)}
+  .ig-check-crop{width:54%;height:34px;margin-top:5px}
+  .ig-caption-prompt{margin-top:10px;padding:0 20px;font-size:10px}
+  .ig-captions{grid-template-columns:1fr;gap:0;margin-top:34px;padding:0 20px}
+  .ig-caption{min-height:0;padding:15px 0 18px}
+  .ig-caption h2{font-size:21px}
+  .ig-caption p:not(.caption-kind){font-size:12px}
+  .social-disclaimer{margin-top:24px;padding:13px 20px 0;font-size:10px}
+  .facebook-main .channel-heading{min-height:0;padding:19px 20px 17px}
+  .channel-heading-wide h1{font-size:31px}
+  .fb-cover{height:clamp(360px,72vw,520px);margin-left:calc(50% - 50vw)}
+  .fb-cover>img{object-position:57% center}
+  .fb-cover-shade{background:linear-gradient(90deg,rgba(40,28,45,.8) 0%,rgba(40,28,45,.46) 54%,rgba(40,28,45,.08) 100%),linear-gradient(0deg,rgba(40,28,45,.3),transparent 60%)}
+  .fb-cover-copy{left:20px;right:16px;bottom:29px}
+  .fb-cover-signature{width:88px;height:37px;margin-bottom:14px}
+  .fb-cover-kicker{font-size:9px;margin-bottom:10px}
+  .fb-cover-copy h2{max-width:14ch;font-size:clamp(34px,10vw,48px)}
+  .fb-cover-credit{margin-top:7px;padding:0 20px;font-size:9px}
+  .fb-profile{min-height:73px;padding:12px 20px;gap:9px}
+  .fb-avatar{width:38px;height:38px}
+  .fb-avatar::before{width:24px;height:24px}
+  .fb-profile-copy h2{font-size:15px}
+  .fb-profile-copy p{max-width:22ch;font-size:9px}
+  .fb-contact{gap:5px;padding:8px 0;font-size:10px}
+  .fb-feed-section{margin-top:17px;padding:34px 14px 42px}
+  .fb-feed-heading{margin-bottom:18px;padding:0 6px}
+  .fb-feed-heading h2{font-size:34px}
+  .fb-feed-heading>p:last-child{font-size:11px}
+  .fb-post-list{gap:12px}
+  .fb-post-header{padding:12px 13px 8px}
+  .fb-post-avatar{width:30px;height:30px}
+  .fb-post-avatar::before{width:19px;height:19px}
+  .fb-post-header>div{font-size:11px}
+  .fb-post-header span{font-size:9px}
+  .fb-post-copy{padding:4px 13px 12px}
+  .fb-post-copy h3{font-size:18px}
+  .fb-post-copy p{font-size:11px;line-height:1.5}
+  .fb-link-preview{min-height:145px;padding:16px}
+  .fb-link-preview strong{font-size:26px}
+  .fb-link-costs>span:not(.fb-link-kicker){font-size:10px}
+  .fb-link-owner{min-height:152px;padding:17px}
+  .fb-owner-mark{top:16px;right:16px;width:36px;height:36px}
+  .fb-link-pilot{min-height:124px;grid-template-columns:34% 1fr;padding:0}
+  .fb-link-image{min-height:124px}
+  .fb-link-copy{padding:12px}
+  .fb-link-pilot .fb-link-copy>span:not(.fb-link-kicker){font-size:10px}
+  .social-footer{padding:21px 20px;grid-template-columns:auto 1fr;gap:10px 17px}
+  .social-footer .brand-logo{width:58px;height:24px}
+  .social-footer>p{justify-self:end;text-align:right;font-size:10px}
+  .surface-links{grid-column:1/-1;justify-content:flex-start;gap:9px 15px}
+  .surface-links a{font-size:10px}
+}
+@media(max-width:390px){
+  .channel-heading h1{font-size:30px}
+  .ig-tile-kicker{font-size:7px}
+  .ig-tile-coral,.ig-tile-listing,.ig-tile-between{padding-left:7px;padding-right:7px}
+  .ig-tile-coral strong{font-size:16px}
+  .ig-tile-costs,.ig-tile-decision,.ig-tile-checklist{padding-left:6px;padding-right:6px}
+  .ig-cost-list span{font-size:6px}
+  .ig-decision-copy{font-size:7px}
+  .ig-tile-checklist strong{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){
+  .social-page *, .social-page *::before, .social-page *::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
+/* Facebook channel preview: recognizable feed chrome around stella.casa content. */
+.social-facebook{background:#f0f2f5;color:#1c1e21;font-family:Arial,Helvetica,sans-serif}
+.social-facebook .site-header{display:none}.social-facebook .social-main{padding:56px 0 52px}
+.fb-topbar{height:56px;position:fixed;inset:0 0 auto;z-index:70;display:flex;align-items:center;gap:12px;padding:0 22px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.15);color:#65676b}
+.fb-top-logo{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#0866ff;color:white;font:bold 38px/1 Arial,sans-serif}.fb-search{width:240px;height:40px;display:flex;align-items:center;gap:8px;padding:0 14px;border-radius:999px;background:#f0f2f5;font-size:22px}.fb-search span{font-size:14px}.fb-top-caption{margin-left:auto;font-size:11px;color:#65676b}
+.fb-page-shell{max-width:1100px;margin:0 auto;background:#fff;border-radius:0 0 9px 9px;box-shadow:0 1px 2px #0001;overflow:hidden}
+.fb-cover{position:relative;width:100%;height:auto;aspect-ratio:2.8/1;margin:0;overflow:hidden;background:#511b36}.fb-cover>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 54%}.fb-cover-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,20,34,.62),rgba(30,20,34,.08) 76%)}.fb-cover-copy{position:absolute;left:40px;bottom:26px;max-width:620px}.fb-cover-signature{width:94px;height:39px;margin:0 0 8px}.fb-cover-kicker{font-size:12px;margin:0 0 5px}.fb-cover-copy h1{font:700 clamp(28px,4vw,48px)/.99 Outfit,Arial,sans-serif;color:#fff;margin:0;max-width:17ch;letter-spacing:-.03em}
+.fb-profile{position:relative;max-width:none;min-height:116px;margin:0;padding:18px 32px 15px 166px;display:flex;gap:14px;align-items:center;border-bottom:1px solid #dadde1}.fb-avatar{position:absolute;left:28px;top:-42px;width:124px;height:124px;display:grid;place-items:center;border:4px solid #fff;border-radius:50%;background:#f25b45}.fb-avatar img{width:77px;height:77px;object-fit:contain}.fb-profile-copy h2{margin:0;color:#1c1e21;font:bold 29px/1.15 Arial,sans-serif}.fb-profile-copy p{margin:4px 0 0;color:#65676b;font-size:13px}.fb-contact{margin-left:auto;display:inline-flex;justify-content:center;padding:10px 16px;border-radius:6px;background:#0866ff;color:#fff;font-size:14px;text-decoration:none}.fb-contact span{display:none}.fb-tabs{height:58px;display:flex;align-items:stretch;gap:12px;padding:0 27px}.fb-tabs a{display:grid;place-items:center;padding:0 16px;color:#65676b;text-decoration:none;font-weight:600;font-size:14px}.fb-tabs a[aria-current=page]{border-bottom:3px solid #0866ff;color:#0866ff}
+.fb-feed-section{width:auto;margin:0;padding:25px 20px 45px;background:#f0f2f5}.fb-content-grid{max-width:1010px;margin:0 auto;display:grid;grid-template-columns:minmax(250px,.76fr) minmax(0,1.35fr);align-items:start;gap:17px}.fb-about,.fb-post{border-radius:8px;background:#fff;box-shadow:0 1px 2px #0002}.fb-about{padding:17px 16px}.fb-about h2{margin:0 0 11px;color:#1c1e21;font:bold 19px Arial,sans-serif}.fb-about>p{font-size:14px;line-height:1.43}.fb-about-item{padding:8px 0;color:#65676b;font-size:13px}.fb-about-item a{color:inherit}.fb-about-note{margin-top:11px;padding:10px;border-radius:7px;background:#f0f2f5;color:#65676b;font-size:11px;line-height:1.4}.fb-about-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:14px;overflow:hidden;border-radius:6px}.fb-about-photos img{width:100%;aspect-ratio:1;object-fit:cover}.fb-feed-heading{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-radius:8px;background:#fff;box-shadow:0 1px 2px #0002;color:#1c1e21;font-size:17px;font-weight:700}.fb-feed-heading p{margin:0}.fb-feed-heading span{font-size:12px;color:#65676b;font-weight:400}.fb-post-list{max-width:none;margin:0;display:grid;gap:14px}.fb-post{overflow:hidden}.fb-post-header{padding:13px 15px 9px}.fb-post-avatar{width:40px;height:40px;background:#f25b45}.fb-post-avatar img{width:27px;height:27px;filter:brightness(0) opacity(.7)}.fb-post-header>div{display:grid;gap:4px}.fb-post-header b{color:#1c1e21;font-size:14px}.fb-post-header span{font-size:12px}.fb-more{margin-left:auto;border:0;background:transparent;color:#65676b;font-size:22px;font-weight:bold}.fb-post-copy{padding:0 15px 12px}.fb-post-copy p{max-width:none;margin:0 0 12px;font-size:14px;line-height:1.45}.fb-link-preview{min-height:144px;gap:8px;padding:18px;background:#f0f2f5;color:#1c1e21}.fb-link-costs{background:linear-gradient(115deg,#511b36,#f25b45);color:#fff}.fb-link-kicker{font-size:10px}.fb-link-preview strong{font:700 23px/1.06 Arial,sans-serif;color:inherit}.fb-link-preview>span:not(.fb-link-kicker):not(.fb-link-image):not(.fb-link-copy){font-size:12px;color:inherit}.fb-open{font-size:12px;color:#0866ff;text-decoration:none}.fb-link-costs .fb-open{color:#fff}.fb-link-owner{min-height:145px}.fb-owner-mark{right:17px;top:16px;width:39px;height:39px}.fb-link-pilot{grid-template-columns:32% 1fr;min-height:144px}.fb-link-image{min-height:144px}.fb-link-copy{padding:14px 16px}.fb-link-pilot .fb-link-copy>span:not(.fb-link-kicker){font-size:12px}.fb-post-actions{display:grid;grid-template-columns:repeat(3,1fr);margin:0 14px;border-top:1px solid #dadde1}.fb-post-actions button{height:42px;border:0;background:white;color:#65676b;font-size:13px;font-weight:600}.fb-post-actions button:hover,.fb-post-actions button[aria-pressed=true]{background:#f0f2f5;color:#0866ff}.fb-post-actions button span{padding-left:5px}.fb-action-result{margin:0 15px 12px;color:#65676b;font-size:11px}.social-facebook .social-disclaimer{max-width:1010px;padding:16px 0 0;border-color:#d4d7dc;color:#65676b;font-size:11px}
+@media(max-width:760px){.fb-topbar{padding:0 14px}.fb-search{width:40px;justify-content:center;padding:0}.fb-search span{display:none}.fb-top-caption{font-size:9px}.social-facebook .social-main{padding-top:56px}.fb-page-shell{border-radius:0}.fb-cover{aspect-ratio:1.8/1}.fb-cover-copy{left:19px;bottom:17px}.fb-cover-signature{width:72px;height:30px}.fb-cover-copy h1{font-size:28px}.fb-profile{min-height:91px;padding:13px 14px 12px 105px;gap:7px}.fb-avatar{left:13px;top:-28px;width:82px;height:82px;border-width:3px}.fb-avatar img{width:50px;height:50px}.fb-profile-copy h2{font-size:21px}.fb-profile-copy p{max-width:22ch;font-size:10px}.fb-contact{padding:8px 9px;font-size:11px}.fb-tabs{height:48px;padding:0 7px;gap:0}.fb-tabs a{padding:0 13px;font-size:12px}.fb-feed-section{padding:12px 9px 30px}.fb-content-grid{grid-template-columns:1fr;gap:12px}.fb-about{padding:13px}.fb-about-photos{grid-template-columns:repeat(3,1fr)}.fb-feed-heading{padding:12px}.fb-post-list{gap:11px}.fb-post-header{padding:11px 12px 7px}.fb-post-copy{padding:0 12px 11px}.fb-post-copy p{font-size:13px}.fb-link-preview{padding:14px;min-height:130px}.fb-link-preview strong{font-size:20px}.fb-link-pilot{grid-template-columns:34% 1fr;padding:0}.fb-link-image{min-height:118px}.fb-link-copy{padding:10px}.fb-link-pilot .fb-link-copy>span:not(.fb-link-kicker){font-size:10px}.fb-post-actions{margin:0 9px}.fb-post-actions button{font-size:11px}.fb-post-actions button span{padding-left:2px}.social-facebook .social-disclaimer{margin:20px 14px 0;padding-top:12px}}
+
+.fb-cover-credit{position:absolute;right:12px;bottom:9px;max-width:none;margin:0;padding:5px 8px;border-radius:3px;background:rgba(40,28,45,.76);color:#fff;font-size:10px;line-height:1.25}.fb-more{align-self:center;color:#65676b;font-size:22px;font-weight:bold}
+@media(max-width:760px){.fb-cover-credit{right:7px;bottom:6px;max-width:47%;padding:4px 6px;font-size:8px}}
+.fb-feed-heading{width:100%;max-width:none;margin:0;padding:14px 16px;gap:16px}.fb-feed-heading>span{white-space:nowrap}
+@media(max-width:760px){.fb-cover-credit{top:7px;right:7px;bottom:auto;max-width:58%}.fb-feed-heading{gap:8px}.fb-feed-heading>span{font-size:10px}}
+.social-facebook .fb-link-preview.fb-link-costs>span:not(.fb-link-kicker){color:var(--social-plum)}
+
+.ig-tile>img.ig-signature{position:static;inset:auto;width:83px;height:34px;object-fit:contain;object-position:left center}
+.ig-tile-listing>img.ig-signature{width:96px;height:40px;filter:brightness(0) opacity(.75)}
+.ig-tile>img.ig-tile-signature{position:absolute;inset:auto;top:15px;left:15px;width:64px;height:26px;object-fit:contain;object-position:left top;z-index:2}
+.ig-check-crop{width:100%;height:38%}
+@media (max-width:800px){.ig-tile>img.ig-signature{width:52px;height:22px}.ig-tile>img.ig-tile-signature{top:6px;left:6px;width:42px;height:17px}.ig-check-crop{height:30%}}
+html[data-brand="incastro"] .ig-tile>img.ig-signature,html[data-brand="incastro"] .ig-signature{width:58px;height:46px}
+html[data-brand="incastro"] .ig-tile>img.ig-tile-signature{width:46px;height:36px}
+@media (max-width:800px){html[data-brand="incastro"] .ig-tile>img.ig-signature,html[data-brand="incastro"] .ig-signature{width:36px;height:28px}html[data-brand="incastro"] .ig-tile>img.ig-tile-signature{width:30px;height:24px}}
+.ig-tile>img.ig-drawing{position:static;inset:auto;display:block;width:112%;height:auto;max-height:52%;margin:8px -6% -6%;object-fit:contain;object-position:center bottom;flex:1 1 auto;min-height:0}
+.ig-tile-between{justify-content:space-between}
+.ig-tile-decision .ig-tile-index{order:5}
+.ig-tile-drawn{padding:0!important;display:block!important}
+.ig-tile-drawn>img.ig-drawing{position:absolute;inset:0;width:100%;height:100%;max-height:none;margin:0;object-fit:cover;object-position:center}
+.ig-tile-drawn .ig-tile-kicker,.ig-tile-drawn strong{position:relative;z-index:1}
+.ig-tile-drawn .ig-tile-kicker{display:inline-block;margin:clamp(14px,2vw,26px) 0 0 clamp(14px,2vw,26px);padding:6px 10px;background:var(--social-cream);color:var(--social-plum)}
+.ig-tile-drawn strong{display:inline-block;margin:8px clamp(14px,2vw,26px) 0;padding:8px 12px 10px;max-width:none;background:var(--social-cream);color:var(--social-plum);font-size:clamp(18px,1.9vw,28px)!important}
+.ig-tile-drawn .ig-tile-index{position:absolute;left:clamp(14px,2vw,26px);bottom:clamp(14px,2vw,22px);z-index:1;padding:5px 8px;background:var(--social-cream);margin:0}
+@media(max-width:800px){.ig-tile-drawn .ig-tile-kicker{margin:6px 0 0 6px;padding:3px 5px;font-size:8px}.ig-tile-drawn strong{margin:4px 6px 0;padding:4px 6px;font-size:11px!important}.ig-tile-drawn .ig-tile-index{display:none}}
+.ig-tile-drawn .ig-tile-kicker,.ig-tile-drawn strong{display:block;width:fit-content}
+.fb-cover>img[src*="luce-persiane"]{object-position:center 45%}

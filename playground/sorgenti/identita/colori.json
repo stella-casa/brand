@@ -1,0 +1,198 @@
+[
+  {
+    "id": "C00",
+    "name": "La base v4",
+    "colors": [
+      "#39283F",
+      "#F3EEE5",
+      "#EDF276",
+      "#B8A9C6"
+    ],
+    "names": [
+      "Prugna",
+      "Carta",
+      "Cedro",
+      "Malva"
+    ],
+    "character": "caldo, editoriale, insolito.",
+    "description": "Il cedro interrompe una base scura e calda. Il sistema funziona quando l’accento è raro e legato a un gesto.",
+    "accent": "Una luce o un dettaglio; evitare di riempire ogni pulsante di cedro.",
+    "risk": "Prugna e cedro dominanti possono oscurare il racconto della casa. Malva e carta non vanno trattati come equivalenti per la leggibilità.",
+    "physical": "Carta naturale; prova dedicata per il cedro, che su carta assorbente perde brillantezza.",
+    "logos": "È il riferimento di partenza. Non implica la scelta del vecchio logo v4.",
+    "ratio": [
+      60,
+      25,
+      10,
+      5
+    ]
+  },
+  {
+    "id": "C01",
+    "name": "Cobalto e burro",
+    "colors": [
+      "#1734B5",
+      "#FFF4CF",
+      "#F06A46",
+      "#D5DEEF"
+    ],
+    "names": [
+      "Cobalto",
+      "Burro",
+      "Arancio vivo",
+      "Azzurro carta"
+    ],
+    "character": "solare, netto, contemporaneo.",
+    "description": "Un blu saturo su giallo chiarissimo dà energia senza usare il lessico cromatico del mare. L’arancio entra solo come piccola interruzione.",
+    "accent": "Un telo, una piega, un bordo stampato. Il cobalto resta il colore che firma.",
+    "risk": "Tre colori visibili a pari peso fanno subito vacanza o ristorazione. L’arancio deve rimanere raro, senza invadere titoli e corpo testo.",
+    "physical": "Serigrafia a due tinte su cotone e biglietti con bordo arancio; la base burro è il supporto.",
+    "logos": "Incastro regge la saturazione. Portico acquista un carattere più vivace.",
+    "ratio": [
+      60,
+      25,
+      10,
+      5
+    ]
+  },
+  {
+    "id": "C02",
+    "name": "Abete e corallo",
+    "colors": [
+      "#193F38",
+      "#F4F0E6",
+      "#FA8A70",
+      "#C5DAD4"
+    ],
+    "names": [
+      "Abete",
+      "Gesso caldo",
+      "Corallo",
+      "Salvia grigia"
+    ],
+    "character": "solido, domestico, presente.",
+    "description": "Il verde profondo dà corpo alla marca; il corallo porta un calore umano visibile anche in un piccolo oggetto.",
+    "accent": "Un elemento toccato dalla mano: tessuto, maniglia, foglio. Evitare di colorare tutte le piante.",
+    "risk": "Se si insiste su foglie e salvia diventa un’identità naturale generica. Il corallo deve raccontare cura e uso della casa.",
+    "physical": "Timbro verde su carta avorio, cucitura o piccolo inserto corallo sul tessile.",
+    "logos": "Incastro e Iniziale: il primo più strutturato, il secondo più personale.",
+    "ratio": [
+      62,
+      23,
+      10,
+      5
+    ]
+  },
+  {
+    "id": "C03",
+    "name": "Amarena e ghiaccio",
+    "colors": [
+      "#681D47",
+      "#EDF5F7",
+      "#F18AB4",
+      "#CCDCE0"
+    ],
+    "names": [
+      "Amarena",
+      "Ghiaccio",
+      "Rosa acceso",
+      "Nebbia"
+    ],
+    "character": "editoriale, intimo, distintivo.",
+    "description": "Un fondo freddo e luminoso mette in tensione l’inchiostro color amarena. Il rosa viene usato come segno concreto, con una presenza contenuta.",
+    "accent": "Un oggetto pieno nella scena o un singolo risguardo. Il rosa non sostituisce l’inchiostro per la lettura.",
+    "risk": "Con lettering troppo morbido può spostarsi verso cosmetica o cerimonia. Servono fotografia reale e testi diretti.",
+    "physical": "Carta bianca fredda, stampa amarena, un solo inserto rosa; ricamo a una tinta per il marchio.",
+    "logos": "Legatura e Slancio. Sorvegliare la somma fra grazia tipografica e delicatezza cromatica.",
+    "ratio": [
+      65,
+      25,
+      7,
+      3
+    ]
+  },
+  {
+    "id": "C04",
+    "name": "Lavanda e arancio",
+    "colors": [
+      "#29233E",
+      "#EEE8F7",
+      "#FF7949",
+      "#C9BDDD"
+    ],
+    "names": [
+      "Inchiostro viola",
+      "Lavanda chiara",
+      "Arancio",
+      "Glicine"
+    ],
+    "character": "sorprendente, grafico, vivace.",
+    "description": "La lavanda costruisce grandi campi quieti; un arancio deciso crea il punto di attenzione. L’inchiostro viola tiene insieme testi e disegni.",
+    "accent": "Una sola zona di luce o il taglio di un oggetto. Nei social può occupare un riquadro intero, senza aggiungere altri accenti.",
+    "risk": "È la proposta più esposta al gusto del momento. La disciplina del disegno deve darle riconoscibilità oltre la palette.",
+    "physical": "Risguardo lavanda e dettaglio arancio; sul tessile scegliere il solo inchiostro viola.",
+    "logos": "Portico e Incastro per controbilanciare la vivacità; Slancio per una firma più espressiva.",
+    "ratio": [
+      65,
+      20,
+      10,
+      5
+    ]
+  },
+  {
+    "id": "C05",
+    "name": "Caffè e celeste",
+    "colors": [
+      "#48342B",
+      "#EAF3F3",
+      "#F2CC59",
+      "#C7DDDC"
+    ],
+    "names": [
+      "Caffè",
+      "Celeste latte",
+      "Giallo ottone",
+      "Vetro"
+    ],
+    "character": "quieto, tattile, raccolto.",
+    "description": "Il bruno sostituisce il nero senza diventare seppia grazie al celeste. Il giallo è un dettaglio caldo, non una luce su tutta la pagina.",
+    "accent": "Un bordo, una maniglia, un telo. La scena rimane prevalentemente bruna su fondo chiaro.",
+    "risk": "Il giallo non è un effetto metallico. Se si aggiungono texture vintage la proposta perde attualità.",
+    "physical": "Ricamo bruno su lino chiaro; inserto giallo opaco. Ottone reale solo dove il supporto lo giustifica.",
+    "logos": "Legatura e Iniziale per un tono composto; Portico per una lettura più architettonica.",
+    "ratio": [
+      65,
+      25,
+      7,
+      3
+    ]
+  },
+  {
+    "id": "C06",
+    "name": "Grafite e menta",
+    "colors": [
+      "#252B35",
+      "#FBFAF6",
+      "#A9E2CA",
+      "#D9E1E4"
+    ],
+    "names": [
+      "Grafite",
+      "Bianco caldo",
+      "Menta",
+      "Grigio nebbia"
+    ],
+    "character": "nitido, pratico, misurato.",
+    "description": "La base quasi neutra lascia spazio a foto, testo e disegno. La menta diventa un segnale fresco e riconoscibile anche in dosi piccole.",
+    "accent": "Una linea di percorso o un dettaglio della scena; le informazioni importanti restano in grafite.",
+    "risk": "È il sistema meno teatrale. La distinzione dovrà venire dal segno illustrativo e dalla qualità del lettering.",
+    "physical": "Carta naturale chiara, stampa grafite, fascetta menta. Facile passaggio a un solo colore.",
+    "logos": "Tutta la shortlist; particolarmente utile con Slancio e Stella aperta, già espressivi.",
+    "ratio": [
+      70,
+      20,
+      7,
+      3
+    ]
+  }
+]

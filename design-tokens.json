@@ -1,0 +1,68 @@
+{
+ "colore": {
+  "corallo": {
+   "valore": "#F25B45"
+  },
+  "vino": {
+   "valore": "#511B36"
+  },
+  "pesca": {
+   "valore": "#F6B495"
+  },
+  "lavanda": {
+   "valore": "#B7A0CA"
+  },
+  "crema": {
+   "valore": "#FFF3E7"
+  },
+  "prugna": {
+   "valore": "#281C2D"
+  }
+ },
+ "font": {
+  "titoli": {
+   "famiglia": "Outfit",
+   "peso": 600,
+   "tracking": "-0.045em",
+   "interlinea": 0.99
+  },
+  "testo": {
+   "famiglia": "DM Sans",
+   "peso": [
+    400,
+    700
+   ],
+   "corpo": "18px",
+   "interlinea": 1.55
+  }
+ },
+ "raggio": {
+  "pillola": "999px",
+  "scheda": "24px",
+  "card": "22px",
+  "ui": "16px"
+ },
+ "spazio": {
+  "gutter": "clamp(22px,5vw,76px)",
+  "max": "1440px",
+  "contenuto": "1288px"
+ },
+ "movimento": {
+  "standard": "320ms cubic-bezier(.2,.7,.2,1)",
+  "scheda": "800ms cubic-bezier(.7,0,.2,1)",
+  "header": "legato allo scroll, 12–232 px"
+ },
+ "contrasti": {
+  "prugna/crema": 14.86,
+  "prugna/bianco": 16.23,
+  "crema/vino": 12.33,
+  "prugna/pesca": 9.18,
+  "prugna/lavanda": 6.87,
+  "prugna/corallo": 4.91,
+  "bianco/corallo": 3.3,
+  "crema/corallo": 3.02,
+  "vino/crema": 12.33,
+  "corallo/crema": 3.02,
+  "vino/pesca": 7.62
+ }
+}

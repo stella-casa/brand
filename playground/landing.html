@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="refresh" content="0;url=index.html?view=landing">
+  <title>Landing proprietari · stella.casa</title>
+</head>
+<body>
+  <p>Apri la <a id="landing-link" href="index.html?view=landing">bozza landing per i proprietari</a>.</p>
+  <script>
+    const target = new URL('index.html', location.href);
+    const query = new URLSearchParams(location.search);
+    query.set('view', 'landing');
+    target.search = query.toString();
+    location.replace(target.href);
+    document.querySelector('#landing-link').href = target.href;
+  </script>
+</body>
+</html>

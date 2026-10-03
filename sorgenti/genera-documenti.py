@@ -1,0 +1,365 @@
+"""Genera brand-identity.html e brand-book.html .
+
+Uso: python3 sorgenti/genera-documenti.py (dalla cartella stella).
+La struttura (16 tavole + 27 pagine, stessa sequenza della v4) è approvata: cambiare i contenuti, non l'ordine.
+"""
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+
+
+def page(doc, total, n, body, cls=''):
+    return (f'<section class="sheet {cls}" id="p{n}">{body}'
+            f'<footer class="folio"><span>stella.casa / {doc}</span><span>{n:02d} / {total}</span></footer></section>\n')
+
+
+def html(title, sheets):
+    return ('<!doctype html>\n<html lang="it"><head><meta charset="utf-8">'
+            f'<meta name="viewport" content="width=1600"><title>{title}</title>'
+            '<link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="book.css"></head><body>\n'
+            + ''.join(sheets) + '</body></html>\n')
+
+
+# ---------------------------------------------------------------- BRAND IDENTITY
+I = []
+T = 16
+def ip(n, body, cls=''):
+    I.append(page('Brand identity', T, n, body, cls))
+
+ip(1, '''<div class="eyebrow">Identità visiva / Linee guida / Settembre 2026</div>
+<img class="heroLogo" src="assets/logo-prugna.svg" alt="stella.casa">
+<div class="caption"><p>La tua casa, seguita da vicino.</p>
+<p class="small" style="margin-top:12px">Marchio Incastro, colore, illustrazione, sito, canali e oggetti.</p></div>''', 'corallo')
+
+ip(2, '''<div style="position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:6px;background:var(--crema)">
+<img src="assets/mockup-ingresso.png" alt="Targa e cartoncino all’ingresso" style="width:100%;height:100%;object-fit:cover;object-position:center 38%">
+<img src="assets/mockup-targhetta.jpg" alt="Targhetta sulla facciata di Stella sul Mare" style="width:100%;height:100%;object-fit:cover;object-position:100% 50%">
+<img src="assets/mockup-letto-chiaro.png" alt="Letto con biancheria chiara e ricamo vino" style="width:100%;height:100%;object-fit:cover">
+<img src="assets/mockup-asciugamani-scuro.png" alt="Asciugamani vino con ricamo crema" style="width:100%;height:100%;object-fit:cover"></div>
+<div style="position:absolute;top:24px;left:34px" class="pill cr">Studio di applicazione / ingresso, targhetta e tessili</div>''', 'full')
+
+ip(3, '''<div class="eyebrow">01 / Il marchio</div><h2>Due case, un incastro.</h2>
+<div class="cols body"><div style="display:flex;align-items:center;justify-content:center;height:560px;background:#fff;border-radius:22px">
+<img src="assets/simbolo-prugna.svg" alt="Simbolo Incastro" style="width:360px"></div>
+<div><h3>Una casa entra nell’altra.</h3>
+<p>Due profili di casa: uno con il tetto in pendenza, come le case sui colli liguri, uno con l’arco di una porta. Si incastrano senza sovrapporsi: il proprietario resta proprietario, stella.casa entra per prendersene cura.</p>
+<p style="margin-top:28px">Il simbolo si legge anche in piccolo e in un solo colore.</p>
+<div style="display:flex;gap:34px;align-items:center;margin-top:50px">
+<img src="assets/avatar.svg" style="width:120px;border-radius:50%" alt="">
+<img src="assets/simbolo-prugna.svg" style="width:44px" alt=""><img src="assets/simbolo-prugna.svg" style="width:22px" alt="">
+<img src="assets/favicon.svg" style="width:32px" alt=""></div>
+<p class="small" style="margin-top:18px">Avatar corallo, simbolo compatto, simbolo minimo e favicon.</p></div></div>''')
+
+ip(4, '''<div class="eyebrow">02 / Il sistema grafico</div><h2>Campi pieni, una soglia di luce.</h2>
+<div class="quads body">
+<div class="card" style="height:330px;display:flex;flex-direction:column;justify-content:space-between"><b class="n">1/4</b><h3>Conosciamo la casa.</h3></div>
+<div class="card c" style="height:330px;display:flex;flex-direction:column;justify-content:space-between"><b class="n">2/4</b><h3>Prepariamo l’accoglienza.</h3></div>
+<div class="card p" style="height:330px;display:flex;flex-direction:column;justify-content:space-between"><b class="n">3/4</b><h3>Seguiamo la gestione.</h3></div>
+<div class="card v" style="height:330px;display:flex;flex-direction:column;justify-content:space-between"><b class="n">4/4</b><h3>Mettiamo i conti in chiaro.</h3></div></div>
+<div class="cols" style="margin-top:44px;align-items:center"><div style="display:flex;gap:14px;flex-wrap:wrap">
+<span class="pill cr"><img src="assets/simbolo-prugna.svg" style="width:26px" alt=""> stella.casa &nbsp;·&nbsp; Il metodo &nbsp;·&nbsp; Diario</span>
+<span class="pill c">Parliamo della tua casa</span><span class="pill v">Richiedi un soggiorno</span></div>
+<p class="small">Ogni fase ha un campo di colore pieno. Pillole per navigazione, pulsanti ed etichette. Il gradiente vino → corallo resta alle copertine.</p></div>''')
+
+ip(5, '''<div class="eyebrow">03 / Colore e tipografia</div><h2>Corallo, vino, crema.</h2>
+<div style="display:grid;grid-template-columns:1.3fr 1.1fr .9fr .9fr .9fr 1.1fr;gap:12px;margin-top:40px">
+<div class="swatch" style="background:#F25B45"><b>Corallo</b><span>#F25B45</span></div>
+<div class="swatch" style="background:#511B36;color:#FFF3E7"><b>Vino</b><span>#511B36</span></div>
+<div class="swatch" style="background:#F6B495"><b>Pesca</b><span>#F6B495</span></div>
+<div class="swatch" style="background:#B7A0CA"><b>Lavanda</b><span>#B7A0CA</span></div>
+<div class="swatch" style="background:#FFF3E7;border:1px solid #281C2D22"><b>Crema</b><span>#FFF3E7</span></div>
+<div class="swatch" style="background:#281C2D;color:#FFF3E7"><b>Prugna</b><span>#281C2D</span></div></div>
+<div class="cols body"><div><h1 style="font-size:124px">Aa, qui.</h1><p style="margin-top:20px">Outfit 600 / Titoli, numeri, etichette</p></div>
+<div style="padding-top:12px"><p style="font-size:38px;line-height:1.25">La tua casa,<br>seguita da vicino.</p>
+<p style="margin-top:24px">DM Sans / Testi, interfacce, documenti</p><p class="small" style="margin-top:14px">Font locali inclusi, licenza SIL Open Font License.</p></div></div>''')
+
+ip(6, '''<div class="eyebrow">04 / Illustrazione</div><h2>La luce entra da una soglia.</h2>
+<img class="ill" src="assets/luce-persiane.jpg" alt="Persona che apre le persiane davanti a un campo di luce corallo" style="position:absolute;left:520px;top:190px;width:1016px;height:680px">
+<div style="position:absolute;left:64px;top:330px;width:400px">
+<p>Plum e crema.<br>Grana da stampa.<br>Un solo corallo.</p>
+<p class="small" style="margin-top:30px">Il corallo compare solo dove entra la luce o si apre una soglia: una finestra, una porta, un percorso. Mai come decorazione.</p></div>''')
+
+ip(7, '''<div class="eyebrow">05 / Biblioteca illustrata</div><h2>Due famiglie, un accento.</h2>
+<div class="cols body" style="gap:44px">
+<div><span class="tag">A · Principale</span><h3 style="margin-top:14px">Silhouette e luce</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><img class="ill" src="assets/luce-persiane.jpg" style="height:300px;width:100%" alt=""><img class="ill" src="assets/luce-lama.jpg" style="height:300px;width:100%" alt=""></div>
+<p class="small" style="margin-top:16px">Emozione e primo contatto: copertine, social, card della home.</p></div>
+<div><span class="tag">B · Secondaria</span><h3 style="margin-top:14px">Incisione di dettaglio</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><img class="ill" src="assets/incisione-facciata.jpg" style="height:300px;width:100%" alt=""><img class="ill" src="assets/incisione-spaccato.jpg" style="height:300px;width:100%" alt=""></div>
+<p class="small" style="margin-top:16px">Spiegare: metodo, guide, articoli, informazioni sulla casa.</p></div></div>
+<p class="note">Una famiglia per blocco. Si alternano nella pagina, non si affiancano nella stessa riga.</p>''')
+
+ip(8, '''<div class="eyebrow">06 / Sito</div><h2>La casa si affida a chi la conosce.</h2>
+<div style="display:flex;gap:36px;align-items:start;margin-top:34px">
+<div class="shot" style="width:980px;height:640px"><img src="canali/sito.png" alt=""></div>
+<div class="phone" style="width:236px;height:640px;flex-shrink:0"><img src="canali/sito-mobile.png" alt=""></div>
+<div style="width:190px;padding-top:20px"><p class="small">Pubblico: i proprietari.<br><br>Header a pillola che si forma con lo scroll.<br><br>Nome stella.casa sempre visibile.</p></div></div>''')
+
+ip(9, '''<div class="eyebrow">07 / Case e blog</div><h2>Ogni casa ha il suo nome.</h2>
+<div class="cols body"><div><div class="shot" style="aspect-ratio:1440/900"><img src="canali/casa.png" alt=""></div>
+<p class="small" style="margin-top:18px">Stella sul Mare / Richiesta con date e ospiti. Disponibilità e prezzo li conferma stella.casa.</p></div>
+<div><div class="shot" style="aspect-ratio:1440/900"><img src="canali/articolo.png" alt=""></div>
+<p class="small" style="margin-top:18px">Diario / Guide per proprietari. Illustrazione di famiglia B in apertura.</p></div></div>''')
+
+ip(10, '''<div class="eyebrow">08 / Proprietari</div><h2>Il metodo, una scheda alla volta.</h2>
+<div class="cols body"><div><div class="shot" style="aspect-ratio:1440/900"><img src="canali/metodo.png" alt=""></div><p class="small" style="margin-top:16px">Metodo / Quattro schede a passo: crema, corallo, pesca, vino.</p></div>
+<div style="display:flex;gap:32px"><div class="shot" style="width:380px;height:640px"><img src="canali/quaderno.png" alt="" style="object-fit:contain;background:#fff"></div>
+<div style="flex:1;padding-top:20px"><h3>Quattro passi</h3><p class="small">Conoscere, preparare, seguire, chiarire i conti. Un gesto di scroll, una scheda.<br><br>Il quaderno della casa porta lo stesso linguaggio nel documento che il proprietario riceve.</p></div></div></div>''')
+
+ip(11, '''<div class="eyebrow">09 / Instagram</div><h2>Un feed, nove pubblicazioni.</h2>
+<div style="display:grid;grid-template-columns:720px 1fr;gap:60px;margin-top:22px">
+<div class="shot" style="height:720px"><img src="canali/instagram-feed.png" alt="" style="object-position:0 12%"></div>
+<div style="padding-top:18px"><h3>Riconoscibile anche scorrendo.</h3>
+<p>Fotografia reale della casa pilota, campi pieni per le parole, illustrazioni con etichette crema. La firma Incastro chiude i post principali.</p>
+<p class="small" style="margin-top:26px">Formati: foto casa · frase su campo pieno · elenco su crema · illustrazione A · gradiente di copertina.</p></div></div>''')
+
+ip(12, '''<div class="eyebrow">10 / Formati social</div><h2>Lo stesso tono cambia ritmo.</h2>
+<div style="display:grid;grid-template-columns:1fr 300px;gap:46px;margin-top:30px"><div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px"><img src="canali/instagram-carousel-01.png" style="border-radius:12px" alt=""><img src="canali/instagram-carousel-02.png" style="border-radius:12px" alt=""><img src="canali/instagram-carousel-03.png" style="border-radius:12px" alt=""></div>
+<h3 style="margin-top:28px">Un preventivo da leggere / Carosello in tre atti</h3><p class="small">Una domanda, una spiegazione senza importi inventati, un rimando al Diario.</p></div>
+<div><img src="canali/instagram-story.png" style="height:640px;width:300px;object-fit:contain;border-radius:14px" alt=""><p class="small" style="margin-top:10px">Story / Spazio libero per l’interfaccia.</p></div></div>''')
+
+ip(13, '''<div class="eyebrow">11 / Facebook e Substack</div><h2>Più contesto, stessa voce.</h2>
+<div class="cols body" style="gap:44px"><div><div class="shot" style="height:620px"><img src="canali/facebook.png" alt=""></div>
+<p class="small" style="margin-top:16px">Pagina Facebook riconoscibile: copertina illustrata A, post con testo che spiega cosa guardare.</p></div>
+<div><div class="shot" style="height:620px"><img src="canali/substack.png" alt=""></div>
+<p class="small" style="margin-top:16px">Lettere da casa su Substack: banner B, articoli dal Diario, iscrizione nativa.</p></div></div>''')
+
+ip(14, '''<img src="assets/mockup-portachiavi.png" style="position:absolute;left:0;top:0;width:810px;height:1000px;object-fit:cover" alt="Portachiavi in pelle vino con anello in ottone">
+<div style="position:absolute;left:885px;top:95px;right:70px"><div class="eyebrow">12 / Presenza fisica</div>
+<h1 style="margin-top:32px">Lo stesso incastro,<br>in mano.</h1>
+<p style="margin-top:40px">La sagoma del simbolo diventa il portachiavi. Sulla targa la casa tiene il suo nome, stella.casa firma la gestione.</p>
+<div style="display:flex;gap:30px;align-items:center;margin-top:36px"><img src="stampa/targa-220x160.png" style="width:250px;box-shadow:0 12px 25px #281C2D30" alt=""><img src="stampa/adesivo-50x50.png" style="width:90px" alt=""></div>
+<p class="small" style="margin-top:18px">A sinistra: portachiavi in pelle. Sopra: targa, adesivo e file esecutivi.</p></div>''', 'full')
+
+ip(15, '''<div class="eyebrow">13 / Tessili, carta, oggetti</div><h2>Il corredo entra in casa.</h2>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:12px;margin-top:10px;height:590px">
+<figure style="margin:0"><img src="assets/mockup-asciugamani-chiaro.png" style="width:100%;height:250px;object-fit:cover;border-radius:12px" alt="Asciugamani crema con ricamo vino"><figcaption class="tiny" style="margin-top:6px">Asciugamani chiari · ricamo vino</figcaption></figure>
+<figure style="margin:0"><img src="assets/mockup-asciugamani-scuro.png" style="width:100%;height:250px;object-fit:cover;border-radius:12px" alt="Asciugamani vino con ricamo crema"><figcaption class="tiny" style="margin-top:6px">Asciugamani scuri · ricamo crema</figcaption></figure>
+<figure style="margin:0"><img src="assets/mockup-letto-chiaro.png" style="width:100%;height:250px;object-fit:cover;border-radius:12px" alt="Biancheria da letto chiara con ricamo vino"><figcaption class="tiny" style="margin-top:6px">Letto chiaro · federa Oxford, profilo corallo</figcaption></figure>
+<figure style="margin:0"><img src="assets/mockup-letto-scuro.png" style="width:100%;height:250px;object-fit:cover;border-radius:12px" alt="Biancheria da letto vino con ricamo crema"><figcaption class="tiny" style="margin-top:6px">Letto scuro · ricamo crema</figcaption></figure>
+<figure style="margin:0"><img src="assets/mockup-ricamo-dettaglio.png" style="width:100%;height:250px;object-fit:cover;border-radius:12px" alt="Dettaglio ravvicinato del ricamo satinato su lino crema"><figcaption class="tiny" style="margin-top:6px">Dettaglio · punto raso su lino</figcaption></figure>
+<figure style="margin:0"><img src="assets/mockup-targhetta.jpg" style="width:100%;height:250px;object-fit:cover;border-radius:12px" alt="Targhetta sulla facciata della casa"><figcaption class="tiny" style="margin-top:6px">Targhetta · nome della casa all’ingresso</figcaption></figure></div>
+<div style="display:flex;gap:26px;align-items:end;margin-top:8px">
+<img src="canali/locandina.png" style="height:76px;border-radius:4px;box-shadow:0 8px 18px #281C2D25" alt=""><img src="canali/benvenuto.png" style="height:66px;border-radius:4px;box-shadow:0 8px 18px #281C2D25" alt="">
+<img src="stampa/biglietto-fronte-91x61-bleed3.png" style="height:44px;box-shadow:0 8px 18px #281C2D25" alt=""></div>''')
+
+ip(16, '''<div class="eyebrow">14 / Handoff</div><h2>Il sistema è nei file.</h2>
+<div class="cols body"><div><img src="assets/logo-crema.svg" style="width:380px;margin:20px 0 60px" alt="stella.casa">
+<h3>Brand identity</h3><p>La proposta visiva e le applicazioni.</p><h3 style="margin-top:40px">Brand book</h3><p>Le regole per riprodurla e ampliarla.</p></div>
+<div><div class="rule"><h3>Marchio</h3><p>SVG in tracciati e PNG: marchio, firma orizzontale, simbolo, logotipo, avatar, favicon.</p></div>
+<div class="rule"><h3>Canali</h3><p>Sito completo in HTML, Instagram, Facebook, Substack, story, carosello, email, documenti.</p></div>
+<div class="rule"><h3>Produzione</h3><p>Master SVG per carta, targa e portachiavi, font, token CSS e registro delle decisioni.</p></div></div></div>''', 'vino')
+
+# ---------------------------------------------------------------- BRAND BOOK
+B = []
+TB = 27
+def bp(n, body, cls=''):
+    B.append(page('Brand book', TB, n, body, cls))
+
+bp(1, '''<div class="eyebrow">Manuale di identità / 2026.09</div>
+<h1 style="position:absolute;left:64px;top:300px;font-size:120px">Il brand,<br>nelle mani<br>di chi lo usa.</h1>
+<img src="assets/simbolo-corallo.svg" style="position:absolute;right:-120px;top:120px;width:760px" alt="">
+<p class="small" style="position:absolute;left:64px;bottom:80px">Linee guida consolidate: marchio Incastro, palette, tipografia, illustrazione, canali.</p>''', 'vino')
+
+bp(2, '''<div class="eyebrow">01 / Identità e posizionamento</div><h2>Prima convinciamo chi affida la casa.</h2>
+<div class="cols body"><div><h3>Per chi affida una casa</h3><p>È il pubblico principale del sito. Deve capire il metodo, fidarsi del lavoro e contattarci con facilità. Co-hosting: annuncio, account e recensioni restano al proprietario.</p>
+<h3 style="margin-top:44px">Per chi soggiorna</h3><p>Una scheda per ogni casa, informazioni precise e una persona di riferimento. La richiesta parte da date e ospiti; conferma stella.casa.</p></div>
+<div><h3>La personalità</h3><p>Presente, schietta, attenta ai dettagli. Calda nei colori, precisa nelle parole.</p>
+<h3 style="margin-top:44px">L’origine del nome</h3><p>Stella è il nome della madre di Gianluca. La storia vive nella pagina Chi siamo, con parole confermate dal fondatore.</p>
+<p class="note">Il marchio madre è stella.casa. Stella sul Mare è la casa pilota, a Oneglia, con il proprio nome.</p></div></div>''')
+
+bp(3, '''<div class="eyebrow">02 / Marchio</div><h2>Due case che si incastrano.</h2>
+<div class="cols body"><div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<div style="background:#fff;border-radius:22px;display:flex;align-items:center;justify-content:center;height:280px"><img src="assets/simbolo-prugna.svg" style="width:190px" alt=""></div>
+<div style="background:var(--vino);border-radius:22px;display:flex;align-items:center;justify-content:center;height:280px"><img src="assets/simbolo-crema.svg" style="width:190px" alt=""></div>
+<div style="background:var(--corallo);border-radius:22px;display:flex;align-items:center;justify-content:center;height:280px"><img src="assets/simbolo-prugna.svg" style="width:190px" alt=""></div>
+<div style="background:var(--pesca);border-radius:22px;display:flex;align-items:center;justify-content:center;height:280px"><img src="assets/simbolo-vino.svg" style="width:190px" alt=""></div></div>
+<div><h3>La costruzione visiva</h3><p>A sinistra una casa con il tetto in pendenza e la parete diritta. A destra una casa ad arco. La seconda si incastra nella prima con una curva concava: si toccano senza fondersi.</p>
+<p style="margin-top:26px">Il simbolo firma gli spazi piccoli e gli oggetti. Il marchio completo presenta il nome quando il pubblico deve impararlo.</p>
+<p class="note">Il marchio è scelto: Incastro. La geometria dei file SVG è il riferimento; non si ridisegna da uno screenshot.</p></div></div>''')
+
+bp(4, '''<div class="eyebrow">03 / Geometria</div><h2>Le misure del simbolo.</h2>
+<div class="cols body"><div style="display:flex;align-items:center;justify-content:center;background:#fff;border-radius:22px;height:640px"><img src="assets/logo-costruzione.svg" style="width:520px" alt="Area di rispetto"></div>
+<div><table class="rules"><tr><th>Elemento</th><th>Misura</th></tr>
+<tr><td>Ingombro</td><td>Quadrato, rapporto 1:1</td></tr>
+<tr><td>Unità di rispetto (u)</td><td>25% dell’altezza del simbolo: il gradino fra i due tetti</td></tr>
+<tr><td>Marchio completo</td><td>Simbolo sopra, nome sotto, larghezza nome = 1,72 × simbolo</td></tr>
+<tr><td>Firma orizzontale</td><td>Simbolo a sinistra, spazio 0,28 × altezza simbolo, nome centrato</td></tr></table>
+<p class="note">I tracciati sono vettorializzati dalla tavola originale 01 Incastro. Prima della stampa di grande formato o dell’incisione: ridisegno geometrico esatto e verifica di registrabilità.</p></div></div>''')
+
+bp(5, '''<div class="eyebrow">04 / Composizioni</div><h2>Le firme disponibili.</h2>
+<div class="thirds body">
+<div><div style="height:330px;background:#fff;border-radius:22px;display:flex;align-items:center;justify-content:center"><img src="assets/logo-prugna.svg" style="width:300px" alt=""></div><h3 style="margin-top:22px">01 / Marchio completo</h3><p class="small">Prima esposizione, copertine, locandine, cartellina. Rapporto fisso fra simbolo e nome.</p></div>
+<div><div style="height:330px;background:#fff;border-radius:22px;display:flex;align-items:center;justify-content:center"><img src="assets/firma-prugna.svg" style="width:380px" alt=""></div><h3 style="margin-top:22px">02 / Firma orizzontale</h3><p class="small">Header del sito, email, documenti, targa. Dove l’altezza è poca.</p></div>
+<div><div style="height:330px;background:#fff;border-radius:22px;display:flex;align-items:center;justify-content:center"><img src="assets/simbolo-prugna.svg" style="width:170px" alt=""></div><h3 style="margin-top:22px">03 / Simbolo</h3><p class="small">Avatar, favicon, adesivo, portachiavi, firme nei post. Dove il nome è già vicino.</p></div></div>
+<p class="note">Nel sito il simbolo è sempre accompagnato dal nome “stella.casa”, anche quando l’header si restringe.</p>''')
+
+bp(6, '''<div class="eyebrow">05 / Rispetto e dimensioni</div><h2>Spazio libero, anche in piccolo.</h2>
+<div class="cols body"><div><p>Spazio minimo = 1 u su ogni lato, cioè il 25% dell’altezza del simbolo. Vale anche attorno a marchio e firma.</p>
+<table class="rules" style="margin-top:30px"><tr><th>Uso</th><th>Minimo</th></tr>
+<tr><td>Simbolo digitale</td><td>20 px di altezza</td></tr><tr><td>Firma orizzontale digitale</td><td>120 px di larghezza</td></tr>
+<tr><td>Marchio completo digitale</td><td>140 px di larghezza</td></tr><tr><td>Simbolo stampato</td><td>6 mm di altezza</td></tr>
+<tr><td>Marchio completo stampato</td><td>30 mm di larghezza</td></tr><tr><td>Favicon</td><td>File dedicato 32 px su fondo vino</td></tr></table></div>
+<div style="display:flex;flex-direction:column;gap:26px;justify-content:center;align-items:center;background:#fff;border-radius:22px">
+<img src="assets/firma-prugna.svg" style="width:120px" alt=""><img src="assets/logo-prugna.svg" style="width:140px" alt=""><img src="assets/simbolo-prugna.svg" style="width:20px" alt=""><img src="assets/favicon.svg" style="width:32px" alt=""><p class="small">Dimensioni minime reali</p></div></div>''')
+
+bp(7, '''<div class="eyebrow">06 / Usi errati</div><h2>Il disegno resta intero.</h2><style>.bad{position:relative}.bad:after{content:'✕';position:absolute;top:10px;right:12px;width:30px;height:30px;border-radius:50%;background:#B3261E;color:#fff;font:700 16px/30px DM Sans;text-align:center}</style>
+<div class="quads body">
+<div><div class="bad" style="background:#fff"><img src="assets/logo-prugna.svg" style="width:180px;height:90px" alt=""></div><h3>Niente deformazioni</h3><p class="small">Mantenere il rapporto dei master.</p></div>
+<div><div class="bad" style="background:var(--corallo)"><img src="assets/simbolo-corallo.svg" style="width:80px" alt=""></div><h3>Niente corallo su corallo</h3><p class="small">Sul corallo il simbolo è prugna.</p></div>
+<div><div class="bad" style="background:var(--pesca)"><img src="assets/simbolo-crema.svg" style="width:80px" alt=""></div><h3>Niente crema su chiari</h3><p class="small">Su pesca e lavanda usare prugna o vino.</p></div>
+<div><div class="bad" style="background:#fff"><img src="assets/simbolo-prugna.svg" style="width:80px;transform:rotate(-12deg);filter:drop-shadow(6px 8px 0 #F25B45)" alt=""></div><h3>Niente effetti o rotazioni</h3><p class="small">Ombre, contorni e inclinazioni non fanno parte del marchio.</p></div></div>
+<p class="note">Il nome “stella.casa” del marchio è un tracciato: non si riscrive con Outfit o con altri font.</p>''')
+
+bp(8, '''<div class="eyebrow">07 / Palette e contrasto</div><h2>Sei colori, un solo accento.</h2>
+<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:30px">
+<div class="swatch" style="background:#F25B45;height:150px"><b>Corallo</b><span>#F25B45</span></div><div class="swatch" style="background:#511B36;color:#FFF3E7;height:150px"><b>Vino</b><span>#511B36</span></div>
+<div class="swatch" style="background:#F6B495;height:150px"><b>Pesca</b><span>#F6B495</span></div><div class="swatch" style="background:#B7A0CA;height:150px"><b>Lavanda</b><span>#B7A0CA</span></div>
+<div class="swatch" style="background:#FFF3E7;border:1px solid #281C2D22;height:150px"><b>Crema</b><span>#FFF3E7</span></div><div class="swatch" style="background:#281C2D;color:#FFF3E7;height:150px"><b>Prugna</b><span>#281C2D</span></div></div>
+<div class="cols" style="margin-top:28px"><table class="rules"><tr><th>Testo / fondo</th><th>Contrasto</th><th>Uso</th></tr>
+<tr><td>Prugna / Crema</td><td>14,9:1</td><td>Lettura</td></tr><tr><td>Crema / Vino</td><td>12,3:1</td><td>Campi scuri</td></tr>
+<tr><td>Prugna / Pesca</td><td>9,2:1</td><td>Schede</td></tr><tr><td>Prugna / Lavanda</td><td>6,9:1</td><td>Servizio</td></tr>
+<tr><td>Prugna / Corallo</td><td>4,9:1</td><td>Testo sul corallo</td></tr><tr><td>Bianco / Corallo</td><td>3,3:1</td><td>Solo titoli ≥ 24 px</td></tr></table>
+<div><h3>Uso per ruolo</h3><p class="small">Crema per leggere. Prugna per testi. Vino per campi pieni e firme. Corallo per l’azione principale e l’accento delle illustrazioni. Pesca e lavanda per schede e servizio.</p>
+<p class="note">Sul corallo il testo piccolo è prugna. Bianco o crema sul corallo solo per titoli grandi.</p></div></div>''')
+
+bp(9, '''<div class="eyebrow">08 / Tipografia</div><h2>La voce ha due caratteri.</h2>
+<div class="cols body"><div><p style="font-family:Outfit;font-weight:600;font-size:110px;letter-spacing:-.045em;line-height:.95">Outfit<br>Aa 123</p>
+<p class="small" style="margin-top:20px">600 per titoli, numeri delle schede, etichette. Spaziatura −0,045 em, interlinea 0,99.</p>
+<p style="margin-top:40px;font-size:34px;line-height:1.3">DM Sans. Una casa si conosce anche dai dettagli.</p><p class="small" style="margin-top:12px">400 per testo, 700 per pulsanti, eyebrow e enfasi brevi.</p></div>
+<div><table class="rules"><tr><th>Ruolo</th><th>Corpo / interlinea</th></tr>
+<tr><td>H1</td><td>52–88 px / 0,99</td></tr><tr><td>H2</td><td>42–72 px / 0,99</td></tr><tr><td>H3 schede</td><td>38–58 px / 0,99</td></tr>
+<tr><td>Testo</td><td>18 px / 1,55 (17 px su mobile)</td></tr><tr><td>Eyebrow</td><td>14 px, maiuscolo, +0,12 em, 700</td></tr>
+<tr><td>Pulsante</td><td>15–16 px, 700</td></tr><tr><td>Didascalia</td><td>12–14 px / 1,4</td></tr></table></div></div>''')
+
+bp(10, '''<div class="eyebrow">09 / Grammatica grafica</div><h2>Campo pieno, pillola, soglia.</h2>
+<div class="thirds body">
+<div><div class="card c" style="height:230px"><b class="n">2/4</b></div><h3 style="margin-top:20px">Campo pieno</h3><p class="small">Ogni fase o post ha un colore intero. Crema, corallo, pesca, vino in sequenza.</p></div>
+<div><div style="height:230px;background:#fff;border-radius:22px;display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center"><span class="pill cr">stella.casa · Il metodo</span><span class="pill c">Parliamo della tua casa</span><span class="tag" style="background:var(--crema);color:var(--prugna);border:1px solid #281C2D22">Casa pilota · 32 m²</span></div><h3 style="margin-top:20px">Pillola</h3><p class="small">Navigazione, pulsanti, etichette sulle foto. Raggio pieno.</p></div>
+<div><div style="height:230px;border-radius:22px;background:linear-gradient(132deg,#511B36 0%,#8c3844 33%,#F25B45 58%)"></div><h3 style="margin-top:20px">Gradiente di copertina</h3><p class="small">Vino → corallo a 132°. Solo copertine e fondi narrativi.</p></div></div>
+<p class="note">Una funzione grafica dominante per blocco. Sulle illustrazioni i testi stanno in etichette crema, mai direttamente sul disegno.</p>''')
+
+bp(11, '''<div class="eyebrow">10 / Linguaggio illustrativo</div><h2>Due segni, una sola luce.</h2>
+<div class="cols body"><div><img class="ill" src="assets/luce-lama.jpg" style="width:100%;height:330px" alt=""><h3 style="margin-top:20px">A · Silhouette e luce</h3><p class="small">Campiture piene plum, forme essenziali, un fascio di luce. Si legge anche in piccolo.</p></div>
+<div><img class="ill" src="assets/incisione-spaccato.jpg" style="width:100%;height:330px" alt=""><h3 style="margin-top:20px">B · Incisione di dettaglio</h3><p class="small">Tratto fine e ricco, la casa vista da vicino. Racconta che la casa la conosciamo.</p></div></div>
+<p class="note">Trattamento comune: bicromia plum → crema con grana da stampa, accento corallo solo su luce o soglia. Le illustrazioni sono immagini generate e rilavorate: non rappresentano case gestite.</p>''')
+
+bp(12, '''<div class="eyebrow">11 / Uso delle illustrazioni</div><h2>Ogni famiglia ha un mestiere.</h2>
+<div class="cols body"><table class="rules"><tr><th>Famiglia</th><th>Dove</th><th>Non usarla</th></tr>
+<tr><td>A · Silhouette</td><td>Copertina Facebook, post Instagram, story, card “Aprire” e “Preparare”, locandina</td><td>Per spiegare un processo</td></tr>
+<tr><td>B · Incisione</td><td>Substack, Diario, articoli, “Accogliere”, documenti</td><td>Sotto i 300 px: il dettaglio si perde</td></tr></table>
+<div><h3>Regole</h3><p class="small">Una famiglia per blocco. Ritagli sui margini, salvando gesto, soglia e corallo. Titoli in etichette crema. Stessi soggetti: finestre, persiane, porte, scale, la casa ligure.</p>
+<h3 style="margin-top:30px">Escluse</h3><p class="small">Linea continua e matita: troppo delicate, fuori dal registro deciso. Collage, ceramica e gouache: fondi e accenti incompatibili.</p></div></div>''')
+
+bp(13, '''<div class="eyebrow">12 / Fotografia</div><h2>La casa reale resta riconoscibile.</h2>
+<div class="cols body"><div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><img class="ill" src="assets/casa-soggiorno.jpg" style="height:330px;width:100%" alt=""><img class="ill" src="assets/casa-cucina.jpg" style="height:330px;width:100%" alt=""><img class="ill" src="assets/casa-cura.jpg" style="height:220px;width:100%" alt=""><img class="ill" src="assets/casa-facciata.webp" style="height:220px;width:100%" alt=""></div>
+<div><h3>Per le case</h3><p class="small">Spazi interi, proporzioni corrette, luce del luogo. Etichetta pillola con luogo o misura: “Casa pilota · 32 m²”.</p>
+<h3 style="margin-top:30px">Per il lavoro</h3><p class="small">Dettagli, dotazioni e interventi documentati. Data e nota quando la foto è una prova.</p>
+<p class="note">Le foto sono della casa pilota Stella sul Mare. La scenografia d’interni in apertura del sito è generata e dichiarata in didascalia. Nessun ambiente generato rappresenta una casa disponibile o un portfolio.</p></div></div>''')
+
+bp(14, '''<div class="eyebrow">13 / Architettura di marca</div><h2>Il nome della casa rimane suo.</h2>
+<div class="cols body"><div style="background:var(--prugna);border-radius:22px;padding:50px;color:var(--crema)"><p style="font-family:Outfit;font-weight:600;font-size:64px;letter-spacing:-.04em;line-height:1">Stella sul Mare</p><p class="small" style="margin:18px 0 44px">Oneglia, Imperia</p><p class="small">Una casa seguita da</p><img src="assets/firma-crema.svg" style="width:260px;margin-top:10px" alt=""></div>
+<div><table class="rules"><tr><th>Livello</th><th>Applicazione</th></tr><tr><td>stella.casa</td><td>Sito, social, Substack, firma di gestione</td></tr>
+<tr><td>Nome della casa</td><td>Scheda dedicata, targa, materiali interni</td></tr><tr><td>Luogo</td><td>Etichette e sezioni editoriali</td></tr><tr><td>Proprietari</td><td>Home del sito e metodo</td></tr></table>
+<p class="note">Il nome della casa non si fonde con il logo.</p></div></div>''')
+
+bp(15, '''<div class="eyebrow">14 / Voce e messaggi</div><h2>Dire una cosa che si possa verificare.</h2>
+<div class="cols body"><div><h3>Il messaggio principale</h3><p>“La tua casa, seguita da vicino.” Apre il sito e i materiali per proprietari.</p>
+<h3 style="margin-top:30px">Il co-hosting</h3><p>“La casa è tua. Anche l’annuncio.” Sempre insieme alla spiegazione: annuncio, account e recensioni restano al proprietario.</p>
+<p class="small" style="margin-top:22px">Firma verbale di chiusura: “Case per soggiornare. Case da seguire.” Non fa parte del logo.</p></div>
+<div><table class="rules"><tr><th>Evitare</th><th>Scrivere</th></tr><tr><td>Gestione senza pensieri</td><td>Sai chi segue la casa e dove leggere gli aggiornamenti.</td></tr>
+<tr><td>Massimizziamo la rendita</td><td>Una percentuale da sola non dice il costo: leggiamo il preventivo.</td></tr><tr><td>Un gioiello autentico</td><td>32 m² a Oneglia, al secondo piano.</td></tr></table>
+<p class="note">Si dà del tu. Niente prezzi, disponibilità, recensioni, follower o risultati inventati. Gli esempi si dichiarano come esempi.</p></div></div>''')
+
+bp(16, '''<div class="eyebrow">15 / Sito e interfaccia</div><h2>Un percorso per chi affida la casa.</h2>
+<div class="cols body"><div><h3>La home</h3><p class="small">Apertura con scena e promessa · manifesto sul corallo · metodo in quattro schede · tre gesti illustrati · casa pilota · domande e contatto. Un’azione principale: “Parliamo della tua casa”.</p>
+<h3 style="margin-top:28px">L’header</h3><p class="small">In apertura è trasparente, a tutta larghezza. Con lo scroll (da 12 a 232 px) diventa una pillola crema larga fino a 1100 px, raggio 48, sfocatura 14 px. Il simbolo passa da crema a prugna in modo continuo. Il nome resta sempre visibile.</p></div>
+<table class="rules"><tr><th>Regola</th><th>Valore</th></tr><tr><td>Margine laterale</td><td>clamp(22 px, 5 vw, 76 px)</td></tr><tr><td>Larghezza contenuti</td><td>1288 px, pagina 1440 px</td></tr>
+<tr><td>Controlli</td><td>≥ 44 px, pulsanti a pillola</td></tr><tr><td>Raggi</td><td>Pillola 999 · schede 24 · card 22 · immagini 18</td></tr><tr><td>Mobile</td><td>Menu a comparsa, schede in colonna, sotto 800 px</td></tr></table></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:34px"><div class="shot" style="aspect-ratio:1440/900"><img src="canali/sito.png" alt=""></div><div class="shot" style="aspect-ratio:1440/900"><img src="canali/metodo.png" alt=""></div><div class="shot" style="aspect-ratio:1440/900"><img src="canali/gesti.png" alt=""></div></div>''')
+
+bp(17, '''<div class="eyebrow">16 / Case e contenuto editoriale</div><h2>Un’informazione, un posto preciso.</h2>
+<div class="cols body"><div><h3>Scheda della casa</h3><p class="small">Nome e luogo, galleria reale, dati essenziali, dotazioni, arrivo. La richiesta di soggiorno chiede date e ospiti e mostra un riepilogo: disponibilità e prezzo li conferma stella.casa, come nel flusso via WhatsApp già in uso. Nessun calendario o prezzo simulato.</p></div>
+<div><h3>Diario e Lettere da casa</h3><p class="small">Il Diario sul sito raccoglie guide per proprietari. Lettere da casa su Substack le porta via email: banner B, un articolo in evidenza, archivio, iscrizione nativa. Una sola illustrazione di apertura per articolo, luogo e data nel titolo quando servono.</p>
+<p class="note">Newsletter: footer del mittente, consensi e disiscrizione del servizio di invio.</p></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:30px"><div class="shot" style="aspect-ratio:1440/900"><img src="canali/casa.png" alt=""></div><div class="shot" style="aspect-ratio:1440/900"><img src="canali/diario.png" alt=""></div><div class="shot" style="aspect-ratio:1440/900"><img src="canali/substack.png" alt=""></div></div>''')
+
+bp(18, '''<div class="eyebrow">17 / Instagram feed</div><h2>Cinque formati bastano.</h2>
+<div class="cols body"><table class="rules"><tr><th>Formato</th><th>Regola</th></tr>
+<tr><td>Foto della casa</td><td>Fotografia piena, etichetta crema con luogo o misura, firma crema</td></tr>
+<tr><td>Frase su campo</td><td>Corallo o pesca, titolo prugna o crema grande, kicker in alto</td></tr>
+<tr><td>Elenco su crema</td><td>Una domanda, tre voci, nessun importo inventato</td></tr>
+<tr><td>Illustrazione A</td><td>Disegno a tutto campo, kicker e titolo in etichette crema</td></tr>
+<tr><td>Copertina a gradiente</td><td>Vino → corallo, titolo prugna, firma prugna</td></tr></table>
+<div><p class="small">Master 1080 × 1350 px, margini 72 px, titoli entro quattro righe. La griglia 3×3 alterna foto, campi e illustrazioni: mai due illustrazioni della stessa famiglia vicine.</p>
+<p class="note">Didascalie: ogni post rimanda a una pagina precisa (Diario, casa, contatto).</p>
+<div class="shot" style="height:430px;margin-top:26px"><img src="canali/instagram-feed.png" alt="" style="object-position:0 14%"></div></div></div>''')
+
+bp(19, '''<div class="eyebrow">18 / Carosello, story e copertina reel</div><h2>Il formato segue la lettura.</h2>
+<div class="cols body"><div><h3>Carosello 4:5</h3><p>Domanda, spiegazione, azione. Numerazione 1/3, 2/3, 3/3. Un’idea per slide. Colori in sequenza: corallo, crema, vino.</p></div>
+<div><h3>Story e reel 9:16</h3><p>Master 1080 × 1920. Lasciare 220 px sopra e 260 px sotto per l’interfaccia. Illustrazione A a tutto campo, testo in etichetta crema, link aggiunto nell’app.</p></div></div>
+<div style="display:flex;gap:18px;margin-top:34px;align-items:start"><img src="canali/instagram-carousel-01.png" style="width:300px;border-radius:12px" alt=""><img src="canali/instagram-carousel-02.png" style="width:300px;border-radius:12px" alt=""><img src="canali/instagram-carousel-03.png" style="width:300px;border-radius:12px" alt=""><img src="canali/instagram-story.png" style="width:210px;border-radius:12px;margin-left:60px" alt=""></div>''')
+
+bp(20, '''<div class="eyebrow">19 / Facebook, Substack e email</div><h2>Più contesto, stessa identità.</h2>
+<div class="thirds body"><div><h3>Facebook</h3><p class="small">La pagina deve sembrare una pagina Facebook vera: copertina A con il nome della casa madre, post con testo che spiega cosa guardare, link diretto. Verificare i ritagli desktop e mobile.</p></div>
+<div><h3>Substack</h3><p class="small">“Lettere da casa”, una pubblicazione di stella.casa. Banner B, titolo in serif di sistema di Substack, logo nel masthead. Contenuti ripresi dal Diario.</p></div>
+<div><h3>Email</h3><p class="small">Firma con marchio orizzontale, nome, ruolo, contatti reali. Testo alternativo alle immagini. Nessuna illustrazione nella firma.</p></div></div>
+<div class="thirds" style="margin-top:30px;align-items:start"><div class="shot" style="height:380px"><img src="canali/facebook.png" alt=""></div><div class="shot" style="height:380px"><img src="canali/substack.png" alt=""></div><div class="shot" style="padding:20px"><img src="canali/firma-email.png" alt="" style="height:auto;object-fit:contain"></div></div>''')
+
+bp(21, '''<div class="eyebrow">20 / Documenti operativi</div><h2>La precisione fa parte della marca.</h2>
+<div class="cols body"><div><h3>Il quaderno della casa</h3><p class="small">Casa, periodo e autore del controllo. Ogni intervento ha data, voce, stato e nota. Lo stato è sempre una parola: “Da verificare”, “Da concordare”, “Completato”.</p>
+<h3 style="margin-top:28px">Il preventivo e il rendiconto</h3><p class="small">Compenso, base di calcolo e costi esclusi in righe distinte. Le note spiegano le variazioni.</p></div>
+<div><h3>La grafica si ritira</h3><p class="small">Prugna su bianco, righe sottili, firma orizzontale in testa. Al massimo una piccola illustrazione B nella fascia di apertura, mai dentro tabelle o prove fotografiche.</p>
+<p class="note">Il registro nel sito è un esempio con voci illustrative, e lo dichiara.</p>
+<div class="shot" style="height:380px;margin-top:24px"><img src="canali/quaderno.png" alt=""></div></div></div>''')
+
+bp(22, '''<div class="eyebrow">21 / Materiali fisici</div><h2>Le priorità sono nell’uso.</h2>
+<div class="cols body" style="gap:44px"><table class="rules"><tr><th>Supporto</th><th>Funzione</th></tr><tr><td>Targa</td><td>Nome della casa e firma di gestione, all’ingresso</td></tr>
+<tr><td>Targhetta</td><td>Nome della casa accanto al portone o al citofono</td></tr><tr><td>Portachiavi</td><td>Sagoma del simbolo, senza indirizzo</td></tr>
+<tr><td>Asciugamani e lenzuola</td><td>Simbolo ricamato; chiaro (crema/vino) o scuro (vino/crema)</td></tr><tr><td>Cartoncino e locandina</td><td>Benvenuto e informazioni della casa</td></tr>
+<tr><td>Cartellina e biglietto</td><td>Proposta al proprietario, persona e contatti</td></tr><tr><td>Adesivo e segnalibro</td><td>Simbolo e Lettere da casa</td></tr></table>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start"><img class="ill" src="assets/mockup-ingresso.png" style="width:100%;height:270px;object-position:center 45%" alt="Ingresso con targa e cartoncino"><img class="ill" src="assets/mockup-targhetta.jpg" style="width:100%;height:270px" alt="Targhetta sulla facciata">
+<img src="assets/mockup-letto-chiaro.png" style="width:100%;height:180px;object-fit:cover;border-radius:12px" alt="Letto chiaro con ricamo vino"><img src="assets/mockup-asciugamani-scuro.png" style="width:100%;height:180px;object-fit:cover;border-radius:12px" alt="Asciugamani scuri con ricamo crema"></div></div>
+<p class="note">Nei tessili si ricama solo il simbolo, a punto raso: sulla fascia degli asciugamani, nell’angolo del bordo Oxford delle federe e al centro del risvolto del lenzuolo. Il corallo resta un profilo sottile. Le schede tecniche alle pagine 23–24 definiscono misure, materiali e istruzioni per la produzione.</p>''')
+
+bp(23, '''<div class="eyebrow">22 / Produzione</div><h2>Formati e passaggio in stampa.</h2>
+<table class="rules" style="margin-top:30px"><tr><th>Oggetto</th><th>Formato di taglio</th><th>Indicazione</th></tr>
+<tr><td>Biglietto</td><td>85 × 55 mm</td><td>Carta naturale 350–450 g/m², abbondanza 3 mm</td></tr><tr><td>Cartellina, fronte</td><td>220 × 310 mm</td><td>Alette e dorso sulla fustella del fornitore</td></tr>
+<tr><td>Targa</td><td>220 × 160 mm</td><td>Alluminio opaco, stampa crema su prugna</td></tr><tr><td>Portachiavi</td><td>40 × 50 mm</td><td>Sagoma del simbolo, foro 3,2 mm, fustella magenta</td></tr>
+<tr><td>Adesivo</td><td>Ø 50 mm</td><td>Corallo con simbolo prugna</td></tr><tr><td>Targhetta</td><td>150 × 100 mm</td><td>Ceramica o alluminio crema, stampa vino, 4 fori</td></tr><tr><td>Asciugamani / federe</td><td>Ricamo 35–45 / 25–30 mm</td><td>Filo vino su crema, crema su vino; tenuta a 60 °C</td></tr><tr><td>Benvenuto / Locandina</td><td>A5 / A3</td><td>Carta naturale 250–300 g/m²</td></tr></table>
+<p class="note">Master SVG in RGB. La conversione CMYK usa il profilo della tipografia e una prova su supporto: il corallo va verificato con attenzione. File non PDF/X certificati. Segnaposto (nome, telefono, email) da sostituire.</p>''')
+
+bp(24, '''<div class="eyebrow">23 / Movimento e accessibilità</div><h2>Il movimento segue il dito.</h2>
+<div class="cols body"><div><h3>Legato allo scroll</h3><p class="small">L’header si trasforma in modo continuo, senza scatti. Le quattro schede del metodo avanzano di una alla volta: un gesto, una scheda, slide verticale di 0,8 s cubic-bezier(.7,0,.2,1). L’inerzia del trackpad viene assorbita; alla prima e all’ultima scheda la pagina riprende a scorrere. Frecce, spazio, swipe e pulsanti fanno lo stesso.</p>
+<h3 style="margin-top:24px">Comparse</h3><p class="small">Spostamento massimo 16 px, 320 ms, cubic-bezier(.2,.7,.2,1). Hover sulle immagini: scala 1,03.</p></div>
+<div><h3>Leggibilità</h3><p class="small">Contrasti della pagina 07, focus visibile, ordine logico dei titoli, controlli ≥ 44 px, testo alternativo alle immagini informative. Lo stato non si comunica solo con il colore.</p>
+<p class="note">Con prefers-reduced-motion: niente animazioni, header e schede subito nella posizione finale; sotto 800 px le schede sono una lista.</p></div></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:34px;align-items:center"><div class="card" style="margin-right:40px;height:150px"><b class="n" style="font-size:34px">1/4</b><p class="tiny">gesto →</p></div><div class="card c" style="margin-right:40px;height:150px"><b class="n" style="font-size:34px">2/4</b><p class="tiny">gesto →</p></div><div class="card p" style="margin-right:40px;height:150px"><b class="n" style="font-size:34px">3/4</b><p class="tiny">gesto →</p></div><div class="card v" style="height:150px"><b class="n" style="font-size:34px">4/4</b><p class="tiny">gesto → la pagina riprende</p></div></div>''')
+
+bp(25, '''<div class="eyebrow">24 / Fonti e provenienza</div><h2>I riferimenti informano il metodo.</h2>
+<div class="cols body" style="gap:50px"><div><table class="rules"><tr><th>Riferimento</th><th>Cosa ne prendiamo</th></tr>
+<tr><td>Dory (Behance)</td><td>Ritmo fra campiture calde, fotografia e tipografia</td></tr><tr><td>Superpower (sito)</td><td>Pillola di navigazione allo scroll, processo in tappe</td></tr>
+<tr><td>Walt (Dribbble)</td><td>Gradiente limitato a copertine</td></tr><tr><td>Malika Favre, Tom Haugomat, Karolis Strautniekas</td><td>Silhouette, luce netta, ombre architettoniche: riferimento per il trattamento</td></tr>
+<tr><td>Sito di prenotazione diretta</td><td>Richiesta di soggiorno con conferma dell’host</td></tr></table></div>
+<div><p class="small">Nessun asset dei riferimenti è riutilizzato. Le illustrazioni derivano dalle scene generate per il book (studi I00, I02, I03, I05), rilavorate in bicromia. Le fotografie sono della casa pilota.</p>
+<p class="note">Dettagli in sorgenti/DECISIONI.md.</p></div></div>''')
+
+bp(26, '''<div class="eyebrow">25 / Iconografia funzionale</div><h2>Otto segni per orientarsi.</h2>
+<div style="display:grid;grid-template-columns:repeat(8,1fr);gap:18px;margin-top:40px">''' + ''.join(
+    f'<div style="background:#fff;border-radius:18px;padding:28px 0;text-align:center"><img src="assets/icone/{i}.svg" style="width:56px;margin:0 auto" alt=""><p class="tiny" style="margin-top:14px">{l}</p></div>'
+    for i, l in [('casa', 'Casa'), ('calendario', 'Calendario'), ('controllo', 'Controllo'), ('chiave', 'Chiave'), ('messaggio', 'Messaggio'), ('quaderno', 'Quaderno'), ('mappa', 'Mappa'), ('passaggio', 'Passaggio')]) + '''</div>
+<div class="cols body"><p class="small">Griglia 24 × 24, tratto 1,75, terminali tondi, colore prugna. Le icone accompagnano le etichette in interfacce e documenti.</p>
+<p class="note">Le icone non sostituiscono il simbolo Incastro e non entrano nelle illustrazioni.</p></div>''')
+
+bp(27, '''<div class="eyebrow">26 / Gestione del sistema</div><h2>Una cartella, responsabilità chiare.</h2>
+<div class="cols body"><table class="rules"><tr><th>Cartella</th><th>Contiene</th></tr><tr><td>assets/</td><td>Marchi SVG e PNG, avatar, favicon, illustrazioni, foto, icone</td></tr>
+<tr><td>font/</td><td>Outfit e DM Sans WOFF2, licenze OFL</td></tr><tr><td>canali/</td><td>Sito HTML completo, template social, email, documenti, PNG</td></tr>
+<tr><td>stampa/</td><td>Master SVG, anteprime e specifiche</td></tr><tr><td>sorgenti/</td><td>Generatore dei documenti, registro delle decisioni, contrasti</td></tr></table>
+<div><h3>Per creare un contenuto</h3><p class="small">Scegli un formato, una foto reale o un’illustrazione della famiglia giusta, un titolo e la destinazione.</p>
+<h3 style="margin-top:28px">Prima dell’uscita</h3><p class="small">Ritaglio, ortografia, dati della casa, link. Per i documenti: periodo, voci e allegati. Per la stampa: prova colore e risoluzione.</p>
+<p class="note">Da fare prima dell’uso pubblico: ridisegno geometrico del marchio e verifica di registrabilità.</p></div></div>''')
+
+(ROOT / 'brand-identity.html').write_text(html('stella.casa — Brand identity', I), encoding='utf-8')
+(ROOT / 'brand-book.html').write_text(html('stella.casa — Brand book', B), encoding='utf-8')
+print(len(I), 'tavole identity;', len(B), 'pagine brand book')
