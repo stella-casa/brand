@@ -1,17 +1,17 @@
-# Rilasci del brand
+# Releasing the brand
 
-Regola: i file generati (kit, archivi, versioni PDF) stanno nelle **Releases**, mai committati. Nel repo restano solo i due PDF correnti in `pdf/`.
+Rule: generated files (kits, archives, versioned PDFs) live in **Releases**, never in commits. The repo only keeps the two current PDFs in `pdf/`.
 
-## Nuova versione
-1. Modifica e committa i sorgenti (HTML, token, asset). Aggiorna i PDF in `pdf/` se cambiano.
-2. `scripts/release.sh brand-vX.Y` costruisce `dist/` (kit zip, PDF, checksum). `dist/` è ignorato da git.
-3. Controlla `dist/`. Quando è tutto a posto: `scripts/release.sh brand-vX.Y --publish` (crea e pubblica tag e Release).
+## New version
+1. Edit and commit the sources (HTML, tokens, assets). Regenerate the PDFs in `pdf/` if they change.
+2. `scripts/release.sh brand-vX.Y` builds `dist/` (kit zip, PDFs, checksums). `dist/` is git-ignored.
+3. Check `dist/`. When ready: `scripts/release.sh brand-vX.Y --publish` (creates and pushes the tag, creates the Release).
 
-## Correggere una Release esistente
-Stesso tag, stesso comando con `--publish`: gli asset vengono sostituiti (`--clobber`).
+## Fixing an existing Release
+Same tag, same command with `--publish`: assets are replaced (`--clobber`).
 
-## Archivio
-`archivio-identita`: versioni v4/v5 dei PDF e kit storici. Si carica una volta con `gh release create archivio-identita <file…>`.
+## Regenerating the brand book PDF
+`"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --no-pdf-header-footer --print-to-pdf=pdf/stella-casa-brand-book.pdf file://$PWD/brand-book.html` (27 pages, 1200×750 pt). Same command for `brand-identity.html`.
 
-## Rigenerare il PDF del brand book
-`"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --no-pdf-header-footer --print-to-pdf=pdf/stella-casa-brand-book.pdf file://$PWD/brand-book.html` (27 pagine, 1200×750 pt). Stesso comando per `brand-identity.html`.
+## Historical versions
+Older versions (v4, v5 kits and PDFs) are kept outside this repo.
