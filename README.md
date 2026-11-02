@@ -2,7 +2,7 @@
 
 Brand identity of stella.casa: Incastro mark, palette, typography, illustrations, channel templates, print masters, brand book. Single source for every visual or editorial output (landing pages, apps, quotes, PDFs, social, email).
 
-Licenses: code GPL-3.0, visual identity all rights reserved, fonts OFL (see `LICENSES.md`, `LICENSE`). Quick orientation (Italian): `LEGGIMI.md`. Design decisions (Italian): `sorgenti/DECISIONI.md`. Releasing: `RELEASING.md`.
+Licenses: code GPL-3.0, visual identity all rights reserved, fonts OFL (see `LICENSES.md`, `LICENSE`). Start by opening `index.html`; the visual presentation is `brand-identity.html` (16 plates), the operating manual is `brand-book.html` (27 pages). Design decisions: `sources/DECISIONS.md`. Releasing: `RELEASING.md`.
 
 Folder names and brand copy are in Italian on purpose; documentation is in English.
 
@@ -12,13 +12,13 @@ Paths are relative to the repo root. Colors and fonts always come from `tokens.c
 
 | Use | What to take | Notes |
 |---|---|---|
-| **Landing pages and websites** | Logo: `assets/firma-*.svg` (horizontal, header) or `assets/logo-*.svg` (full mark). Favicon: `assets/favicon.svg` / `.png`. Icons: `assets/icone/*.svg`. Illustrations: `assets/luce-*.jpg` (family A), `assets/incisione-*.jpg` (family B). Hero: `assets/hero-scenografia.png`. Photos: `assets/casa-*`. Style: `tokens.css`, `font/` | Full layout and component reference: `canali/sito/` (home, property page, journal, article, letters). Prefer SVG; PNG only where SVG will not do |
-| **Web apps and tools** | Tokens and fonts only (`tokens.css`, `design-tokens.json`, `font/`), icons `assets/icone/*.svg`, symbol `assets/simbolo-*.svg`, `assets/favicon.*`, `assets/avatar.*` | No invented values or fonts. Check contrast in `sorgenti/contrasti.json` |
-| **Social (Instagram, Facebook, Substack)** | Templates in `canali/`: `instagram-story.html` (1080×1920), `instagram-carousel-0N.html` (1080×1350); previews `canali/instagram-feed.png`, `facebook.png`. Avatar: `assets/avatar.png`. Post signature: `assets/simbolo-*.svg` | Edit the text in the HTML and export the PNG at the same size. Formats and rules: `canali/LEGGIMI.md` |
-| **Email** | `canali/firma-email.html` (600×220), `canali/benvenuto.html` (guest card, A5) | Contacts and data are "esempio" placeholders |
-| **Documents, quotes, reports** | Logo: `assets/firma-*.svg` or `assets/logo-*.svg`; layout reference: `canali/quaderno.html` (A4) | Fonts and colors from the tokens |
-| **Physical materials (print)** | Masters in `stampa/`: business card 91×61 with 3 mm bleed, folder, bookmark, sign, tag, sticker, key ring (die-cut); textile spec sheets in `stampa/schede/`; mockups in `assets/mockup-*` | RGB, not PDF/X: convert to CMYK with the printer's profile. Specs: `stampa/LEGGIMI.txt` |
-| **Posters and flyers** | `canali/locandina.html` (A3), `canali/benvenuto.html` (A5) | |
+| **Landing pages and websites** | Logo: `assets/firma-*.svg` (horizontal, header) or `assets/logo-*.svg` (full mark). Favicon: `assets/favicon.svg` / `.png`. Icons: `assets/icons/*.svg`. Illustrations: `assets/luce-*.jpg` (family A), `assets/incisione-*.jpg` (family B). Hero: `assets/hero-scenografia.png`. Photos: `assets/casa-*`. Style: `tokens.css`, `font/` | Full layout and component reference: `channels/site/` (home, property page, journal, article, letters). Prefer SVG; PNG only where SVG will not do |
+| **Web apps and tools** | Tokens and fonts only (`tokens.css`, `design-tokens.json`, `font/`), icons `assets/icons/*.svg`, symbol `assets/simbolo-*.svg`, `assets/favicon.*`, `assets/avatar.*` | No invented values or fonts. Check contrast in `sources/contrast.json` |
+| **Social (Instagram, Facebook, Substack)** | Templates in `channels/`: `instagram-story.html` (1080×1920), `instagram-carousel-0N.html` (1080×1350); previews `channels/instagram-feed.png`, `facebook.png`. Avatar: `assets/avatar.png`. Post signature: `assets/simbolo-*.svg` | Edit the text in the HTML and export the PNG at the same size. Formats and rules: `channels/README.md` |
+| **Email** | `channels/email-signature.html` (600×220), `channels/welcome.html` (guest card, A5) | Contacts and data are "esempio" placeholders |
+| **Documents, quotes, reports** | Logo: `assets/firma-*.svg` or `assets/logo-*.svg`; layout reference: `channels/notebook.html` (A4) | Fonts and colors from the tokens |
+| **Physical materials (print)** | Masters in `print/`: business card 91×61 with 3 mm bleed, folder, bookmark, sign, tag, sticker, key ring (die-cut); textile spec sheets in `print/spec-sheets/`; mockups in `assets/mockup-*` | RGB, not PDF/X: convert to CMYK with the printer's profile. Specs: `print/README.md` |
+| **Posters and flyers** | `channels/poster.html` (A3), `channels/welcome.html` (A5) | |
 | **Presentations and sales material** | `assets/logo-*.svg`, `assets/luce-*.jpg`, `assets/incisione-*.jpg`, tokens | Never mix illustration families in one block |
 | **Brand book and rules** | `pdf/` (current PDFs), `brand-book.html`, `brand-identity.html` | Older versions live outside the repo |
 
@@ -31,42 +31,42 @@ Logo color variants: `-prugna` on light backgrounds, `-crema` on dark ones; `-vi
 | `tokens.css`, `design-tokens.json` | Colors, fonts, radii, spacing, easing | **source** (keep in sync) |
 | `font/` | Outfit and DM Sans WOFF2 + OFL licenses | source |
 | `assets/` | Logo (`logo-*`), signature (`firma-*`), symbol, wordmark (`logotipo-*`), avatar, favicon, illustrations (`luce-*` family A, `incisione-*` family B), pilot-house photos, mockups, `icone/` | source (SVG) + exported PNG |
-| `canali/*.html` | Editable templates: story, carousels, email signature, poster, welcome card, notebook | source |
-| `canali/*.png` | Template exports, same name as the HTML | **generated** |
-| `canali/sito/` | Website prototype (owners' home, social pages, journal, article, property page) | source, unpublished |
-| `stampa/` | SVG masters and `LEGGIMI.txt` with specs | source (SVG), PNG generated |
-| `stampa/schede/` | Spec sheets for towels, bed linen, key ring | **generated** by `sorgenti/genera-schede.py` |
-| `brand-identity.html`, `brand-book.html` | Documents (16 plates, 27 pages) | **generated** by `sorgenti/genera-documenti.py` |
+| `channels/*.html` | Editable templates: story, carousels, email signature, poster, welcome card, notebook | source |
+| `channels/*.png` | Template exports, same name as the HTML | **generated** |
+| `channels/site/` | Website prototype (owners' home, social pages, journal, article, property page) | source, unpublished |
+| `print/` | SVG masters and `README.md` with specs | source (SVG), PNG generated |
+| `print/spec-sheets/` | Spec sheets for towels, bed linen, key ring | **generated** by `sources/generate-spec-sheets.py` |
+| `brand-identity.html`, `brand-book.html` | Documents (16 plates, 27 pages) | **generated** by `sources/generate-documents.py` |
 | `pdf/` | Current PDFs of brand identity and brand book | **generated** (headless Chrome, see `RELEASING.md`) |
 | `index.html`, `book.css` | Index and document styles | source |
 | `playground/` | Identity explorer (logo, palette, fonts, illustrations) | `index.html` generated by `build.mjs`; the rest is source |
-| `sorgenti/` | `DECISIONI.md`, `contrasti.json`, generation scripts | source |
+| `sources/` | `DECISIONS.md`, `contrast.json`, generation scripts | source |
 
 ## What to edit by hand, and what not
 
-- **By hand:** tokens, SVG assets, templates in `canali/`, masters in `stampa/`, texts in `sorgenti/genera-documenti.py`, `DECISIONI.md`.
-- **Never by hand (regenerate):** `brand-identity.html`, `brand-book.html`, `playground/index.html`, `stampa/schede/*`, the PDFs, the PNGs in `canali/`.
+- **By hand:** tokens, SVG assets, templates in `channels/`, masters in `print/`, texts in `sources/generate-documents.py`, `DECISIONS.md`.
+- **Never by hand (regenerate):** `brand-identity.html`, `brand-book.html`, `playground/index.html`, `print/spec-sheets/*`, the PDFs, the PNGs in `channels/`.
 - **Never committed:** archives and historical versions (zips, old PDFs). They go in Releases (`RELEASING.md`). `dist/` is git-ignored.
 
 ## Regenerating
 
 ```sh
-python3 sorgenti/genera-documenti.py      # brand-identity.html + brand-book.html
-python3 sorgenti/genera-schede.py         # stampa/schede (Pillow)
+python3 sources/generate-documents.py      # brand-identity.html + brand-book.html
+python3 sources/generate-spec-sheets.py         # print/spec-sheets (Pillow)
 cd playground && node build.mjs           # playground (Python 3 with Pillow and NumPy)
 ```
-PDFs: headless Chrome command in `RELEASING.md`. Channel PNGs: re-export a screenshot at the viewport size given in `canali/LEGGIMI.md`.
+PDFs: headless Chrome command in `RELEASING.md`. Channel PNGs: re-export a screenshot at the viewport size given in `channels/README.md`.
 
 ## Rules for editing or creating assets
 
-1. **Colors and fonts only from the tokens.** Palette: Corallo #F25B45 (the only accent), Vino #511B36, Pesca #F6B495, Lavanda #B7A0CA, Crema #FFF3E7, Prugna #281C2D. Fonts: Outfit (headings), DM Sans (text). No invented values or fonts. If you change a token, update `tokens.css` **and** `design-tokens.json`, then `sorgenti/contrasti.json` if contrast changes.
+1. **Colors and fonts only from the tokens.** Palette: Corallo #F25B45 (the only accent), Vino #511B36, Pesca #F6B495, Lavanda #B7A0CA, Crema #FFF3E7, Prugna #281C2D. Fonts: Outfit (headings), DM Sans (text). No invented values or fonts. If you change a token, update `tokens.css` **and** `design-tokens.json`, then `sources/contrast.json` if contrast changes.
 2. **Contrast:** white on coral only for large headings (3.3:1); small text on coral is plum. Never coral on coral, never cream on peach or lavender.
 3. **Logo:** plum on light backgrounds, cream on dark ones; on coral the symbol is plum. Clear space is 25% of the symbol height. The name "stella.casa" stays visible next to the symbol on the website. Do not redraw the paths.
 4. **Illustrations:** family A (light) and family B (engraving) never in the same block.
 5. **New asset:** SVG when possible; name it `type-variant.ext` in lowercase with hyphens, as in `assets/`; export the PNG with the same name; use only token fonts and colors.
-6. **New channel template:** standalone HTML sized exactly to the format, linking `../tokens.css`; data and contacts are placeholders labelled "esempio"; document format and use in `canali/LEGGIMI.md`.
-7. **Documents (identity/book):** the structure (16 plates, 27 pages, same sequence) is approved: change content, not order. Edit `sorgenti/genera-documenti.py`, regenerate, then regenerate the PDFs.
-8. **Decisions:** every new or changed design decision goes in `sorgenti/DECISIONI.md` (one line, date, reason). No revision history elsewhere.
+6. **New channel template:** standalone HTML sized exactly to the format, linking `../tokens.css`; data and contacts are placeholders labelled "esempio"; document format and use in `channels/README.md`.
+7. **Documents (identity/book):** the structure (16 plates, 27 pages, same sequence) is approved: change content, not order. Edit `sources/generate-documents.py`, regenerate, then regenerate the PDFs.
+8. **Decisions:** every new or changed design decision goes in `sources/DECISIONS.md` (one line, date, reason). No revision history elsewhere.
 9. **Licenses:** new code is GPL-3.0; assets and trademark stay all rights reserved (`LICENSES.md`). Fonts only OFL.
 10. **Not allowed in this repo (it is public):** client or guest data, third-party pricing data, internal prices or strategy, third-party or copyrighted reference material, secrets. Contacts and prices are always placeholders.
 

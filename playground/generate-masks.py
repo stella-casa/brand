@@ -1,16 +1,16 @@
-"""Estrae le forme del marchio dalle tavole e produce maschere trasparenti per le anteprime."""
+"""Extracts the mark shapes from the plates and produces transparent masks for the previews."""
 from pathlib import Path
 import json
 from PIL import Image
 import numpy as np
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE / "sorgenti" / "loghi"
+ROOT = HERE / "sources" / "logos"
 OUT = HERE / "assets"
 OUT.mkdir(exist_ok=True)
 
-# Ritagli delle tavole: Incastro (segno + nome) e Firma/Iniziale (wordmark).
-# I campi vengono ricavati dal colore rispetto allo sfondo uniforme della tavola.
+# Plate crops: Incastro (mark + name) and Firma/Iniziale (wordmark).
+# Fields are derived from the color difference against the plate's uniform background.
 STUDIES = {
     "01": ("01-incastro.png", (60, 70, 840, 685), (280, 135, 455, 455)),
     "24": ("24-firma-filo-iniziale.png", (45, 65, 875, 640), (660, 780, 150, 150)),
@@ -21,7 +21,7 @@ def extract(source, box, destination):
     x, y, width, height = box
     crop = image.crop((x, y, x + width, y + height))
     pixels = crop.load()
-    # Angolo interno alla campitura piatta che ospita la firma.
+    # Corner inside the flat fill that hosts the signature.
     background = pixels[3, 3]
     output = Image.new("RGBA", crop.size, (0, 0, 0, 0))
     out = output.load()
@@ -29,8 +29,8 @@ def extract(source, box, destination):
         for px in range(width):
             r, g, b = pixels[px, py]
             distance = max(abs(r-background[0]), abs(g-background[1]), abs(b-background[2]))
-            # Soglia morbida per mantenere l'antialias del lettering, lasciando fuori
-            # le variazioni minime della campitura di fondo.
+            # Soft threshold to keep the lettering antialiasing while leaving out
+            # the minimal variations of the background fill.
             alpha = max(0, min(255, round((distance - 16) * 2.8)))
             if alpha:
                 out[px, py] = (255, 255, 255, alpha)
@@ -41,12 +41,12 @@ for number, (filename, full_box, icon_box) in STUDIES.items():
     extract(source, full_box, OUT / f"logo-{number}.png")
     extract(source, icon_box, OUT / f"simbolo-{number}.png")
 
-# Esporta anteprime illustrative ricolorate: conserva toni e texture, rimappando
-# ombre, mezzi toni, accenti e superfici ai ruoli della palette scelta.
-IDENTITY = HERE / "sorgenti" / "identita"
-ILLUSTRATIONS = json.loads((IDENTITY / "illustrazioni.json").read_text())["proposte"]
-PALETTES = json.loads((IDENTITY / "colori.json").read_text())
-COLOR_DIR = OUT / "colori"
+# Exports recolored illustration previews: keeps tones and texture, remapping
+# shadows, midtones, accents and surfaces to the roles of the chosen palette.
+IDENTITY = HERE / "sources" / "identity"
+ILLUSTRATIONS = json.loads((IDENTITY / "illustrations.json").read_text())["proposte"]
+PALETTES = json.loads((IDENTITY / "colors.json").read_text())
+COLOR_DIR = OUT / "colors"
 COLOR_DIR.mkdir(exist_ok=True)
 
 def recolor(source, colors, destination):
@@ -55,16 +55,16 @@ def recolor(source, colors, destination):
     low = rgb.min(axis=2)
     saturation = np.divide(high-low, high, out=np.zeros_like(high), where=high > 0)
     luminance = rgb @ np.array([0.2126, 0.7152, 0.0722], dtype=np.float32)
-    # Soglie ampie: i neri restano inchiostro, i colori saturi diventano accento,
-    # i passaggi neutri medi diventano secondario e le luci carta.
-    role = np.full(luminance.shape, 3, dtype=np.uint8)  # carta
-    role[(luminance < 0.28)] = 0                           # inchiostro
-    role[(luminance >= 0.28) & (luminance < 0.72) & (saturation < 0.24)] = 1  # secondo
-    role[(luminance >= 0.28) & (luminance < 0.92) & (saturation >= 0.24)] = 2 # accento
+    # Wide thresholds: blacks stay ink, saturated colors become accent,
+    # mid neutral tones become secondary and highlights become paper.
+    role = np.full(luminance.shape, 3, dtype=np.uint8)  # paper
+    role[(luminance < 0.28)] = 0                           # ink
+    role[(luminance >= 0.28) & (luminance < 0.72) & (saturation < 0.24)] = 1  # second
+    role[(luminance >= 0.28) & (luminance < 0.92) & (saturation >= 0.24)] = 2 # accent
     targets = np.array([[int(c[i:i+2],16) for i in (1,3,5)] for c in colors], dtype=np.float32) / 255.0
     gray = np.repeat(luminance[:,:,None], 3, axis=2)
     mapped = targets[role]
-    # Tintatura intensa ma non piatta: il residuo neutro conserva grana, luce e pieghe.
+    # Strong but not flat tinting: the neutral residue keeps grain, light and folds.
     result = np.clip(mapped * 0.78 + gray * 0.22, 0, 1)
     Image.fromarray(np.uint8(result * 255)).save(destination, "WEBP", quality=86, method=5)
 

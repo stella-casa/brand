@@ -3,7 +3,7 @@
 The repo has three distinct regimes.
 
 ## Code: GPL-3.0
-Scripts and source code (`scripts/`, `sorgenti/*.py`, `playground/*.mjs|*.py|*.js`, `canali/sito/site.js`) are under the **GNU GPL v3**; full text in `LICENSE`. Anyone reusing or modifying them must release derivative works under the same license.
+Scripts and source code (`scripts/`, `sources/*.py`, `playground/*.mjs|*.py|*.js`, `channels/site/site.js`) are under the **GNU GPL v3**; full text in `LICENSE`. Anyone reusing or modifying them must release derivative works under the same license.
 
 ## Visual identity: all rights reserved
 Trademark and logo (Incastro, `logo-*`, `firma-*`, `simbolo-*`, `logotipo-*`, `avatar`, `favicon`), the name "stella.casa", illustrations, photographs, templates, brand book and brand identity are **not** covered by the GPL. They may not be reused or modified, including inside derivative works of the code, without written permission from stella.casa. The trademark is not registered; a registrability check is still open.

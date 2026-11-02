@@ -1,8 +1,8 @@
-"""Ricamo realistico del simbolo su una foto: punto raso, bordo, rilievo, increspatura."""
+"""Realistic embroidery of the symbol on a photo: satin stitch, edge, relief, puckering."""
 from pathlib import Path
 from PIL import Image, ImageFilter
 import numpy as np
-SYM=np.asarray(Image.open(Path(__file__).resolve().parent/'sym.png').convert('L')).astype(float)/255  # 862x862, bianco = simbolo
+SYM=np.asarray(Image.open(Path(__file__).resolve().parent/'sym.png').convert('L')).astype(float)/255  # 862x862, white = symbol
 def _b(a,r): return np.asarray(Image.fromarray((np.clip(a,0,1)*255).astype('uint8')).filter(ImageFilter.GaussianBlur(r))).astype(float)/255
 def _lum(a): return .2126*a[...,0]+.7152*a[...,1]+.0722*a[...,2]
 def hexc(h): return np.array([int(h[i:i+2],16) for i in (1,3,5)])/255
@@ -23,7 +23,7 @@ def art(color,res=900,angle=38,period=8.5):
         ang=np.deg2rad(angle if i%2 else -angle)
         u=(xx*np.cos(ang)+yy*np.sin(ang))/period
         idx=np.floor(u); frac=u-idx
-        prof=np.sqrt(np.clip(1-(2*frac-1)**2,0,1))          # filo come cilindro
+        prof=np.sqrt(np.clip(1-(2*frac-1)**2,0,1))          # thread as a cylinder
         var=rng.normal(0,.05,int(idx.max()-idx.min())+3)[(idx-idx.min()).astype(int)]
         sh=.50+.62*prof**1.1+var
         sheen[lab==i]=sh[lab==i]
@@ -34,18 +34,18 @@ def art(color,res=900,angle=38,period=8.5):
     rgba=np.dstack([np.clip(col,0,1),m])
     return Image.fromarray((rgba*255).astype('uint8'),'RGBA')
 def apply(base,quad,color,soft=None,fold=6.0,lightk=1.0,period=8.5):
-    """base: HxWx3 0..1; quad: tl,tr,br,bl della superficie. soft: sfocatura (px) per la profondità di campo; fold: quanto le pieghe deformano il ricamo."""
+    """base: HxWx3 0..1; quad: tl,tr,br,bl of the surface. soft: blur (px) for depth of field; fold: how much the folds distort the embroidery."""
     from scipy.ndimage import map_coordinates, gaussian_filter
     H,W,_=base.shape; a=art(color,period=period)
     c=coeffs(quad,[(0,0),(a.width,0),(a.width,a.height),(0,a.height)])
     w=np.asarray(a.transform((W,H),Image.PERSPECTIVE,c,Image.BICUBIC)).astype(float)/255
     L=_lum(base)
-    # nitidezza locale: stima dalla varianza del laplaciano nell'area
+    # local sharpness: estimated from the Laplacian variance in the area
     m0=w[...,3]>.5
     if soft is None:
         lap=np.abs(L-gaussian_filter(L,1.0)); s_loc=lap[m0].mean() if m0.any() else .01
         soft=float(np.clip(.012/max(s_loc,1e-4)-0.6,0,4))
-    # pieghe: sposta il ricamo lungo il gradiente della luminanza sfocata
+    # folds: shift the embroidery along the blurred luminance gradient
     Lb=gaussian_filter(L,8); gy,gx=np.gradient(Lb)
     yy,xx=np.mgrid[0:H,0:W].astype(float)
     dx=gx*fold*40; dy=gy*fold*40

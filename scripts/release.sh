@@ -8,7 +8,7 @@ cd "$(dirname "$0")/.."
 [ -z "$(git status --porcelain)" ] || { echo "Working tree not clean: commit first."; exit 1; }
 rm -rf dist && mkdir dist
 git archive --format=zip -o "dist/stella-casa-brand-kit-$TAG.zip" HEAD \
-  assets canali font stampa tokens.css design-tokens.json LEGGIMI.md sorgenti
+  assets channels font print tokens.css design-tokens.json README.md LICENSES.md sources
 cp pdf/stella-casa-brand-book.pdf     "dist/stella-casa-brand-book-$TAG.pdf"
 cp pdf/stella-casa-brand-identity.pdf "dist/stella-casa-brand-identity-$TAG.pdf"
 (cd dist && shasum -a 256 * > SHA256SUMS.txt)

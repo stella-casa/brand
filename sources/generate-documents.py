@@ -1,7 +1,7 @@
-"""Genera brand-identity.html e brand-book.html .
+"""Generates brand-identity.html and brand-book.html.
 
-Uso: python3 sorgenti/genera-documenti.py (dalla cartella stella).
-La struttura (16 tavole + 27 pagine, stessa sequenza della v4) è approvata: cambiare i contenuti, non l'ordine.
+Usage: python3 sources/generate-documents.py (from the repo root).
+The structure (16 plates + 27 pages, same sequence as v4) is approved: change the content, not the order.
 """
 from pathlib import Path
 
@@ -91,45 +91,45 @@ ip(7, '''<div class="eyebrow">05 / Biblioteca illustrata</div><h2>Due famiglie, 
 
 ip(8, '''<div class="eyebrow">06 / Sito</div><h2>La casa si affida a chi la conosce.</h2>
 <div style="display:flex;gap:36px;align-items:start;margin-top:34px">
-<div class="shot" style="width:980px;height:640px"><img src="canali/sito.png" alt=""></div>
-<div class="phone" style="width:236px;height:640px;flex-shrink:0"><img src="canali/sito-mobile.png" alt=""></div>
+<div class="shot" style="width:980px;height:640px"><img src="channels/site.png" alt=""></div>
+<div class="phone" style="width:236px;height:640px;flex-shrink:0"><img src="channels/site-mobile.png" alt=""></div>
 <div style="width:190px;padding-top:20px"><p class="small">Pubblico: i proprietari.<br><br>Header a pillola che si forma con lo scroll.<br><br>Nome stella.casa sempre visibile.</p></div></div>''')
 
 ip(9, '''<div class="eyebrow">07 / Case e blog</div><h2>Ogni casa ha il suo nome.</h2>
-<div class="cols body"><div><div class="shot" style="aspect-ratio:1440/900"><img src="canali/casa.png" alt=""></div>
+<div class="cols body"><div><div class="shot" style="aspect-ratio:1440/900"><img src="channels/property.png" alt=""></div>
 <p class="small" style="margin-top:18px">Stella sul Mare / Richiesta con date e ospiti. Disponibilità e prezzo li conferma stella.casa.</p></div>
-<div><div class="shot" style="aspect-ratio:1440/900"><img src="canali/articolo.png" alt=""></div>
+<div><div class="shot" style="aspect-ratio:1440/900"><img src="channels/article.png" alt=""></div>
 <p class="small" style="margin-top:18px">Diario / Guide per proprietari. Illustrazione di famiglia B in apertura.</p></div></div>''')
 
 ip(10, '''<div class="eyebrow">08 / Proprietari</div><h2>Il metodo, una scheda alla volta.</h2>
-<div class="cols body"><div><div class="shot" style="aspect-ratio:1440/900"><img src="canali/metodo.png" alt=""></div><p class="small" style="margin-top:16px">Metodo / Quattro schede a passo: crema, corallo, pesca, vino.</p></div>
-<div style="display:flex;gap:32px"><div class="shot" style="width:380px;height:640px"><img src="canali/quaderno.png" alt="" style="object-fit:contain;background:#fff"></div>
+<div class="cols body"><div><div class="shot" style="aspect-ratio:1440/900"><img src="channels/method.png" alt=""></div><p class="small" style="margin-top:16px">Metodo / Quattro schede a passo: crema, corallo, pesca, vino.</p></div>
+<div style="display:flex;gap:32px"><div class="shot" style="width:380px;height:640px"><img src="channels/notebook.png" alt="" style="object-fit:contain;background:#fff"></div>
 <div style="flex:1;padding-top:20px"><h3>Quattro passi</h3><p class="small">Conoscere, preparare, seguire, chiarire i conti. Un gesto di scroll, una scheda.<br><br>Il quaderno della casa porta lo stesso linguaggio nel documento che il proprietario riceve.</p></div></div></div>''')
 
 ip(11, '''<div class="eyebrow">09 / Instagram</div><h2>Un feed, nove pubblicazioni.</h2>
 <div style="display:grid;grid-template-columns:720px 1fr;gap:60px;margin-top:22px">
-<div class="shot" style="height:720px"><img src="canali/instagram-feed.png" alt="" style="object-position:0 12%"></div>
+<div class="shot" style="height:720px"><img src="channels/instagram-feed.png" alt="" style="object-position:0 12%"></div>
 <div style="padding-top:18px"><h3>Riconoscibile anche scorrendo.</h3>
 <p>Fotografia reale della casa pilota, campi pieni per le parole, illustrazioni con etichette crema. La firma Incastro chiude i post principali.</p>
 <p class="small" style="margin-top:26px">Formati: foto casa · frase su campo pieno · elenco su crema · illustrazione A · gradiente di copertina.</p></div></div>''')
 
 ip(12, '''<div class="eyebrow">10 / Formati social</div><h2>Lo stesso tono cambia ritmo.</h2>
 <div style="display:grid;grid-template-columns:1fr 300px;gap:46px;margin-top:30px"><div>
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px"><img src="canali/instagram-carousel-01.png" style="border-radius:12px" alt=""><img src="canali/instagram-carousel-02.png" style="border-radius:12px" alt=""><img src="canali/instagram-carousel-03.png" style="border-radius:12px" alt=""></div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px"><img src="channels/instagram-carousel-01.png" style="border-radius:12px" alt=""><img src="channels/instagram-carousel-02.png" style="border-radius:12px" alt=""><img src="channels/instagram-carousel-03.png" style="border-radius:12px" alt=""></div>
 <h3 style="margin-top:28px">Un preventivo da leggere / Carosello in tre atti</h3><p class="small">Una domanda, una spiegazione senza importi inventati, un rimando al Diario.</p></div>
-<div><img src="canali/instagram-story.png" style="height:640px;width:300px;object-fit:contain;border-radius:14px" alt=""><p class="small" style="margin-top:10px">Story / Spazio libero per l’interfaccia.</p></div></div>''')
+<div><img src="channels/instagram-story.png" style="height:640px;width:300px;object-fit:contain;border-radius:14px" alt=""><p class="small" style="margin-top:10px">Story / Spazio libero per l’interfaccia.</p></div></div>''')
 
 ip(13, '''<div class="eyebrow">11 / Facebook e Substack</div><h2>Più contesto, stessa voce.</h2>
-<div class="cols body" style="gap:44px"><div><div class="shot" style="height:620px"><img src="canali/facebook.png" alt=""></div>
+<div class="cols body" style="gap:44px"><div><div class="shot" style="height:620px"><img src="channels/facebook.png" alt=""></div>
 <p class="small" style="margin-top:16px">Pagina Facebook riconoscibile: copertina illustrata A, post con testo che spiega cosa guardare.</p></div>
-<div><div class="shot" style="height:620px"><img src="canali/substack.png" alt=""></div>
+<div><div class="shot" style="height:620px"><img src="channels/substack.png" alt=""></div>
 <p class="small" style="margin-top:16px">Lettere da casa su Substack: banner B, articoli dal Diario, iscrizione nativa.</p></div></div>''')
 
 ip(14, '''<img src="assets/mockup-portachiavi.png" style="position:absolute;left:0;top:0;width:810px;height:1000px;object-fit:cover" alt="Portachiavi in pelle vino con anello in ottone">
 <div style="position:absolute;left:885px;top:95px;right:70px"><div class="eyebrow">12 / Presenza fisica</div>
 <h1 style="margin-top:32px">Lo stesso incastro,<br>in mano.</h1>
 <p style="margin-top:40px">La sagoma del simbolo diventa il portachiavi. Sulla targa la casa tiene il suo nome, stella.casa firma la gestione.</p>
-<div style="display:flex;gap:30px;align-items:center;margin-top:36px"><img src="stampa/targa-220x160.png" style="width:250px;box-shadow:0 12px 25px #281C2D30" alt=""><img src="stampa/adesivo-50x50.png" style="width:90px" alt=""></div>
+<div style="display:flex;gap:30px;align-items:center;margin-top:36px"><img src="print/targa-220x160.png" style="width:250px;box-shadow:0 12px 25px #281C2D30" alt=""><img src="print/adesivo-50x50.png" style="width:90px" alt=""></div>
 <p class="small" style="margin-top:18px">A sinistra: portachiavi in pelle. Sopra: targa, adesivo e file esecutivi.</p></div>''', 'full')
 
 ip(15, '''<div class="eyebrow">13 / Tessili, carta, oggetti</div><h2>Il corredo entra in casa.</h2>
@@ -141,8 +141,8 @@ ip(15, '''<div class="eyebrow">13 / Tessili, carta, oggetti</div><h2>Il corredo 
 <figure style="margin:0"><img src="assets/mockup-ricamo-dettaglio.png" style="width:100%;height:250px;object-fit:cover;border-radius:12px" alt="Dettaglio ravvicinato del ricamo satinato su lino crema"><figcaption class="tiny" style="margin-top:6px">Dettaglio · punto raso su lino</figcaption></figure>
 <figure style="margin:0"><img src="assets/mockup-targhetta.jpg" style="width:100%;height:250px;object-fit:cover;border-radius:12px" alt="Targhetta sulla facciata della casa"><figcaption class="tiny" style="margin-top:6px">Targhetta · nome della casa all’ingresso</figcaption></figure></div>
 <div style="display:flex;gap:26px;align-items:end;margin-top:8px">
-<img src="canali/locandina.png" style="height:76px;border-radius:4px;box-shadow:0 8px 18px #281C2D25" alt=""><img src="canali/benvenuto.png" style="height:66px;border-radius:4px;box-shadow:0 8px 18px #281C2D25" alt="">
-<img src="stampa/biglietto-fronte-91x61-bleed3.png" style="height:44px;box-shadow:0 8px 18px #281C2D25" alt=""></div>''')
+<img src="channels/poster.png" style="height:76px;border-radius:4px;box-shadow:0 8px 18px #281C2D25" alt=""><img src="channels/welcome.png" style="height:66px;border-radius:4px;box-shadow:0 8px 18px #281C2D25" alt="">
+<img src="print/biglietto-fronte-91x61-bleed3.png" style="height:44px;box-shadow:0 8px 18px #281C2D25" alt=""></div>''')
 
 ip(16, '''<div class="eyebrow">14 / Handoff</div><h2>Il sistema è nei file.</h2>
 <div class="cols body"><div><img src="assets/logo-crema.svg" style="width:380px;margin:20px 0 60px" alt="stella.casa">
@@ -277,13 +277,13 @@ bp(16, '''<div class="eyebrow">15 / Sito e interfaccia</div><h2>Un percorso per 
 <h3 style="margin-top:28px">L’header</h3><p class="small">In apertura è trasparente, a tutta larghezza. Con lo scroll (da 12 a 232 px) diventa una pillola crema larga fino a 1100 px, raggio 48, sfocatura 14 px. Il simbolo passa da crema a prugna in modo continuo. Il nome resta sempre visibile.</p></div>
 <table class="rules"><tr><th>Regola</th><th>Valore</th></tr><tr><td>Margine laterale</td><td>clamp(22 px, 5 vw, 76 px)</td></tr><tr><td>Larghezza contenuti</td><td>1288 px, pagina 1440 px</td></tr>
 <tr><td>Controlli</td><td>≥ 44 px, pulsanti a pillola</td></tr><tr><td>Raggi</td><td>Pillola 999 · schede 24 · card 22 · immagini 18</td></tr><tr><td>Mobile</td><td>Menu a comparsa, schede in colonna, sotto 800 px</td></tr></table></div>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:34px"><div class="shot" style="aspect-ratio:1440/900"><img src="canali/sito.png" alt=""></div><div class="shot" style="aspect-ratio:1440/900"><img src="canali/metodo.png" alt=""></div><div class="shot" style="aspect-ratio:1440/900"><img src="canali/gesti.png" alt=""></div></div>''')
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:34px"><div class="shot" style="aspect-ratio:1440/900"><img src="channels/site.png" alt=""></div><div class="shot" style="aspect-ratio:1440/900"><img src="channels/method.png" alt=""></div><div class="shot" style="aspect-ratio:1440/900"><img src="channels/gestures.png" alt=""></div></div>''')
 
 bp(17, '''<div class="eyebrow">16 / Case e contenuto editoriale</div><h2>Un’informazione, un posto preciso.</h2>
 <div class="cols body"><div><h3>Scheda della casa</h3><p class="small">Nome e luogo, galleria reale, dati essenziali, dotazioni, arrivo. La richiesta di soggiorno chiede date e ospiti e mostra un riepilogo: disponibilità e prezzo li conferma stella.casa, come nel flusso via WhatsApp già in uso. Nessun calendario o prezzo simulato.</p></div>
 <div><h3>Diario e Lettere da casa</h3><p class="small">Il Diario sul sito raccoglie guide per proprietari. Lettere da casa su Substack le porta via email: banner B, un articolo in evidenza, archivio, iscrizione nativa. Una sola illustrazione di apertura per articolo, luogo e data nel titolo quando servono.</p>
 <p class="note">Newsletter: footer del mittente, consensi e disiscrizione del servizio di invio.</p></div></div>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:30px"><div class="shot" style="aspect-ratio:1440/900"><img src="canali/casa.png" alt=""></div><div class="shot" style="aspect-ratio:1440/900"><img src="canali/diario.png" alt=""></div><div class="shot" style="aspect-ratio:1440/900"><img src="canali/substack.png" alt=""></div></div>''')
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:30px"><div class="shot" style="aspect-ratio:1440/900"><img src="channels/property.png" alt=""></div><div class="shot" style="aspect-ratio:1440/900"><img src="channels/journal.png" alt=""></div><div class="shot" style="aspect-ratio:1440/900"><img src="channels/substack.png" alt=""></div></div>''')
 
 bp(18, '''<div class="eyebrow">17 / Instagram feed</div><h2>Cinque formati bastano.</h2>
 <div class="cols body"><table class="rules"><tr><th>Formato</th><th>Regola</th></tr>
@@ -294,25 +294,25 @@ bp(18, '''<div class="eyebrow">17 / Instagram feed</div><h2>Cinque formati basta
 <tr><td>Copertina a gradiente</td><td>Vino → corallo, titolo prugna, firma prugna</td></tr></table>
 <div><p class="small">Master 1080 × 1350 px, margini 72 px, titoli entro quattro righe. La griglia 3×3 alterna foto, campi e illustrazioni: mai due illustrazioni della stessa famiglia vicine.</p>
 <p class="note">Didascalie: ogni post rimanda a una pagina precisa (Diario, casa, contatto).</p>
-<div class="shot" style="height:430px;margin-top:26px"><img src="canali/instagram-feed.png" alt="" style="object-position:0 14%"></div></div></div>''')
+<div class="shot" style="height:430px;margin-top:26px"><img src="channels/instagram-feed.png" alt="" style="object-position:0 14%"></div></div></div>''')
 
 bp(19, '''<div class="eyebrow">18 / Carosello, story e copertina reel</div><h2>Il formato segue la lettura.</h2>
 <div class="cols body"><div><h3>Carosello 4:5</h3><p>Domanda, spiegazione, azione. Numerazione 1/3, 2/3, 3/3. Un’idea per slide. Colori in sequenza: corallo, crema, vino.</p></div>
 <div><h3>Story e reel 9:16</h3><p>Master 1080 × 1920. Lasciare 220 px sopra e 260 px sotto per l’interfaccia. Illustrazione A a tutto campo, testo in etichetta crema, link aggiunto nell’app.</p></div></div>
-<div style="display:flex;gap:18px;margin-top:34px;align-items:start"><img src="canali/instagram-carousel-01.png" style="width:300px;border-radius:12px" alt=""><img src="canali/instagram-carousel-02.png" style="width:300px;border-radius:12px" alt=""><img src="canali/instagram-carousel-03.png" style="width:300px;border-radius:12px" alt=""><img src="canali/instagram-story.png" style="width:210px;border-radius:12px;margin-left:60px" alt=""></div>''')
+<div style="display:flex;gap:18px;margin-top:34px;align-items:start"><img src="channels/instagram-carousel-01.png" style="width:300px;border-radius:12px" alt=""><img src="channels/instagram-carousel-02.png" style="width:300px;border-radius:12px" alt=""><img src="channels/instagram-carousel-03.png" style="width:300px;border-radius:12px" alt=""><img src="channels/instagram-story.png" style="width:210px;border-radius:12px;margin-left:60px" alt=""></div>''')
 
 bp(20, '''<div class="eyebrow">19 / Facebook, Substack e email</div><h2>Più contesto, stessa identità.</h2>
 <div class="thirds body"><div><h3>Facebook</h3><p class="small">La pagina deve sembrare una pagina Facebook vera: copertina A con il nome della casa madre, post con testo che spiega cosa guardare, link diretto. Verificare i ritagli desktop e mobile.</p></div>
 <div><h3>Substack</h3><p class="small">“Lettere da casa”, una pubblicazione di stella.casa. Banner B, titolo in serif di sistema di Substack, logo nel masthead. Contenuti ripresi dal Diario.</p></div>
 <div><h3>Email</h3><p class="small">Firma con marchio orizzontale, nome, ruolo, contatti reali. Testo alternativo alle immagini. Nessuna illustrazione nella firma.</p></div></div>
-<div class="thirds" style="margin-top:30px;align-items:start"><div class="shot" style="height:380px"><img src="canali/facebook.png" alt=""></div><div class="shot" style="height:380px"><img src="canali/substack.png" alt=""></div><div class="shot" style="padding:20px"><img src="canali/firma-email.png" alt="" style="height:auto;object-fit:contain"></div></div>''')
+<div class="thirds" style="margin-top:30px;align-items:start"><div class="shot" style="height:380px"><img src="channels/facebook.png" alt=""></div><div class="shot" style="height:380px"><img src="channels/substack.png" alt=""></div><div class="shot" style="padding:20px"><img src="channels/email-signature.png" alt="" style="height:auto;object-fit:contain"></div></div>''')
 
 bp(21, '''<div class="eyebrow">20 / Documenti operativi</div><h2>La precisione fa parte della marca.</h2>
 <div class="cols body"><div><h3>Il quaderno della casa</h3><p class="small">Casa, periodo e autore del controllo. Ogni intervento ha data, voce, stato e nota. Lo stato è sempre una parola: “Da verificare”, “Da concordare”, “Completato”.</p>
 <h3 style="margin-top:28px">Il preventivo e il rendiconto</h3><p class="small">Compenso, base di calcolo e costi esclusi in righe distinte. Le note spiegano le variazioni.</p></div>
 <div><h3>La grafica si ritira</h3><p class="small">Prugna su bianco, righe sottili, firma orizzontale in testa. Al massimo una piccola illustrazione B nella fascia di apertura, mai dentro tabelle o prove fotografiche.</p>
 <p class="note">Il registro nel sito è un esempio con voci illustrative, e lo dichiara.</p>
-<div class="shot" style="height:380px;margin-top:24px"><img src="canali/quaderno.png" alt=""></div></div></div>''')
+<div class="shot" style="height:380px;margin-top:24px"><img src="channels/notebook.png" alt=""></div></div></div>''')
 
 bp(22, '''<div class="eyebrow">21 / Materiali fisici</div><h2>Le priorità sono nell’uso.</h2>
 <div class="cols body" style="gap:44px"><table class="rules"><tr><th>Supporto</th><th>Funzione</th></tr><tr><td>Targa</td><td>Nome della casa e firma di gestione, all’ingresso</td></tr>
@@ -343,23 +343,23 @@ bp(25, '''<div class="eyebrow">24 / Fonti e provenienza</div><h2>I riferimenti i
 <tr><td>Walt (Dribbble)</td><td>Gradiente limitato a copertine</td></tr><tr><td>Malika Favre, Tom Haugomat, Karolis Strautniekas</td><td>Silhouette, luce netta, ombre architettoniche: riferimento per il trattamento</td></tr>
 <tr><td>Sito di prenotazione diretta</td><td>Richiesta di soggiorno con conferma dell’host</td></tr></table></div>
 <div><p class="small">Nessun asset dei riferimenti è riutilizzato. Le illustrazioni derivano dalle scene generate per il book (studi I00, I02, I03, I05), rilavorate in bicromia. Le fotografie sono della casa pilota.</p>
-<p class="note">Dettagli in sorgenti/DECISIONI.md.</p></div></div>''')
+<p class="note">Dettagli in sources/DECISIONS.md.</p></div></div>''')
 
 bp(26, '''<div class="eyebrow">25 / Iconografia funzionale</div><h2>Otto segni per orientarsi.</h2>
 <div style="display:grid;grid-template-columns:repeat(8,1fr);gap:18px;margin-top:40px">''' + ''.join(
-    f'<div style="background:#fff;border-radius:18px;padding:28px 0;text-align:center"><img src="assets/icone/{i}.svg" style="width:56px;margin:0 auto" alt=""><p class="tiny" style="margin-top:14px">{l}</p></div>'
-    for i, l in [('casa', 'Casa'), ('calendario', 'Calendario'), ('controllo', 'Controllo'), ('chiave', 'Chiave'), ('messaggio', 'Messaggio'), ('quaderno', 'Quaderno'), ('mappa', 'Mappa'), ('passaggio', 'Passaggio')]) + '''</div>
+    f'<div style="background:#fff;border-radius:18px;padding:28px 0;text-align:center"><img src="assets/icons/{i}.svg" style="width:56px;margin:0 auto" alt=""><p class="tiny" style="margin-top:14px">{l}</p></div>'
+    for i, l in [('house', 'Casa'), ('calendar', 'Calendario'), ('check', 'Controllo'), ('key', 'Chiave'), ('message', 'Messaggio'), ('notebook', 'Quaderno'), ('map', 'Mappa'), ('passage', 'Passaggio')]) + '''</div>
 <div class="cols body"><p class="small">Griglia 24 × 24, tratto 1,75, terminali tondi, colore prugna. Le icone accompagnano le etichette in interfacce e documenti.</p>
 <p class="note">Le icone non sostituiscono il simbolo Incastro e non entrano nelle illustrazioni.</p></div>''')
 
 bp(27, '''<div class="eyebrow">26 / Gestione del sistema</div><h2>Una cartella, responsabilità chiare.</h2>
 <div class="cols body"><table class="rules"><tr><th>Cartella</th><th>Contiene</th></tr><tr><td>assets/</td><td>Marchi SVG e PNG, avatar, favicon, illustrazioni, foto, icone</td></tr>
-<tr><td>font/</td><td>Outfit e DM Sans WOFF2, licenze OFL</td></tr><tr><td>canali/</td><td>Sito HTML completo, template social, email, documenti, PNG</td></tr>
-<tr><td>stampa/</td><td>Master SVG, anteprime e specifiche</td></tr><tr><td>sorgenti/</td><td>Generatore dei documenti, registro delle decisioni, contrasti</td></tr></table>
+<tr><td>font/</td><td>Outfit e DM Sans WOFF2, licenze OFL</td></tr><tr><td>channels/</td><td>Sito HTML completo, template social, email, documenti, PNG</td></tr>
+<tr><td>print/</td><td>Master SVG, anteprime e specifiche</td></tr><tr><td>sources/</td><td>Generatore dei documenti, registro delle decisioni, contrasti</td></tr></table>
 <div><h3>Per creare un contenuto</h3><p class="small">Scegli un formato, una foto reale o un’illustrazione della famiglia giusta, un titolo e la destinazione.</p>
 <h3 style="margin-top:28px">Prima dell’uscita</h3><p class="small">Ritaglio, ortografia, dati della casa, link. Per i documenti: periodo, voci e allegati. Per la stampa: prova colore e risoluzione.</p>
 <p class="note">Da fare prima dell’uso pubblico: ridisegno geometrico del marchio e verifica di registrabilità.</p></div></div>''')
 
 (ROOT / 'brand-identity.html').write_text(html('stella.casa — Brand identity', I), encoding='utf-8')
 (ROOT / 'brand-book.html').write_text(html('stella.casa — Brand book', B), encoding='utf-8')
-print(len(I), 'tavole identity;', len(B), 'pagine brand book')
+print(len(I), 'identity plates;', len(B), 'brand book pages')

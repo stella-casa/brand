@@ -1,21 +1,21 @@
-# Playground d’identità stella.casa
+# stella.casa identity playground
 
-Aprire `index.html` in un browser. Il playground funziona in locale e non richiede un server.
+Open `index.html` in a browser. The playground works locally and needs no server.
 
-Seleziona una proposta della shortlist, una palette, un sistema tipografico e una direzione illustrativa. Il marchio viene ricolorato con l’inchiostro scelto; le illustrazioni vengono adattate ai quattro ruoli cromatici della palette. La selezione aggiorna landing, blog, post singolo e feed Instagram, Facebook e cartoncino fisico. Si può selezionare un’illustrazione anche dalla galleria e copiare l’indirizzo per condividere la combinazione.
+Select a proposal from the shortlist, a palette, a type system and an illustration direction. The mark is recolored with the chosen ink; the illustrations are adapted to the four color roles of the palette. The selection updates the landing page, blog, single post, Instagram feed, Facebook and physical card. An illustration can also be selected from the gallery, and the address can be copied to share the combination.
 
-I dati e le immagini originali (due tavole logo, palette, font, illustrazioni I00–I09) sono in `sorgenti/`; foto e progetto della casa sono letti da `../assets/` e `../canali/sito/`; le maschere logo e le varianti illustrate sono derivate per il playground. `I00 / La base v4` è inclusa per il confronto. Il pulsante «Riparti da v4» ripristina la combinazione d’ingresso (Incastro, palette C00, font T00 e illustrazione I00), non dichiara approvato il logo.
+The original data and images (two logo plates, palette, fonts, illustrations I00–I09) are in `sources/`; photos and the house project are read from `../assets/` and `../channels/site/`; the logo masks and illustrated variants are derived for the playground. `I00 / La base v4` is included for comparison. The «Riparti da v4» button restores the entry combination (Incastro, palette C00, font T00 and illustration I00); it does not declare the logo approved.
 
-Per rigenerare la pagina dopo modifiche alle sorgenti, da questa cartella eseguire:
+To regenerate the page after changes to the sources, run from this folder:
 
 ```sh
 node build.mjs
 ```
 
-La generazione richiede Python 3 con Pillow e NumPy, usati per creare maschere logo e immagini illustrative ricolorate in WebP. Le tavole originali restano invariate.
+Generation requires Python 3 with Pillow and NumPy, used to create logo masks and recolored illustration images in WebP. The original plates stay unchanged.
 
-## Landing per i proprietari
+## Landing page for owners
 
-Dalla pagina [landing.html](landing.html) si apre direttamente la bozza per i proprietari. In alternativa, aggiungi `?view=landing` all’indirizzo di `index.html`. La modalità usa la stessa pagina e conserva i quattro selettori e l’URL condivisibile; **Torna al confronto identità** riapre il playground completo.
+From [landing.html](landing.html) the draft for owners opens directly. Alternatively, add `?view=landing` to the address of `index.html`. The mode uses the same page and keeps the four selectors and the shareable URL; **Torna al confronto identità** reopens the full playground.
 
-La pagina mette in sequenza promessa e immagine della casa, cosa resta al proprietario nel co-hosting, metodo, reportage del progetto pilota, esempio di rendiconto, struttura dei costi, presenza sul territorio, FAQ e contatto. Il modulo mostra soltanto un riepilogo nella pagina: non invia né salva dati. Le fotografie provengono dall’archivio della casa pilota; non sono usate come risultati di gestione. Logo, palette e font restano scelte aperte.
+The page sequences promise and house image, what stays with the owner in co-hosting, method, pilot project report, sample statement, cost structure, local presence, FAQ and contact. The form only shows a summary on the page: it does not send or save data. The photographs come from the pilot house archive; they are not used as management results. Logo, palette and fonts remain open choices.

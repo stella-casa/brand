@@ -5,17 +5,17 @@ import { execFileSync } from 'node:child_process';
 
 const directory=path.dirname(fileURLToPath(import.meta.url));
 const root=directory;
-execFileSync('python3',[path.join(directory,'genera-maschere.py')],{stdio:'inherit'});
+execFileSync('python3',[path.join(directory,'generate-masks.py')],{stdio:'inherit'});
 const read=async p=>JSON.parse(await readFile(path.join(root,p),'utf8'));
-const logos=JSON.parse(await readFile(path.join(root,'sorgenti/loghi/indice.json'),'utf8'))
+const logos=JSON.parse(await readFile(path.join(root,'sources/logos/index.json'),'utf8'))
   .filter(x=>['01-incastro','24-firma-filo-iniziale'].includes(x.file));
-const palettes=await read('sorgenti/identita/colori.json');
-const types=await read('sorgenti/identita/tipografia.json');
-const illustrations=(await read('sorgenti/identita/illustrazioni.json')).proposte;
-const fontCss=await readFile(path.join(root,'sorgenti/identita/studi.css'),'utf8');
-const faces=[...fontCss.matchAll(/@font-face\{[^}]+\}/g)].map(m=>m[0].replaceAll('url(font/','url(sorgenti/identita/font/')).join('\n');
+const palettes=await read('sources/identity/colors.json');
+const types=await read('sources/identity/typography.json');
+const illustrations=(await read('sources/identity/illustrations.json')).proposte;
+const fontCss=await readFile(path.join(root,'sources/identity/studi.css'),'utf8');
+const faces=[...fontCss.matchAll(/@font-face\{[^}]+\}/g)].map(m=>m[0].replaceAll('url(font/','url(sources/identity/font/')).join('\n');
 for(const l of logos){
-  l.image=`sorgenti/loghi/${l.file}.png`;
+  l.image=`sources/logos/${l.file}.png`;
   if(l.file==='01-incastro')Object.assign(l,{cropX:60,cropY:70,cropW:840,cropH:685,iconX:280,iconY:135,iconW:455,iconH:455,ground:'#f1c3a3'});
   else Object.assign(l,{cropX:45,cropY:65,cropW:875,cropH:640,iconX:660,iconY:780,iconW:150,iconH:150,ground:'#c2d4fb'});
   l.zoom=`${1536/l.cropW*100}% auto`;
@@ -36,8 +36,8 @@ const cleanIllustrations=[{
   rules:'Conservare il tratto leggero e lo spazio bianco. Usare l’accento con parsimonia e mantenere leggibili le linee sui formati piccoli.',
   channels:'Scena intera su sito e carta; ritaglio del dettaglio per post e copertine.',
   risk:'Il tratto fine va controllato in stampa e nei ritagli social.',logos:'Riferimento illustrativo della v4, indipendente dalla scelta del logo.',
-  image:'sorgenti/identita/assets/i00-v4.png',colorImages:Object.fromEntries(palettes.map(c=>[c.id,`assets/colori/i00-${c.id.toLowerCase()}.webp`]))
-},...illustrations.map(({prompt,...item})=>({...item,image:`sorgenti/identita/assets/${item.file}.png`,colorImages:Object.fromEntries(palettes.map(c=>[c.id,`assets/colori/${item.id.toLowerCase()}-${c.id.toLowerCase()}.webp`]))}))];
+  image:'sources/identity/assets/i00-v4.png',colorImages:Object.fromEntries(palettes.map(c=>[c.id,`assets/colors/i00-${c.id.toLowerCase()}.webp`]))
+},...illustrations.map(({prompt,...item})=>({...item,image:`sources/identity/assets/${item.file}.png`,colorImages:Object.fromEntries(palettes.map(c=>[c.id,`assets/colors/${item.id.toLowerCase()}-${c.id.toLowerCase()}.webp`]))}))];
 const safeJson=value=>JSON.stringify(value).replaceAll('<','\\u003c').replaceAll('\u2028','\\u2028').replaceAll('\u2029','\\u2029');
 const title='stella.casa / Play di identità';
 const html=`<!doctype html>
@@ -147,9 +147,9 @@ const html=`<!doctype html>
         </section>
 
         <section class="owner-pilot owner-section" id="landing-caso">
-          <div class="pilot-copy"><div><p class="eyebrow">La casa da cui siamo partiti</p><h2>Stella sul Mare.</h2></div><div class="pilot-summary"><p>Un monolocale di 32 m² a Oneglia. Il progetto pilota con cui abbiamo costruito il sito della casa, il diario della città e l’area ospiti.</p><a href="../canali/sito/casa.html">Guarda il progetto della casa ↗</a></div><span class="pilot-meta">32 m² <i>/</i> Oneglia <i>/</i> Imperia</span></div>
+          <div class="pilot-copy"><div><p class="eyebrow">La casa da cui siamo partiti</p><h2>Stella sul Mare.</h2></div><div class="pilot-summary"><p>Un monolocale di 32 m² a Oneglia. Il progetto pilota con cui abbiamo costruito il sito della casa, il diario della città e l’area ospiti.</p><a href="../channels/site/property.html">Guarda il progetto della casa ↗</a></div><span class="pilot-meta">32 m² <i>/</i> Oneglia <i>/</i> Imperia</span></div>
           <figure class="pilot-image"><img class="pilot-main" src="../assets/casa-soggiorno.jpg" alt="Il soggiorno del monolocale Stella sul Mare"><div class="pilot-detail"><img src="../assets/casa-cucina.jpg" alt="Dettaglio della cucina di Stella sul Mare"></div><figcaption>Stella sul Mare · il progetto pilota, non un caso cliente né una promessa di rendimento.</figcaption></figure>
-          <div class="pilot-annotations"><span><b>01</b> Annuncio e sito della casa</span><span><b>02</b> Informazioni prima e durante il soggiorno</span><span><b>03</b> Lavoro sugli ospiti e sulle recensioni</span><a href="../canali/sito/casa.html">Apri il progetto completo ↗</a></div>
+          <div class="pilot-annotations"><span><b>01</b> Annuncio e sito della casa</span><span><b>02</b> Informazioni prima e durante il soggiorno</span><span><b>03</b> Lavoro sugli ospiti e sulle recensioni</span><a href="../channels/site/property.html">Apri il progetto completo ↗</a></div>
         </section>
 
         <section class="owner-record owner-section" id="landing-rendiconto">
@@ -202,4 +202,4 @@ const html=`<!doctype html>
 </body></html>
 `;
 await writeFile(path.join(directory,'index.html'),html);
-console.log('Playground aggiornato da archivi logo e studi di identità.');
+console.log('Playground updated from logo archives and identity studies.');
