@@ -5,7 +5,7 @@ Regola: i file generati (kit, archivi, versioni PDF) stanno nelle **Releases**, 
 ## Nuova versione
 1. Modifica e committa i sorgenti (HTML, token, asset). Aggiorna i PDF in `pdf/` se cambiano.
 2. `scripts/release.sh brand-vX.Y` costruisce `dist/` (kit zip, PDF, checksum). `dist/` è ignorato da git.
-3. Controlla `dist/`. `scripts/release.sh brand-vX.Y --publish` (tag + Release).
+3. Controlla `dist/`. Quando è tutto a posto: `scripts/release.sh brand-vX.Y --publish` (crea e pubblica tag e Release).
 
 ## Correggere una Release esistente
 Stesso tag, stesso comando con `--publish`: gli asset vengono sostituiti (`--clobber`).
