@@ -6,6 +6,24 @@ Licenze: codice GPL-3.0, identità visiva con diritti riservati, font OFL (`LICE
 
 Orientamento rapido: `LEGGIMI.md`. Decisioni di design: `sorgenti/DECISIONI.md`. Come rilasciare: `RELEASING.md`.
 
+## Quale asset usare, e dove
+
+Percorsi relativi alla radice del repo. Colori e font vengono sempre da `tokens.css` / `design-tokens.json` e dai file in `font/`.
+
+| Uso | Cosa prendere | Note |
+|---|---|---|
+| **Landing e pagine web** | Logo: `assets/firma-*.svg` (header orizzontale) o `assets/logo-*.svg` (marchio completo). Favicon: `assets/favicon.svg` / `.png`. Icone: `assets/icone/*.svg`. Illustrazioni: `assets/luce-*.jpg` (famiglia A), `assets/incisione-*.jpg` (famiglia B). Hero: `assets/hero-scenografia.png`. Foto: `assets/casa-*`. Stile: `tokens.css`, `font/` | Riferimento completo di layout e componenti: `canali/sito/` (home, scheda casa, diario, articolo, lettere). Preferisci SVG; i PNG solo dove l'SVG non basta |
+| **Applicazioni e web app (simulatore, strumenti)** | Solo token e font (`tokens.css`, `design-tokens.json`, `font/`), icone `assets/icone/*.svg`, simbolo `assets/simbolo-*.svg`, `assets/favicon.*`, `assets/avatar.*` | Nessun valore o font inventato. Controlla i contrasti in `sorgenti/contrasti.json` |
+| **Social (Instagram, Facebook, Substack)** | Template in `canali/`: `instagram-story.html` (1080×1920), `instagram-carousel-0N.html` (1080×1350), mockup `canali/instagram-feed.png`, `facebook.png`. Avatar: `assets/avatar.png`. Firma nei post: `assets/simbolo-*.svg` | Cambia i testi nell'HTML ed esporta il PNG alla stessa dimensione. Formati e regole: `canali/LEGGIMI.md` |
+| **Email** | `canali/firma-email.html` (600×220), `canali/benvenuto.html` (card ospiti, A5) | Contatti e dati sono segnaposto «esempio» |
+| **Documenti, preventivi, report** | Logo: `assets/firma-*.svg` o `assets/logo-*.svg`; layout di riferimento: `canali/quaderno.html` (A4), `canali/locandina.html` (A3) | Font e colori dai token |
+| **Materiale fisico (stampa)** | Master in `stampa/`: biglietto 91×61 con abbondanza 3 mm, cartellina, segnalibro, targa, targhetta, adesivo, portachiavi (fustella); schede tecniche tessili in `stampa/schede/`; mockup in `assets/mockup-*` | RGB, non PDF/X: conversione CMYK con il profilo della tipografia. Specifiche: `stampa/LEGGIMI.txt` |
+| **Locandine e cartaceo** | `canali/locandina.html` (A3), `canali/benvenuto.html` (A5) | |
+| **Presentazioni e materiale commerciale** | `assets/logo-*.svg`, `assets/luce-*.jpg`, `assets/incisione-*.jpg`, token | Mai illustrazioni di famiglie diverse nello stesso blocco |
+| **Brand book e regole** | `pdf/` (PDF correnti), `brand-book.html`, `brand-identity.html` | Versioni storiche nelle Releases |
+
+Varianti colore dei loghi: `-prugna` sui fondi chiari, `-crema` sui fondi scuri, `-vino` e `-corallo` secondo le regole di colore sotto.
+
 ## Struttura
 
 | Percorso | Contenuto | Tipo |
@@ -50,7 +68,7 @@ PDF: comando Chrome headless in `RELEASING.md`. PNG dei canali: riesporta lo scr
 7. **Documenti (identity/book):** la struttura (16 tavole, 27 pagine, stessa sequenza) è approvata: si cambiano i contenuti, non l'ordine. Modifica `sorgenti/genera-documenti.py`, rigenera, poi rigenera i PDF.
 8. **Decisioni:** ogni scelta di design nuova o cambiata va in `sorgenti/DECISIONI.md` (una riga, data, motivo). Niente storia delle revisioni altrove.
 9. **Licenze:** il codice nuovo è GPL-3.0; asset e marchio restano a diritti riservati (`LICENZE.md`). Font solo OFL.
-10. **Contenuti vietati nel repo (è pubblico):** dati di clienti o ospiti, dati di terzi a pagamento, prezzi o strategia interna, materiale di terzi o riferimenti con copyright, segreti. Contatti e prezzi sono sempre segnaposto. Materiale interno e ricerche vanno in `knowledge-hub`.
+10. **Contenuti vietati nel repo (è pubblico):** dati di clienti o ospiti, dati di terzi a pagamento, prezzi o strategia interna, materiale di terzi o riferimenti con copyright, segreti. Contatti e prezzi sono sempre segnaposto. 
 
 ## Limiti dichiarati
 
@@ -59,8 +77,7 @@ PDF: comando Chrome headless in `RELEASING.md`. PNG dei canali: riesporta lo scr
 - Master di stampa in RGB, non PDF/X: conversione CMYK con il profilo della tipografia.
 - Sito e canali sono prototipi locali: i moduli non inviano dati.
 
-## Flusso di lavoro
+## Contribuire
 
-- Branch and pull requests.
-- Modifiche su branch `agente/<task>`, revisione e merge su `main`. Nessun push diretto su `main`.
-- Dopo una modifica visibile: rigenera i derivati, controlla in browser, aggiorna i PDF e, se serve, una Release (`RELEASING.md`).
+- Lavora su un branch dedicato e apri una pull request verso `main`: niente push diretti su `main`.
+- Dopo una modifica visibile: rigenera i derivati, controlla in browser, aggiorna i PDF e, se serve, pubblica una Release (`RELEASING.md`).
