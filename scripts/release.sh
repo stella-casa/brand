@@ -14,7 +14,8 @@ cp pdf/stella-casa-brand-identity.pdf "dist/stella-casa-brand-identity-$TAG.pdf"
 (cd dist && shasum -a 256 * > SHA256SUMS.txt)
 ls -lh dist
 [ "$MODE" = "--publish" ] || { echo "Solo build locale. Aggiungi --publish per pubblicare."; exit 0; }
-git tag -a "$TAG" -m "Brand $TAG"
+git rev-parse -q --verify "refs/tags/$TAG" >/dev/null || git tag -a "$TAG" -m "Brand $TAG"
+git push -q origin "$TAG"
 if gh release view "$TAG" >/dev/null 2>&1; then
   gh release upload "$TAG" dist/* --clobber
 else
