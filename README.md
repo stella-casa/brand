@@ -2,6 +2,8 @@
 
 Brand identity di stella.casa: marchio Incastro, palette, tipografia, illustrazioni, template dei canali, master di stampa, brand book. Fonte unica per ogni output visivo o editoriale (landing, simulatore, offerte, PDF, social, email).
 
+Licenze: codice GPL-3.0, identità visiva con diritti riservati, font OFL (`LICENZE.md`, `LICENSE`).
+
 Orientamento rapido: `LEGGIMI.md`. Decisioni di design: `sorgenti/DECISIONI.md`. Come rilasciare: `RELEASING.md`.
 
 ## Struttura
@@ -47,7 +49,8 @@ PDF: comando Chrome headless in `RELEASING.md`. PNG dei canali: riesporta lo scr
 6. **Nuovo template di canale:** HTML standalone dimensionato esattamente al formato, che richiama `../tokens.css`; dati e contatti sono placeholder etichettati «esempio»; documenta formato e uso in `canali/LEGGIMI.md`.
 7. **Documenti (identity/book):** la struttura (16 tavole, 27 pagine, stessa sequenza) è approvata: si cambiano i contenuti, non l'ordine. Modifica `sorgenti/genera-documenti.py`, rigenera, poi rigenera i PDF.
 8. **Decisioni:** ogni scelta di design nuova o cambiata va in `sorgenti/DECISIONI.md` (una riga, data, motivo). Niente storia delle revisioni altrove.
-9. **Contenuti vietati nel repo (è pubblico):** dati di clienti o ospiti, dati di terzi a pagamento, prezzi o strategia interna, materiale di terzi o riferimenti con copyright, segreti. Contatti e prezzi sono sempre segnaposto. Materiale interno e ricerche vanno in `knowledge-hub`.
+9. **Licenze:** il codice nuovo è GPL-3.0; asset e marchio restano a diritti riservati (`LICENZE.md`). Font solo OFL.
+10. **Contenuti vietati nel repo (è pubblico):** dati di clienti o ospiti, dati di terzi a pagamento, prezzi o strategia interna, materiale di terzi o riferimenti con copyright, segreti. Contatti e prezzi sono sempre segnaposto. Materiale interno e ricerche vanno in `knowledge-hub`.
 
 ## Limiti dichiarati
 
