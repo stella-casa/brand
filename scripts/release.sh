@@ -9,6 +9,20 @@ cd "$(dirname "$0")/.."
 rm -rf dist && mkdir dist
 git archive --format=zip -o "dist/stella-casa-brand-kit-$TAG.zip" HEAD \
   assets channels font print tokens.css design-tokens.json README.md LICENSES.md sources
+# Core bundle: the small artifact other repositories import (tokens, logo marks, favicon, fonts) with a manifest.
+CORE=(tokens.css design-tokens.json assets/firma-prugna.svg assets/firma-vino.svg assets/firma-crema.svg assets/favicon.svg font/outfit-variable-latin.woff2 font/dm-sans-variable-latin.woff2)
+core="$(mktemp -d)"; mkdir -p "$core/assets" "$core/font"
+for f in "${CORE[@]}"; do cp "$f" "$core/$f"; done
+python3 - "$core" "$TAG" <<'PY'
+import hashlib, json, os, sys
+root, tag = sys.argv[1], sys.argv[2]
+files = {}
+for d, _, fs in os.walk(root):
+    for f in fs:
+        p = os.path.join(d, f); files[os.path.relpath(p, root)] = hashlib.sha256(open(p, "rb").read()).hexdigest()
+json.dump({"name": "stella-casa-brand-core", "version": tag, "files": dict(sorted(files.items()))}, open(os.path.join(root, "MANIFEST.json"), "w"), indent=2)
+PY
+(cd "$core" && zip -qr "$OLDPWD/dist/stella-casa-brand-core-$TAG.zip" .)
 cp pdf/stella-casa-brand-book.pdf     "dist/stella-casa-brand-book-$TAG.pdf"
 cp pdf/stella-casa-brand-identity.pdf "dist/stella-casa-brand-identity-$TAG.pdf"
 (cd dist && shasum -a 256 * > SHA256SUMS.txt)
